@@ -21,5 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Coverage directory used by tools like istanbul
+coverage
+
 #vscode
 .vscode

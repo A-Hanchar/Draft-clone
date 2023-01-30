@@ -1,4 +1,5 @@
 dist
+coverage
 vscode
 package.json
 package-lock.json

@@ -46,7 +46,7 @@ export default defineConfig({
     coverage: {
       enabled: false,
       reporter: ['text', 'html'],
-      reportsDirectory: 'coverage',
+      reportsDirectory: path.resolve(__dirname, 'coverage'),
       branches: 10,
       functions: 10,
       statements: 10,
