@@ -1,0 +1,5 @@
+export { routerPathes } from './routerPathes'
+export { router, rootRoute, notFoundRoute } from './router'
+export * from './types'
+export { renderComponent } from './renderComponent'
+export { getDocumentIdParam } from './utils'

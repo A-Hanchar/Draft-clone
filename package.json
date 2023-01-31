@@ -86,6 +86,7 @@
   "dependencies": {
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
+    "autoprefixer": "^10.4.13",
     "vite": "^4.0.4",
     "vite-plugin-tsc-watch": "^2.0.1"
   }

@@ -1,5 +1,7 @@
-export {}
+import './index.css'
 
-const div = document.createElement('div')
+import { renderComponent } from 'router'
 
-document.body.append(div)
+window.addEventListener('load', renderComponent)
+window.addEventListener('hashchange', renderComponent)
+window.onpopstate = renderComponent
