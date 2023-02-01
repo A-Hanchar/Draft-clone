@@ -3,9 +3,15 @@ import { addClassnameToElement, createElementWithClassNameAndAppendNode } from '
 import { type ButtonProps } from './types'
 
 export const Button = ({ children, classname, onclick, type = 'button', disabled = false }: ButtonProps) => {
-  const button = createElementWithClassNameAndAppendNode({ tagName: 'button', classname, children })
+  const button = createElementWithClassNameAndAppendNode({ tagName: 'button', classname: 'cursor-pointer', children })
 
-  addClassnameToElement({ element: button, classname: 'cursor-pointer' })
+  if (typeof classname === 'string') {
+    addClassnameToElement({ element: button, classname })
+  } else if (Array.isArray(classname)) {
+    classname.forEach((className) => {
+      addClassnameToElement({ element: button, classname: className })
+    })
+  }
 
   button.type = type
   button.disabled = disabled
