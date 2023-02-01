@@ -1,12 +1,11 @@
-import './styles.css'
-import { createElementWithClassName } from 'helpers'
+import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { type ButtonProps } from './types'
 
 export const Button = ({ children, classname, onclick, type = 'button', disabled = false }: ButtonProps) => {
-  const button = createElementWithClassName({ tagName: 'button', classname })
+  const button = createElementWithClassNameAndAppendNode({ tagName: 'button', classname, children })
 
-  children && button.append(children)
+  addClassnameToElement({ element: button, classname: 'cursor-pointer' })
 
   button.type = type
   button.disabled = disabled
