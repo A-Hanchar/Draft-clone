@@ -1,7 +1,3 @@
-export const Documents = () => {
-  const div = document.createElement('div')
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-  div.append('Documents Page')
-
-  return div
-}
+export const Documents = () => createElementWithClassNameAndAppendNode({ tagName: 'div', children: 'Documents Page' })

@@ -1,7 +1,3 @@
-export const SignIn = () => {
-  const div = document.createElement('div')
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-  div.append('SignIn Page')
-
-  return div
-}
+export const SignIn = () => createElementWithClassNameAndAppendNode({ tagName: 'div', children: 'SignIn Page' })

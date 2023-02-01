@@ -1,7 +1,3 @@
-export const Header = () => {
-  const div = document.createElement('div')
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-  div.append('Header')
-
-  return div
-}
+export const Header = () => createElementWithClassNameAndAppendNode({ tagName: 'header', children: 'Header' })

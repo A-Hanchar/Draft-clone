@@ -1,11 +1,10 @@
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { getDocumentIdParam } from 'router'
 
 export const Document = () => {
   const { documentId } = getDocumentIdParam()
-
-  const div = document.createElement('div')
-
-  div.append(`Document Page: id - ${documentId ?? ''}`)
-
-  return div
+  return createElementWithClassNameAndAppendNode({
+    tagName: 'div',
+    children: `Document Page: id - ${documentId ?? ''}`,
+  })
 }
