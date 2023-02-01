@@ -1,7 +1,3 @@
-export const NotFound = () => {
-  const div = document.createElement('div')
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-  div.append('Not Found Page')
-
-  return div
-}
+export const NotFound = () => createElementWithClassNameAndAppendNode({ tagName: 'div', children: 'Not Found Page' })

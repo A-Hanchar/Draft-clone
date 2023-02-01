@@ -1,9 +1,4 @@
-export const Home = () => {
-  const div = document.createElement('div')
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-  div.append('Home Page')
-
-  div.classList.add('text-blue-600')
-
-  return div
-}
+export const Home = () =>
+  createElementWithClassNameAndAppendNode({ tagName: 'div', children: 'Home Page', classname: 'text-blue-600' })

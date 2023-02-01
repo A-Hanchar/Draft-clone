@@ -1,7 +1,3 @@
-export const Footer = () => {
-  const div = document.createElement('div')
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-  div.append('Footer')
-
-  return div
-}
+export const Footer = () => createElementWithClassNameAndAppendNode({ tagName: 'footer', children: 'Footer' })

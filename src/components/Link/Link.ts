@@ -1,12 +1,10 @@
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { renderComponent } from 'router'
 
 import { type LinkProps } from './types'
 
 export const Link = ({ children, href, classname, target = '_self' }: LinkProps) => {
-  const a = document.createElement('a')
-
-  classname && a.classList.add(classname)
-  children && a.append(children)
+  const a = createElementWithClassNameAndAppendNode({ tagName: 'a', classname, children })
 
   a.href = href
   a.target = target
