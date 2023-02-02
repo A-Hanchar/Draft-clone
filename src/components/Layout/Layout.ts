@@ -1,14 +1,15 @@
 import { Body } from 'components/Body'
 import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
-import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { type PropsWithChildren } from 'types'
+import { colors } from 'variables/css'
 
 export const Layout = ({ children }: PropsWithChildren) => {
   const fragment = document.createDocumentFragment()
   const main = createElementWithClassNameAndAppendNode({ tagName: 'main', children })
 
-  addClassnameToElement({ element: Body, classname: 'bg-gray-100' })
+  Body.classList.add(`bg-${colors.lightGray}`)
 
   fragment.append(Header(), main, Footer())
 
