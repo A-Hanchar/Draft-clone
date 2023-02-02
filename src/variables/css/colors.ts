@@ -6,5 +6,5 @@ export const colors = {
   greenhover: 'green-700',
   bluehover: 'blue-700',
   lightgray: 'gray-100',
-  darkgray: 'gray-900',
+  darkgray: 'gray-800',
 }
