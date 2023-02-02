@@ -9,7 +9,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
   const fragment = document.createDocumentFragment()
   const main = createElementWithClassNameAndAppendNode({ tagName: 'main', children })
 
-  Body.classList.add(`bg-${colors.lightgray}`)
+  Body.classList.add(`bg-${colors.lightGray}`)
 
   fragment.append(Header(), main, Footer())
 

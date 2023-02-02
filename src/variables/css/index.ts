@@ -1,2 +1,2 @@
 export { fontWeights, type FontWeightKeys } from './fontWeights'
-export { colors } from './colors'
+export { colors, type ColorKeys } from './colors'
