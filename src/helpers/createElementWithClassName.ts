@@ -1,3 +1,5 @@
+import { addClassnameToElement } from './addClassnameToElement'
+
 export const createElementWithClassName = <K extends keyof HTMLElementTagNameMap>({
   tagName,
   classname = '',
@@ -6,7 +8,8 @@ export const createElementWithClassName = <K extends keyof HTMLElementTagNameMap
   classname?: string
 }) => {
   const element = document.createElement(tagName)
-  element.className = classname
+
+  addClassnameToElement({ element, classname })
 
   return element
 }

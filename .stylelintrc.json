@@ -39,7 +39,7 @@
     ],
     "alpha-value-notation": "number",
     "import-notation": "url",
-    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
     "selector-id-pattern": "^[a-z][a-zA-Z0-9]+$",
     "font-family-name-quotes": "always-where-required",
     "function-url-quotes": "never",
