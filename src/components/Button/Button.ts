@@ -1,4 +1,5 @@
 import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { buttonClassesByColorType } from 'variables/css'
 
 import { type ButtonProps } from './types'
 
@@ -13,7 +14,7 @@ export const Button = ({
 }: ButtonProps) => {
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
-    classname: `cursor-pointer bg-${color} ${classname}`,
+    classname: `cursor-pointer ${buttonClassesByColorType[color]} ${classname}`,
     children,
   })
 
