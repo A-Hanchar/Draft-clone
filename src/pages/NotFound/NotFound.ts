@@ -9,7 +9,14 @@ export const NotFound = () =>
     children: [
       Text({ tagName: 'h1', innerText: 'Error: 404', classname: 'text-9xl', weight: 900 }),
       Text({ tagName: 'h2', innerText: 'Page Not Fount', classname: 'text-6xl', weight: 700 }),
-      Link({ href: routerPathes.home, children: 'Go Home' }),
+      Link({
+        href: routerPathes.home,
+        children: 'Go Home',
+        type: 'button',
+        color: 'success',
+        classname: 'text-xl',
+        weight: 600,
+      }),
     ],
-    classname: 'flex flex-col justify-center items-center h-full',
+    classname: 'flex flex-col justify-center items-center h-full gap-6',
   })
