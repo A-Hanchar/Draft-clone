@@ -25,3 +25,5 @@
 4. Blue accent: blue-500; Green accent hover: blue-700.
 
 5. Background color: bg-gray-100.
+
+6. Text color: gray-800.
