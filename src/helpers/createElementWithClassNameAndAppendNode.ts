@@ -8,7 +8,7 @@ export const createElementWithClassNameAndAppendNode = <K extends keyof HTMLElem
   children,
 }: {
   tagName: K
-  classname?: string | Array<string | undefined>
+  classname?: string
   children?: ChildrenNode | Array<ChildrenNode | undefined>
 }) => {
   const element = createElementWithClassName({ tagName, classname })
