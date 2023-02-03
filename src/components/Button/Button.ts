@@ -6,8 +6,7 @@ import { type ButtonProps } from './types'
 export const Button = ({
   children,
   classname = '',
-  color,
-  textcontent = '',
+  color = 'primary',
   onclick,
   type = 'button',
   disabled = false,
@@ -20,7 +19,6 @@ export const Button = ({
 
   button.type = type
   button.disabled = disabled
-  button.textContent = textcontent
 
   const handleClick = (event: Event) => {
     event.preventDefault()
