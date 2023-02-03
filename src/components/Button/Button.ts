@@ -12,7 +12,7 @@ export const Button = ({
 }: ButtonProps) => {
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
-    classname: `cursor-pointer ${classname}`,
+    classname: `cursor-pointer bg-${color} ${classname}`,
     children,
   })
 
