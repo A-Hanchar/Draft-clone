@@ -8,4 +8,5 @@ export type ButtonProps = PropsWithChildren<{
   type?: string
   disabled?: boolean
   innerText?: string
+  textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
 }>

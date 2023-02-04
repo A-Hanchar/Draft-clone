@@ -35,13 +35,15 @@ export const SignIn = () => {
     classname:
       'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
     color: 'primary',
-    innerText: 'SIGN IN',
+    innerText: 'sign in',
+    textTransform: 'uppercase',
   })
 
   const signUpButton = Button({
     classname:
       'bg-white hover:bg-white text-blue-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
-    innerText: 'SIGN UP',
+    innerText: 'sign up',
+    textTransform: 'uppercase',
   })
 
   const loginControls = createElementWithClassNameAndAppendNode({
