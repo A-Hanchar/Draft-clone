@@ -13,7 +13,7 @@ export type LinkProps = PropsWithChildren<
         color?: ButtonColorType
       }
     | {
-        type?: 'custom'
+        type?: undefined
       }
   )
 >

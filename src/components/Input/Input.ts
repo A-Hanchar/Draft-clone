@@ -2,9 +2,13 @@ import { createElementWithClassNameAndAppendNode, createElementWithClassName } f
 
 import { type InputProps } from './types'
 
-export const Input = ({ className, id = '', type, placeholder = '', ...rest }: InputProps) => {
+export const Input = ({ className, id, type, placeholder = '', ...rest }: InputProps) => {
   const inputElement = createElementWithClassName({ tagName: 'input', classname: className })
-  inputElement.id = id
+
+  if (id) {
+    inputElement.id = id
+  }
+
   inputElement.placeholder = placeholder
 
   if (rest.labelInnerText) {
