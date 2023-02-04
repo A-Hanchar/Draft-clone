@@ -1,6 +1,8 @@
 import { Button } from 'components/Button'
 import { Input } from 'components/Input'
+import { Link } from 'components/Link'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { routerPathes } from 'router'
 
 export const SignIn = () => {
   const commonInputClassname =
@@ -29,27 +31,28 @@ export const SignIn = () => {
     classname:
       'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
     textTransform: 'uppercase',
-    children: 'sign ip',
+    children: 'sign in',
   })
 
-  const signUpButton = Button({
-    classname:
-      'bg-white hover:bg-white text-blue-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
-    textTransform: 'uppercase',
+  const signUpButton = Link({
+    classname: 'text-blue-500 py-2 px-4 rounded focus:outline-none focus:shadow-outline',
+    href: routerPathes.signUp,
     children: 'sign up',
+    textTransform: 'uppercase',
+    weight: 700,
   })
 
-  const loginControls = createElementWithClassNameAndAppendNode({
+  const signInControls = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex items-center justify-between',
     children: [signInButton, signUpButton],
   })
 
-  const loginForm = createElementWithClassNameAndAppendNode({
+  const signInForm = createElementWithClassNameAndAppendNode({
     tagName: 'form',
     classname: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-6',
-    children: [emailInput, passwordInput, loginControls],
+    children: [emailInput, passwordInput, signInControls],
   })
 
-  return loginForm
+  return signInForm
 }
