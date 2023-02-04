@@ -1,6 +1,6 @@
 export { Home } from './Home'
 export { NotFound } from './NotFound'
-export { SignIn } from './SignIn'
-export { SignUp } from './SignUp'
+export { SignIn } from 'pages/SignIn'
+export { SignUp } from 'forms/SignUp'
 export { Documents } from './Documents'
 export { Document } from './Document'

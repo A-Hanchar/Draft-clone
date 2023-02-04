@@ -7,4 +7,5 @@ export type ButtonProps = PropsWithChildren<{
   onclick?: () => void
   type?: string
   disabled?: boolean
+  innerText?: string
 }>

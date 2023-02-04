@@ -10,6 +10,7 @@ export const Button = ({
   onclick,
   type = 'button',
   disabled = false,
+  innerText = '',
 }: ButtonProps) => {
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
@@ -19,6 +20,7 @@ export const Button = ({
 
   button.type = type
   button.disabled = disabled
+  button.innerText = innerText
 
   const handleClick = (event: Event) => {
     event.preventDefault()
