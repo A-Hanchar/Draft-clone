@@ -1,5 +1,9 @@
+/* @import url(tailwindcss/base);
+@import url(tailwindcss/components);
+@import url(tailwindcss/utilities); */
+
 @import url(./assets/styles/normalize.css);
-@import url(./assets/styles/common.css);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

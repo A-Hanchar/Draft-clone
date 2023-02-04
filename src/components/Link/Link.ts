@@ -13,7 +13,7 @@ export const Link = ({ children, href, classname = '', target = '_self', weight 
   if (type === 'button') {
     const { color = 'primary' } = restProps
 
-    linkCssClass = `p-3.5 rounded text-white min-w-[15.625rem] flex justify-center ${buttonClassesByColorType[color]} ${classname}`
+    linkCssClass = `p-3.5 rounded ${buttonClassesByColorType[color]} ${classname}`
   }
 
   const a = createElementWithClassNameAndAppendNode({ tagName: 'a', classname: linkCssClass, children })

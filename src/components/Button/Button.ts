@@ -1,4 +1,4 @@
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
 import { buttonClassesByColorType } from 'variables/css'
 
 import { type ButtonProps } from './types'
@@ -6,7 +6,7 @@ import { type ButtonProps } from './types'
 export const Button = ({
   children,
   classname = '',
-  color = 'primary',
+  color,
   onclick,
   type = 'button',
   disabled = false,
@@ -14,9 +14,13 @@ export const Button = ({
 }: ButtonProps) => {
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
-    classname: `cursor-pointer ${buttonClassesByColorType[color]} ${classname} ${textTransform}`,
+    classname: `p-3.5 rounded cursor-pointer focus:outline-none focus:shadow-outline ${classname} ${textTransform}`,
     children,
   })
+
+  if (color) {
+    addClassnameToElement({ element: button, classname: buttonClassesByColorType[color] })
+  }
 
   button.type = type
   button.disabled = disabled
