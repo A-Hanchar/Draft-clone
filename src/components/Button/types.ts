@@ -7,6 +7,5 @@ export type ButtonProps = PropsWithChildren<{
   onclick?: () => void
   type?: string
   disabled?: boolean
-  innerText?: string
   textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | 'normal-case'
 }>

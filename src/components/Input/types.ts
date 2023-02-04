@@ -1,12 +1,14 @@
 export type InputProps = {
-  input: {
-    className?: string
-    id: string
-    type: string
-    placeholder: string
-  }
-  label?: {
-    className?: string
-    innerText: string
-  }
-}
+  className?: string
+  id?: string
+  type?: 'email' | 'number' | 'password' | 'search' | 'submit' | 'text' | 'button' | 'hidden'
+  placeholder?: string
+} & (
+  | {
+      labelClassName?: string
+      labelInnerText: string
+    }
+  | {
+      labelInnerText?: undefined
+    }
+)

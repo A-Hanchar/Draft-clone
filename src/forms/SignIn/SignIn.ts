@@ -4,46 +4,38 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 export const SignIn = () => {
   const emailInput = Input({
-    input: {
-      className:
-        'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3',
-      id: 'email',
-      type: 'email',
-      placeholder: 'apple@google.com',
-    },
-    label: {
-      className: 'block text-gray-700 text-sm font-bold mb-2',
-      innerText: 'Email',
-    },
+    className:
+      'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3',
+    id: 'email',
+    type: 'email',
+    placeholder: 'apple@google.com',
+    labelClassName: 'block text-gray-700 text-sm font-bold mb-2',
+    labelInnerText: 'Email',
   })
 
   const passwordInput = Input({
-    input: {
-      className:
-        'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3',
-      id: 'password',
-      type: 'password',
-      placeholder: '******************',
-    },
-    label: {
-      className: 'block text-gray-700 text-sm font-bold mb-2',
-      innerText: 'Password',
-    },
+    className:
+      'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3',
+    id: 'password',
+    type: 'password',
+    placeholder: '******************',
+    labelClassName: 'block text-gray-700 text-sm font-bold mb-2',
+    labelInnerText: 'Password',
   })
 
   const signInButton = Button({
     classname:
       'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
     color: 'primary',
-    innerText: 'sign in',
     textTransform: 'uppercase',
+    children: 'sign ip',
   })
 
   const signUpButton = Button({
     classname:
       'bg-white hover:bg-white text-blue-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
-    innerText: 'sign up',
     textTransform: 'uppercase',
+    children: 'sign up',
   })
 
   const loginControls = createElementWithClassNameAndAppendNode({
