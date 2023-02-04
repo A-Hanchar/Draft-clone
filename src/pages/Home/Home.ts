@@ -1,8 +1,8 @@
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { createElementWithClassName } from 'helpers/createElementWithClassName'
-import { colors } from 'variables/css'
+import { routerPathes } from 'router'
+import { colorsConfig } from 'variables/css'
 
 export const Home = () => {
   const title = Text({
@@ -12,16 +12,16 @@ export const Home = () => {
     textTransform: 'uppercase',
     weight: 900,
   })
+
   const subTitle = Text({
     tagName: 'h3',
     innerText: "A Simple Writer's tool",
     textTransform: 'uppercase',
     classname: 'text-center text-sm',
   })
+
   const titleWrapper = createElementWithClassNameAndAppendNode({ tagName: 'div', children: [title, subTitle] })
-  const loginButton = createElementWithClassName({ tagName: 'button', classname: 'font-bold' })
-  loginButton.innerText = 'LOGIN'
-  const loginLink = Link({ children: loginButton, href: '/signIn' })
+  const loginLink = Link({ children: 'LOGIN', href: routerPathes.signIn, appearance: 'button', color: 'primary' })
 
   const quote = Text({
     tagName: 'p',
@@ -31,7 +31,7 @@ export const Home = () => {
 
   const wrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `text-${colors.darkGray} flex justify-center items-center h-screen flex-col gap-10`,
+    classname: `${colorsConfig.text.darkGray} flex justify-center items-center h-screen flex-col gap-10`,
     children: [titleWrapper, loginLink, quote],
   })
 

@@ -3,7 +3,7 @@ import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
 import { type PropsWithChildren } from 'types'
-import { colors } from 'variables/css'
+import { colorsConfig } from 'variables/css'
 
 export const Layout = ({ children }: PropsWithChildren) => {
   const fragment = document.createDocumentFragment()
@@ -14,7 +14,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
 
   addClassnameToElement({
     element: Body,
-    classname: `grid grid-rows-[auto_1fr_auto] min-h-screen bg-${colors.lightGray}`,
+    classname: `grid grid-rows-[auto_1fr_auto] min-h-screen ${colorsConfig.bg.lightGray}`,
   })
 
   fragment.append(Header(), main, Footer())

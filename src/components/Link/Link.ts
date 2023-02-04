@@ -1,6 +1,6 @@
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
 import { renderComponent } from 'router'
-import { buttonClassesByColorType, fontWeights } from 'variables/css'
+import { fontWeights, buttonConfig, textTransformConfig } from 'variables/css'
 
 import { type LinkProps } from './types'
 
@@ -10,24 +10,26 @@ export const Link = ({
   classname = '',
   target = '_self',
   weight = 400,
-  textTransform = 'normal-case',
+  textTransform = 'none',
   ...restProps
 }: LinkProps) => {
-  const { type } = restProps
-  const commonClasses = `${fontWeights[weight]} ${classname} ${textTransform}`
-
-  let linkCssClass = commonClasses
-
-  if (type === 'button') {
-    const { color = 'primary' } = restProps
-
-    linkCssClass = `p-3.5 rounded ${buttonClassesByColorType[color]} ${classname}`
-  }
-
-  const a = createElementWithClassNameAndAppendNode({ tagName: 'a', classname: linkCssClass, children })
+  const a = createElementWithClassNameAndAppendNode({
+    tagName: 'a',
+    classname: `${fontWeights[weight]} ${textTransformConfig[textTransform]} ${classname}`,
+    children,
+  })
 
   a.href = href
   a.target = target
+
+  if (restProps.appearance === 'button') {
+    const { color: colorType } = restProps
+
+    addClassnameToElement({
+      element: a,
+      classname: `py-2 px-4 rounded ${buttonConfig.commonStyles} ${buttonConfig.getClassByColorType({ colorType })}`,
+    })
+  }
 
   const handleLinkClick = (event: MouseEvent) => {
     if (target === '_blank') {

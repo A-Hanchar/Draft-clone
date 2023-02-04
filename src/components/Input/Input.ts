@@ -2,7 +2,7 @@ import { createElementWithClassNameAndAppendNode, createElementWithClassName } f
 
 import { type InputProps } from './types'
 
-export const Input = ({ className, id, type, placeholder = '', ...rest }: InputProps) => {
+export const Input = ({ className, id, type, placeholder = '', ...restProps }: InputProps) => {
   const inputElement = createElementWithClassName({ tagName: 'input', classname: className })
 
   if (id) {
@@ -11,12 +11,15 @@ export const Input = ({ className, id, type, placeholder = '', ...rest }: InputP
 
   inputElement.placeholder = placeholder
 
-  if (rest.labelInnerText) {
+  if (restProps.labelInnerText) {
+    const { labelInnerText, labelClassName } = restProps
+
     const labelElement = createElementWithClassNameAndAppendNode({
       tagName: 'label',
-      classname: rest.labelClassName,
-      children: [rest.labelInnerText, inputElement],
+      classname: labelClassName,
+      children: [labelInnerText, inputElement],
     })
+
     return labelElement
   }
 

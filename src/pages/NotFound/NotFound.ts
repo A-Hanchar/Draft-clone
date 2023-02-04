@@ -27,7 +27,7 @@ export const NotFound = () => {
       Link({
         href: routerPathes.home,
         children: 'Go Home',
-        type: 'button',
+        appearance: 'button',
         color: 'success',
         classname: 'text-xl min-w-[15.625rem] flex justify-center',
         weight: 600,
