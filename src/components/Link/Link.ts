@@ -4,9 +4,17 @@ import { buttonClassesByColorType, fontWeights } from 'variables/css'
 
 import { type LinkProps } from './types'
 
-export const Link = ({ children, href, classname = '', target = '_self', weight = 400, ...restProps }: LinkProps) => {
+export const Link = ({
+  children,
+  href,
+  classname = '',
+  target = '_self',
+  weight = 400,
+  textTransform = 'normal-case',
+  ...restProps
+}: LinkProps) => {
   const { type } = restProps
-  const commonClasses = `${fontWeights[weight]} ${classname}`
+  const commonClasses = `${fontWeights[weight]} ${classname} ${textTransform}`
 
   let linkCssClass = commonClasses
 
