@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'types'
-import { type ButtonColorType } from 'variables/css'
+import { type TextTransform, type ButtonColorType } from 'variables/css'
 
 export type ButtonProps = PropsWithChildren<{
   classname?: string
@@ -7,4 +7,5 @@ export type ButtonProps = PropsWithChildren<{
   onclick?: () => void
   type?: string
   disabled?: boolean
+  textTransform?: TextTransform
 }>

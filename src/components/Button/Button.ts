@@ -10,10 +10,11 @@ export const Button = ({
   onclick,
   type = 'button',
   disabled = false,
+  textTransform = 'normal-case',
 }: ButtonProps) => {
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
-    classname: `cursor-pointer ${buttonClassesByColorType[color]} ${classname}`,
+    classname: `cursor-pointer ${buttonClassesByColorType[color]} ${classname} ${textTransform}`,
     children,
   })
 
