@@ -1,15 +1,12 @@
 import gitHubSvg from 'assets/icons/svg/github.svg'
 import RSSvg from 'assets/icons/svg/rs_school_js.svg'
 import { GitHubLink } from 'components/GitHubLink'
+import { Image } from 'components/Image/Image'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { createElementWithClassName } from 'helpers/createElementWithClassName'
 
 export const Footer = () => {
-  const svgLogo = createElementWithClassName({ tagName: 'img', classname: 'w-14' })
-  svgLogo.src = gitHubSvg
-
   const links = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     children: [
@@ -22,19 +19,16 @@ export const Footer = () => {
   const linksWrap = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex  gap-2',
-    children: [svgLogo, links],
+    children: [Image({ url: gitHubSvg, alt: 'gitHub', classname: 'w-14' }), links],
   })
 
   const year = Text({ tagName: 'p', innerText: '2023' })
-
-  const RSLogo = createElementWithClassNameAndAppendNode({ tagName: 'img', classname: 'w-16' })
-  RSLogo.src = RSSvg
 
   const RSLink = Link({
     href: 'https://rs.school/js/',
     target: '_blank',
     classname: 'block',
-    children: RSLogo,
+    children: Image({ url: RSSvg, alt: 'RSS', classname: 'w-16' }),
   })
 
   return createElementWithClassNameAndAppendNode({
