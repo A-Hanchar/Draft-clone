@@ -18,8 +18,8 @@ export const Footer = () => {
 
   const linksWrap = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: 'flex  gap-2',
-    children: [Image({ url: gitHubLogo, alt: 'gitHub', classname: 'w-14' }), links],
+    classname: 'flex',
+    children: [Image({ url: gitHubLogo, alt: 'gitHub', classname: 'w-32' }), links],
   })
 
   const year = Text({ tagName: 'p', innerText: '2023' })
@@ -27,8 +27,7 @@ export const Footer = () => {
   const RSLink = Link({
     href: 'https://rs.school/js/',
     target: '_blank',
-    classname: 'block',
-    children: Image({ url: RSSvg, alt: 'RSS', classname: 'w-16' }),
+    children: Image({ url: RSSvg, alt: 'RSS', classname: 'w-32' }),
   })
 
   return createElementWithClassNameAndAppendNode({
