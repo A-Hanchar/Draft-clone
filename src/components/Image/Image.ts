@@ -1,11 +1,11 @@
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassName } from 'helpers'
 
 import { type ImageProps } from './types'
 
-export const Image = ({ url, alt, classname = '' }: ImageProps) => {
-  const img = createElementWithClassNameAndAppendNode({
+export const Image = ({ url, alt, classname }: ImageProps) => {
+  const img = createElementWithClassName({
     tagName: 'img',
-    classname: `${classname}`,
+    classname,
   })
 
   img.src = url

@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'types'
-import { type ButtonColorType, type FontWeightKeys } from 'variables/css'
+import { type TextTransform, type FontWeightKeys, type ButtonTypeGeneral } from 'variables/css'
 
 export type LinkProps = PropsWithChildren<
   {
@@ -7,13 +7,15 @@ export type LinkProps = PropsWithChildren<
     classname?: string
     target?: '_blank' | '_self' | '_top' | 'framename'
     weight?: FontWeightKeys
+    textTransform?: TextTransform
+    rounded?: boolean
   } & (
     | {
-        type: 'button'
-        color?: ButtonColorType
+        appearance: 'button'
+        appearanceButtonColor: ButtonTypeGeneral
       }
     | {
-        type?: undefined
+        appearance?: 'link'
       }
   )
 >

@@ -1,4 +1,4 @@
-import gitHubSvg from 'assets/icons/svg/github.svg'
+import gitHubLogo from 'assets/icons/png/github-logo.png'
 import RSSvg from 'assets/icons/svg/rs_school_js.svg'
 import { GitHubLink } from 'components/GitHubLink'
 import { Image } from 'components/Image/Image'
@@ -19,7 +19,7 @@ export const Footer = () => {
   const linksWrap = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex  gap-2',
-    children: [Image({ url: gitHubSvg, alt: 'gitHub', classname: 'w-14' }), links],
+    children: [Image({ url: gitHubLogo, alt: 'gitHub', classname: 'w-14' }), links],
   })
 
   const year = Text({ tagName: 'p', innerText: '2023' })
