@@ -21,7 +21,12 @@ export const Home = () => {
   })
 
   const titleWrapper = createElementWithClassNameAndAppendNode({ tagName: 'div', children: [title, subTitle] })
-  const loginLink = Link({ children: 'LOGIN', href: routerPathes.signIn, appearance: 'button', color: 'primary' })
+  const loginLink = Link({
+    children: 'LOGIN',
+    href: routerPathes.signIn,
+    appearance: 'button',
+    appearanceButtonColor: 'primary',
+  })
 
   const quote = Text({
     tagName: 'p',

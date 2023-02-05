@@ -11,6 +11,7 @@ export const Link = ({
   target = '_self',
   weight = 400,
   textTransform = 'none',
+  rounded = true,
   ...restProps
 }: LinkProps) => {
   const a = createElementWithClassNameAndAppendNode({
@@ -22,8 +23,15 @@ export const Link = ({
   a.href = href
   a.target = target
 
+  if (rounded) {
+    addClassnameToElement({
+      element: a,
+      classname: 'rounded',
+    })
+  }
+
   if (restProps.appearance === 'button') {
-    const { color: colorType } = restProps
+    const { appearanceButtonColor: colorType } = restProps
 
     addClassnameToElement({
       element: a,

@@ -28,7 +28,7 @@ export const NotFound = () => {
         href: routerPathes.home,
         children: 'Go Home',
         appearance: 'button',
-        color: 'success',
+        appearanceButtonColor: 'success',
         classname: 'text-xl min-w-[15.625rem] flex justify-center',
         weight: 600,
       }),

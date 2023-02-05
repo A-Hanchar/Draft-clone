@@ -8,10 +8,11 @@ export type LinkProps = PropsWithChildren<
     target?: '_blank' | '_self' | '_top' | 'framename'
     weight?: FontWeightKeys
     textTransform?: TextTransform
+    rounded?: boolean
   } & (
     | {
         appearance: 'button'
-        color: ButtonTypeGeneral
+        appearanceButtonColor: ButtonTypeGeneral
       }
     | {
         appearance?: 'link'
