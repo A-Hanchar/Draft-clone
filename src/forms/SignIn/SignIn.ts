@@ -28,14 +28,14 @@ export const SignIn = () => {
   })
 
   const signInButton = Button({
-    classname:
-      'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline',
     textTransform: 'uppercase',
     children: 'sign in',
+    appearanceType: 'primary',
+    weight: 700,
   })
 
   const signUpButton = Link({
-    classname: 'text-blue-500 py-2 px-4 rounded focus:outline-none focus:shadow-outline',
+    classname: 'text-blue-500',
     href: routerPathes.signUp,
     children: 'sign up',
     textTransform: 'uppercase',

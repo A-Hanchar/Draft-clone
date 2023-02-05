@@ -1,7 +1,7 @@
 import { Text } from 'components/Text'
 import { SignIn as SingInForm } from 'forms/SignIn'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { colors } from 'variables/css'
+import { colorsConfig } from 'variables/css'
 
 export const SignIn = () => {
   const title = Text({
@@ -16,7 +16,7 @@ export const SignIn = () => {
 
   const wrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `text-${colors.darkGray} flex justify-center items-center h-screen flex-col gap-10`,
+    classname: `${colorsConfig.text.darkGray} flex justify-center items-center h-screen flex-col gap-10`,
     children: [title, singInForm],
   })
 

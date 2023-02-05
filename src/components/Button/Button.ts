@@ -1,22 +1,51 @@
-import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { buttonClassesByColorType } from 'variables/css'
+import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
+import { buttonConfig, fontWeights, textTransformConfig } from 'variables/css'
 
 import { type ButtonProps } from './types'
 
 export const Button = ({
   children,
   classname = '',
-  color = 'primary',
   onclick,
   type = 'button',
   disabled = false,
-  textTransform = 'normal-case',
+  textTransform = 'none',
+  rounded = true,
+  weight = 400,
+  ...restProps
 }: ButtonProps) => {
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
-    classname: `cursor-pointer ${buttonClassesByColorType[color]} ${classname} ${textTransform}`,
+    classname: `${buttonConfig.commonStyles} ${textTransformConfig[textTransform]} ${fontWeights[weight]} ${classname}`,
     children,
   })
+
+  if (rounded) {
+    addClassnameToElement({
+      element: button,
+      classname: 'rounded',
+    })
+  }
+
+  if (restProps.appearanceType) {
+    let addedClassname = ''
+    const { appearanceType } = restProps
+
+    if (appearanceType !== 'close') {
+      addedClassname = `py-2 px-4 rounded ${buttonConfig.getClassByColorType({ colorType: appearanceType })}`
+    }
+
+    if (appearanceType === 'close') {
+      const { closeButtonColor, closeButtonPosition } = restProps
+
+      addedClassname = buttonConfig.getClassesForCloseButton({ color: closeButtonColor, position: closeButtonPosition })
+    }
+
+    addClassnameToElement({
+      element: button,
+      classname: addedClassname,
+    })
+  }
 
   button.type = type
   button.disabled = disabled
