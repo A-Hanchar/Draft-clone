@@ -4,9 +4,9 @@ import { CreateDocument } from './components/CreateDocument'
 import { Navigation } from './components/Navigation'
 import { Title } from './components/Title'
 
-import { type SidebarProps } from './types'
+import styles from './styles.module.css'
 
-export const Sidebar = ({ classname }: SidebarProps) => {
+export const Sidebar = () => {
   const titleWithNavigation = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     children: [Title(), Navigation()],
@@ -15,7 +15,7 @@ export const Sidebar = ({ classname }: SidebarProps) => {
   const aside = createElementWithClassNameAndAppendNode({
     tagName: 'aside',
     children: [titleWithNavigation, CreateDocument()],
-    classname: `flex flex-col gap-6 ${classname ?? ''}`,
+    classname: `${styles.sidebar ?? ''} flex flex-col gap-6`,
   })
 
   return aside

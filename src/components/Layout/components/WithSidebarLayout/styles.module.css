@@ -3,14 +3,6 @@
     "footer footer";
 }
 
-.sidebar {
-  grid-area: sidebar;
-}
-
 .main {
   grid-area: content;
-}
-
-.footer {
-  grid-area: footer;
 }

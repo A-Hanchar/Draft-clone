@@ -13,10 +13,10 @@ export const CommonLayout = ({ children }: PropsWithChildren) => {
 
   addClassnameToElement({
     element: Body,
-    classname: `grid grid-rows-[1fr_auto] min-h-screen ${colorsConfig.bg.lightGray}`,
+    classname: `${colorsConfig.bg.lightGray}`,
   })
 
-  fragment.append(main, Footer({}))
+  fragment.append(main, Footer())
 
   return fragment
 }

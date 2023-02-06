@@ -23,7 +23,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
     }`,
   })
 
-  fragment.append(Sidebar({ classname: styles.sidebar }), main, Footer({ classname: styles.footer }))
+  fragment.append(Sidebar(), main, Footer())
 
   return fragment
 }
