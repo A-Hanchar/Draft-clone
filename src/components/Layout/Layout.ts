@@ -1,10 +1,11 @@
-import { type PropsWithChildren } from 'types'
+import { AuthorizationLayout } from './components/AuthorizationLayout'
 
 import { CommonLayout } from './components/CommonLayout'
 import { WithSidebarLayout } from './components/WithSidebarLayout'
 import { type LayoutType } from './types'
 
-export const Layout: Record<LayoutType, (params: PropsWithChildren) => DocumentFragment> = {
+export const Layout: LayoutType = {
   General: CommonLayout,
   WithSidebar: WithSidebarLayout,
+  Authorization: AuthorizationLayout,
 }

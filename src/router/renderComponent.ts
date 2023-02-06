@@ -5,11 +5,21 @@ import { routerPathes } from './routerPathes'
 import { getRoute } from './utils'
 
 export const renderComponent = () => {
-  const { content, path, layoutType = 'General' } = getRoute()
+  const route = getRoute()
+
+  const { path } = route
 
   if (path === routerPathes.notFound) {
     window.history.pushState({}, '', routerPathes.notFound)
   }
 
-  Body.replaceChildren(Layout[layoutType]({ children: content() }))
+  if (route.layoutType === 'Authorization') {
+    const { pageTitle, form } = route
+
+    Body.replaceChildren(Layout.Authorization({ titleText: pageTitle, form: form() }))
+
+    return
+  }
+
+  Body.replaceChildren(Layout[route.layoutType ?? 'General']({ children: route.content() }))
 }

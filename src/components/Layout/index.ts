@@ -1,2 +1,2 @@
 export { Layout } from './Layout'
-export { type LayoutType } from './types'
+export { type LayoutType, type LayoutTypeKeys } from './types'

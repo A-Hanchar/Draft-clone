@@ -1,4 +1,6 @@
-import { Document, Documents, Home, NotFound, SignIn, SignUp } from 'pages'
+import { SignIn } from 'forms/SignIn'
+import { SignUp } from 'forms/SignUp'
+import { Document, Documents, Home, NotFound } from 'pages'
 
 import { routerPathes } from './routerPathes'
 import { type RouterOwnObject } from './types'
@@ -17,11 +19,15 @@ export const router: RouterOwnObject[] = [
   rootRoute,
   {
     path: routerPathes.signIn,
-    content: SignIn,
+    form: SignIn,
+    layoutType: 'Authorization',
+    pageTitle: 'Login to drafter',
   },
   {
     path: routerPathes.signUp,
-    content: SignUp,
+    form: SignUp,
+    layoutType: 'Authorization',
+    pageTitle: 'Sign Up to drafter',
   },
   {
     path: routerPathes.documents,
