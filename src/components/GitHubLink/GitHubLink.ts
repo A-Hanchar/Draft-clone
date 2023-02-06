@@ -2,10 +2,11 @@ import { Link } from 'components/Link'
 
 import { type GitHubLinkProps } from './types'
 
-export const GitHubLink = ({ username, name }: GitHubLinkProps) =>
+export const GitHubLink = ({ username, name, classname }: GitHubLinkProps) =>
   Link({
     href: `https://github.com/${username}`,
     target: '_blank',
-    classname: 'flex',
+    classname,
     children: name,
+    rounded: false,
   })
