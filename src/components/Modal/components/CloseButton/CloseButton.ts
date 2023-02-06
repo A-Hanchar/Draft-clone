@@ -7,6 +7,5 @@ export const CloseButton = ({ onclick }: CloseButtonProps) =>
     classname: 'top-1.5 right-1.5 bg-transparent border-none w-6 h-6',
     onclick,
     appearanceType: 'close',
-    closeButtonColor: 'red',
     closeButtonPosition: 'absolute',
   })

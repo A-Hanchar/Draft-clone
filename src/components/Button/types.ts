@@ -3,7 +3,7 @@ import {
   type TextTransform,
   type ButtonTypeClose,
   type ButtonTypePositionClose,
-  type ButtonTypeCloseColor,
+  type ButtonTextColor,
   type ButtonTypeGeneral,
   type FontWeightKeys,
 } from 'variables/css'
@@ -21,10 +21,14 @@ export type ButtonProps = PropsWithChildren<
     | {
         appearanceType: ButtonTypeClose
         closeButtonPosition: ButtonTypePositionClose
-        closeButtonColor: ButtonTypeCloseColor
+        color?: ButtonTextColor
       }
     | {
         appearanceType?: ButtonTypeGeneral
+      }
+    | {
+        appearanceType: 'none'
+        color?: ButtonTextColor
       }
   )
 >

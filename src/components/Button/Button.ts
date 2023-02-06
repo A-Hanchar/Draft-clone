@@ -31,14 +31,20 @@ export const Button = ({
     let addedClassname = ''
     const { appearanceType } = restProps
 
-    if (appearanceType !== 'close') {
+    if (appearanceType === 'close' || appearanceType === 'none') {
+      if (appearanceType === 'close') {
+        const { closeButtonPosition, color = 'red' } = restProps
+
+        addedClassname = buttonConfig.getClassesForCloseButton({ color, position: closeButtonPosition })
+      }
+
+      if (appearanceType === 'none') {
+        const { color = 'darkGray' } = restProps
+
+        addedClassname = buttonConfig.color[color]
+      }
+    } else {
       addedClassname = `py-2 px-4 rounded ${buttonConfig.getClassByColorType({ colorType: appearanceType })}`
-    }
-
-    if (appearanceType === 'close') {
-      const { closeButtonColor, closeButtonPosition } = restProps
-
-      addedClassname = buttonConfig.getClassesForCloseButton({ color: closeButtonColor, position: closeButtonPosition })
     }
 
     addClassnameToElement({

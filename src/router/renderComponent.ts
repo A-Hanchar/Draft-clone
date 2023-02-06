@@ -5,11 +5,11 @@ import { routerPathes } from './routerPathes'
 import { getRoute } from './utils'
 
 export const renderComponent = () => {
-  const route = getRoute()
+  const { content, path, layoutType = 'General' } = getRoute()
 
-  if (route.path === routerPathes.notFound) {
+  if (path === routerPathes.notFound) {
     window.history.pushState({}, '', routerPathes.notFound)
   }
 
-  Body.replaceChildren(Layout({ children: route.content() }))
+  Body.replaceChildren(Layout[layoutType]({ children: content() }))
 }
