@@ -1,6 +1,6 @@
 import { Body } from 'components/Body'
 import { Footer } from 'components/Footer'
-import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
+import { addClassnameToElement, createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 import { type PropsWithChildren } from 'types'
 import { colorsConfig } from 'variables/css'
 
@@ -13,14 +13,19 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
   const main = createElementWithClassNameAndAppendNode({
     tagName: 'main',
     children,
-    classname: `p-4 ${styles.main ?? ''}`,
+    classname: getTruthyClasses(['p-4', styles.main]),
   })
 
   addClassnameToElement({
     element: Body,
-    classname: `grid grid-rows-[1fr_auto] grid-cols-[15rem_1fr] min-h-screen ${colorsConfig.bg.lightGray} ${
-      styles.body ?? ''
-    }`,
+    classname: getTruthyClasses([
+      'grid',
+      'grid-rows-[1fr_auto]',
+      'grid-cols-[15rem_1fr]',
+      'min-h-screen',
+      colorsConfig.bg.lightGray,
+      styles.body,
+    ]),
   })
 
   fragment.append(Sidebar(), main, Footer())

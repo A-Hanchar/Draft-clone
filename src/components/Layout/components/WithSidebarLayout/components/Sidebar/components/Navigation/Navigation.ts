@@ -1,4 +1,4 @@
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 
 import { HelpButton } from './components/HelpButton'
 import { LogOutButton } from './components/LogOutButton'
@@ -13,7 +13,7 @@ export const Navigation = () => {
       LogOutButton({ classname: styles.button }),
       HelpButton({ classname: styles.button }),
     ],
-    classname: `flex gap-6 ${styles.navigation ?? ''}`,
+    classname: getTruthyClasses(['flex', 'gap-6', styles.navigation]),
   })
 
   return navigation

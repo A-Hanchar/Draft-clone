@@ -4,7 +4,7 @@ import { openModalWithContent } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
 export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
-  const modal = Modal({ children: 'Modal Help Content', title: 'Congrats' })
+  const modal = Modal({ children: 'Modal Help Content', title: 'Support Information' })
 
   return Button({
     children: 'Help',

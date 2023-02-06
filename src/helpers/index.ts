@@ -4,3 +4,4 @@ export { createElementWithClassNameAndAppendNode } from './createElementWithClas
 export { toggleClassnameToElement } from './toggleClassnameToElement'
 export { addClassnameToElement } from './addClassnameToElement'
 export { openModalWithContent } from './openModalWithContent'
+export { getTruthyClasses } from './getTruthyClasses'

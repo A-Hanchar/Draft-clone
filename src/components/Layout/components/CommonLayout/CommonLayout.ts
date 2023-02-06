@@ -13,7 +13,7 @@ export const CommonLayout = ({ children }: PropsWithChildren) => {
 
   addClassnameToElement({
     element: Body,
-    classname: `${colorsConfig.bg.lightGray}`,
+    classname: colorsConfig.bg.lightGray,
   })
 
   fragment.append(main, Footer())
