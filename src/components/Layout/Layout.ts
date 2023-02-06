@@ -17,7 +17,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
     classname: `grid grid-rows-[auto_1fr_auto] min-h-screen ${colorsConfig.bg.lightGray}`,
   })
 
-  fragment.append(Header(), main, Footer())
+  fragment.append(Header(), main, Footer({}))
 
   return fragment
 }
