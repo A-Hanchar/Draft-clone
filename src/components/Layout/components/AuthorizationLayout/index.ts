@@ -1,0 +1,1 @@
+export { AuthorizationLayout } from './AuthorizationLayout'
