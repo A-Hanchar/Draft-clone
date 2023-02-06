@@ -13,7 +13,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
   const main = createElementWithClassNameAndAppendNode({
     tagName: 'main',
     children,
-    classname: styles.main,
+    classname: `p-4 ${styles.main ?? ''}`,
   })
 
   addClassnameToElement({
@@ -23,7 +23,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
     }`,
   })
 
-  fragment.append(Sidebar({ classname: styles.sidebar }), main, Footer())
+  fragment.append(Sidebar({ classname: styles.sidebar }), main, Footer({ classname: styles.footer }))
 
   return fragment
 }
