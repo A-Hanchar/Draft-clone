@@ -1,7 +1,7 @@
 import { Button } from 'components/Button'
 import { Text } from 'components/Text'
 
-import { createElementWithClassName, createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { type СontentProps } from './types'
 
@@ -24,11 +24,11 @@ export const PreviewDocument = ({ text }: СontentProps) => {
   })
   const data = Text({ tagName: 'p', innerText: monthDay, classname: 'text-end' })
 
-  const hr = createElementWithClassName({ tagName: 'hr' })
+  const hr = createElementWithClassNameAndAppendNode({ tagName: 'hr', children: data })
 
   return createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
-    children: [wrapperButtons, content, data, hr],
+    children: [wrapperButtons, content, hr],
   })
 }
