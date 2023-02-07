@@ -30,10 +30,14 @@ export const buttonConfig: ButtonConfigType = {
         'after:absolute after:top-[calc(100% / 2)] after:left-0 after:w-full after:h-1.5 after:bg-current after:-rotate-45',
       before:
         'before:absolute before:top-[calc(100% / 2)] before:left-0 before:w-full before:h-1.5 before:bg-current before:rotate-45',
-      color: {
-        red: 'text-red-500',
-      },
     },
+  },
+  color: {
+    red: 'text-red-500',
+    green: 'text-green-500',
+    blue: 'text-blue-500',
+    lightGray: 'text-gray-100',
+    darkGray: 'text-gray-800',
   },
   getClassByColorType({ colorType }) {
     const { bgColor, color, outline } = this.buttonType[colorType]
@@ -41,8 +45,8 @@ export const buttonConfig: ButtonConfigType = {
     return `${bgColor} ${color} ${outline}`
   },
   getClassesForCloseButton({ position, color }) {
-    const { wrap, color: closeColor, after, before } = this.buttonType.close
+    const { wrap, after, before } = this.buttonType.close
 
-    return `${wrap.position[position]} ${wrap.classes} ${after} ${before} ${closeColor[color]}`
+    return `${wrap.position[position]} ${wrap.classes} ${after} ${before} ${this.color[color]}`
   },
 }

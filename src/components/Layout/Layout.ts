@@ -1,23 +1,11 @@
-import { Body } from 'components/Body'
-import { Footer } from 'components/Footer'
-import { Header } from 'components/Header'
-import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
-import { type PropsWithChildren } from 'types'
-import { colorsConfig } from 'variables/css'
+import { AuthorizationLayout } from './components/AuthorizationLayout'
 
-export const Layout = ({ children }: PropsWithChildren) => {
-  const fragment = document.createDocumentFragment()
-  const main = createElementWithClassNameAndAppendNode({
-    tagName: 'main',
-    children,
-  })
+import { CommonLayout } from './components/CommonLayout'
+import { WithSidebarLayout } from './components/WithSidebarLayout'
+import { type LayoutType } from './types'
 
-  addClassnameToElement({
-    element: Body,
-    classname: `grid grid-rows-[auto_1fr_auto] min-h-screen ${colorsConfig.bg.lightGray}`,
-  })
-
-  fragment.append(Header(), main, Footer({}))
-
-  return fragment
+export const Layout: LayoutType = {
+  General: CommonLayout,
+  WithSidebar: WithSidebarLayout,
+  Authorization: AuthorizationLayout,
 }

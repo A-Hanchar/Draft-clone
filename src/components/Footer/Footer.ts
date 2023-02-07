@@ -4,11 +4,11 @@ import { GitHubLink } from 'components/GitHubLink'
 import { Image } from 'components/Image/Image'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 
-import { type FooterProps } from './types'
+import styles from './styles.module.css'
 
-export const Footer = ({ classname = '' }: FooterProps) => {
+export const Footer = () => {
   const links = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-4',
@@ -40,6 +40,6 @@ export const Footer = ({ classname = '' }: FooterProps) => {
   return createElementWithClassNameAndAppendNode({
     tagName: 'footer',
     children: [linksWrap, RSLink],
-    classname: `flex items-center justify-around text-sm ${classname}`,
+    classname: getTruthyClasses(['flex', 'items-center', 'justify-around', 'text-sm', styles.footer]),
   })
 }

@@ -1,0 +1,8 @@
+.body {
+  grid-template-areas: "sidebar content"
+    "footer footer";
+}
+
+.main {
+  grid-area: content;
+}

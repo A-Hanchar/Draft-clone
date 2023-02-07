@@ -3,10 +3,24 @@ import {
   type TextTransform,
   type ButtonTypeClose,
   type ButtonTypePositionClose,
-  type ButtonTypeCloseColor,
+  type ButtonTextColor,
   type ButtonTypeGeneral,
   type FontWeightKeys,
 } from 'variables/css'
+
+export type ButtonAppearanceProps =
+  | {
+      appearanceType: ButtonTypeClose
+      closeButtonPosition: ButtonTypePositionClose
+      color?: ButtonTextColor
+    }
+  | {
+      appearanceType?: ButtonTypeGeneral
+    }
+  | {
+      appearanceType: 'none'
+      color?: ButtonTextColor
+    }
 
 export type ButtonProps = PropsWithChildren<
   {
@@ -17,14 +31,5 @@ export type ButtonProps = PropsWithChildren<
     textTransform?: TextTransform
     rounded?: boolean
     weight?: FontWeightKeys
-  } & (
-    | {
-        appearanceType: ButtonTypeClose
-        closeButtonPosition: ButtonTypePositionClose
-        closeButtonColor: ButtonTypeCloseColor
-      }
-    | {
-        appearanceType?: ButtonTypeGeneral
-      }
-  )
+  } & ButtonAppearanceProps
 >
