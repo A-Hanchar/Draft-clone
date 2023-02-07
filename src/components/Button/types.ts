@@ -28,6 +28,7 @@ export type ButtonProps = PropsWithChildren<
     onclick?: () => void
     type?: string
     disabled?: boolean
+    id?: string | undefined
     textTransform?: TextTransform
     rounded?: boolean
     weight?: FontWeightKeys

@@ -6,6 +6,7 @@ import { useGetButtonClasses } from './useGetButtonClasses'
 export const Button = ({
   children,
   classname,
+  id,
   onclick,
   type = 'button',
   disabled = false,
@@ -24,6 +25,7 @@ export const Button = ({
 
   button.type = type
   button.disabled = disabled
+  if (id) button.id = id
 
   const handleClick = (event: Event) => {
     event.preventDefault()

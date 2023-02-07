@@ -4,14 +4,14 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { type СontentProps } from './types'
 
-export const ViewDocument = ({ text }: СontentProps) => {
+export const PreviewDocument = ({ text }: СontentProps) => {
   const wrapperButtons = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-2',
     children: [
-      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase' }),
-      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase' }),
-      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase' }),
+      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase', id: 'view' }),
+      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase', id: 'share' }),
+      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase', id: 'edit' }),
     ],
   })
 

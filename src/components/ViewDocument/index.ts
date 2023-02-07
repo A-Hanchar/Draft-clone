@@ -1,1 +1,0 @@
-export { ViewDocument } from './ViewDocument'
