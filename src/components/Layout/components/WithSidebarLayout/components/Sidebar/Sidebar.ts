@@ -1,6 +1,6 @@
 import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 
-import { CreateDocument } from './components/CreateDocument'
+import { CreateDocumentButton } from './components/CreateDocumentButton'
 import { Navigation } from './components/Navigation'
 import { Title } from './components/Title'
 
@@ -14,7 +14,7 @@ export const Sidebar = () => {
 
   const aside = createElementWithClassNameAndAppendNode({
     tagName: 'aside',
-    children: [titleWithNavigation, CreateDocument()],
+    children: [titleWithNavigation, CreateDocumentButton()],
     classname: getTruthyClasses(['flex', 'flex-col', 'gap-6', styles.sidebar]),
   })
 

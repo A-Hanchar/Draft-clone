@@ -1,6 +1,6 @@
 import { Button } from 'components/Button'
 
-export const CreateDocument = () =>
+export const CreateDocumentButton = () =>
   Button({
     appearanceType: 'success',
     children: 'New Document',
