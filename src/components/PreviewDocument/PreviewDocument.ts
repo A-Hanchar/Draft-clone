@@ -5,18 +5,18 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { type СontentProps } from './types'
 
-export const PreviewDocument = ({ text }: СontentProps) => {
+export const PreviewDocument = ({ text, id }: СontentProps) => {
   const wrapperButtons = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-2',
     children: [
-      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase', id: 'view' }),
-      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase', id: 'share' }),
-      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase', id: 'edit' }),
+      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase' }),
+      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase' }),
+      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase' }),
     ],
   })
 
-  const content = Text({ tagName: 'p', innerText: text })
+  const content = Text({ tagName: 'p', classname: 'text-ellipsis overflow-hidden max-w-3xl max-h-28', innerText: text })
 
   const monthDay = new Date().toLocaleString('en-US', {
     month: 'long',
@@ -26,9 +26,13 @@ export const PreviewDocument = ({ text }: СontentProps) => {
 
   const hr = createElementWithClassNameAndAppendNode({ tagName: 'hr', children: data })
 
-  return createElementWithClassNameAndAppendNode({
+  const documentComponent = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
     children: [wrapperButtons, content, hr],
   })
+
+  documentComponent.id = id
+
+  return documentComponent
 }
