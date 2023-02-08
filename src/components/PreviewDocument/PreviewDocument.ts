@@ -3,9 +3,10 @@ import { Text } from 'components/Text'
 
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
+import styles from './styles.module.css'
 import { type СontentProps } from './types'
 
-export const PreviewDocument = ({ text, id }: СontentProps) => {
+export const PreviewDocument = ({ id }: СontentProps) => {
   const wrapperButtons = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-2',
@@ -16,22 +17,27 @@ export const PreviewDocument = ({ text, id }: СontentProps) => {
     ],
   })
 
-  const content = Text({ tagName: 'p', classname: 'text-ellipsis overflow-hidden max-w-3xl max-h-28', innerText: text })
+  // TODO: text variable to debug development, will be deleted after adding back-end to the project
+  const text = 'fish text'
+  const content = Text({
+    tagName: 'p',
+    classname: styles.content,
+    innerText: text,
+  })
 
   const monthDay = new Date().toLocaleString('en-US', {
     month: 'long',
     day: 'numeric',
   })
-  const data = Text({ tagName: 'p', innerText: monthDay, classname: 'text-end' })
-
-  const hr = createElementWithClassNameAndAppendNode({ tagName: 'hr', children: data })
+  const data = Text({ tagName: 'p', innerText: monthDay, classname: 'text-end border-b-2 border-slate-900' })
 
   const documentComponent = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
-    children: [wrapperButtons, content, hr],
+    children: [wrapperButtons, content, data],
   })
 
+  // TODO: remove this line after adding back-end to the project
   documentComponent.id = id
 
   return documentComponent
