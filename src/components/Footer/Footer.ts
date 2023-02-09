@@ -3,7 +3,6 @@ import RSSvg from 'assets/icons/svg/rs_school_js.svg'
 import { GitHubLink } from 'components/GitHubLink'
 import { Image } from 'components/Image/Image'
 import { Link } from 'components/Link'
-import { PreviewDocument } from 'components/PreviewDocument'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 
@@ -40,7 +39,7 @@ export const Footer = () => {
 
   return createElementWithClassNameAndAppendNode({
     tagName: 'footer',
-    children: [linksWrap, RSLink, PreviewDocument({ id: 'qwe' })],
+    children: [linksWrap, RSLink],
     classname: getTruthyClasses(['flex', 'items-center', 'justify-around', 'text-sm', styles.footer]),
   })
 }
