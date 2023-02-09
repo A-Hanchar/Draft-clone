@@ -1,4 +1,4 @@
-export type ColorKeys = 'red' | 'green' | 'blue' | 'lightGray' | 'darkGray'
+export type ColorKeys = 'red' | 'green' | 'blue' | 'lightGray' | 'darkGray' | 'neutral'
 
 type ColorsConfig = {
   bg: Record<ColorKeys, string>
@@ -12,6 +12,7 @@ export const colorsConfig: ColorsConfig = {
     blue: 'bg-blue-500',
     lightGray: 'bg-gray-100',
     darkGray: 'bg-gray-800',
+    neutral: 'bg-neutral-800',
   },
   text: {
     red: 'text-red-500',
@@ -19,5 +20,6 @@ export const colorsConfig: ColorsConfig = {
     blue: 'text-blue-500',
     lightGray: 'text-gray-100',
     darkGray: 'text-gray-800',
+    neutral: 'text-neutral-400',
   },
 }

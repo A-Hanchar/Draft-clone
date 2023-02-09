@@ -15,7 +15,7 @@ export const Sidebar = () => {
   const aside = createElementWithClassNameAndAppendNode({
     tagName: 'aside',
     children: [titleWithNavigation, CreateDocumentButton()],
-    classname: getTruthyClasses(['flex', 'flex-col', 'gap-6', styles.sidebar]),
+    classname: getTruthyClasses(['flex', 'flex-col', 'gap-6', 'pl-6', styles.sidebar]),
   })
 
   return aside
