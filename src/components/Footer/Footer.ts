@@ -4,14 +4,19 @@ import { GitHubLink } from 'components/GitHubLink'
 import { Image } from 'components/Image/Image'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
-import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
+import {
+  createElementWithClassNameAndAppendNode,
+  getTruthyClasses,
+  isClientWidthAbove450,
+  isClientWidthAbove767,
+} from 'helpers'
 
 import styles from './styles.module.css'
 
 export const Footer = () => {
   const links = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: 'flex gap-4',
+    classname: 'flex gap-4 md:text-xs',
     children: [
       GitHubLink({ username: 'A-Hanchar', name: 'Artsiom Hanchar' }),
       GitHubLink({ username: 'yauheniZabotsin', name: 'Yauheni Zabotsin' }),
@@ -19,16 +24,25 @@ export const Footer = () => {
     ],
   })
 
-  const copyright = Text({ tagName: 'p', innerText: '© 2023', textTransform: 'uppercase', weight: 500 })
-  const wpapperCopyright = createElementWithClassNameAndAppendNode({
+  const copyright = Text({
+    tagName: 'p',
+    innerText: '© 2023',
+    textTransform: 'uppercase',
+    weight: 500,
+    classname: 'md:text-xs',
+  })
+
+  const wrapperCopyright = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     children: [links, copyright],
   })
 
+  const gitLogo = Image({ url: gitHubLogo, alt: 'gitHub', classname: 'w-14' })
+
   const linksWrap = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex items-center ',
-    children: [Image({ url: gitHubLogo, alt: 'gitHub', classname: 'w-14' }), wpapperCopyright],
+    children: [gitLogo, wrapperCopyright],
   })
 
   const RSLink = Link({
@@ -37,9 +51,36 @@ export const Footer = () => {
     children: Image({ url: RSSvg, alt: 'RSS', classname: 'w-16' }),
   })
 
-  return createElementWithClassNameAndAppendNode({
+  let isRslinkDisplayed = isClientWidthAbove767()
+  let isGitLogoDisplayed = isClientWidthAbove450()
+
+  const footerWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'footer',
-    children: [linksWrap, RSLink],
+    children: [linksWrap, isRslinkDisplayed && RSLink],
     classname: getTruthyClasses(['flex', 'items-center', 'justify-around', 'text-sm', styles.footer]),
   })
+
+  window.addEventListener('resize', () => {
+    if (!isClientWidthAbove767() && isRslinkDisplayed) {
+      RSLink.remove()
+      isRslinkDisplayed = false
+    }
+    if (isClientWidthAbove767() && !isRslinkDisplayed) {
+      footerWrapper.append(RSLink)
+      isRslinkDisplayed = true
+    }
+
+    if (!isClientWidthAbove450() && isGitLogoDisplayed) {
+      gitLogo.remove()
+      copyright.remove()
+      isGitLogoDisplayed = false
+    }
+    if (isClientWidthAbove450() && !isGitLogoDisplayed) {
+      linksWrap.prepend(gitLogo)
+      wrapperCopyright.append(copyright)
+      isGitLogoDisplayed = true
+    }
+  })
+
+  return footerWrapper
 }
