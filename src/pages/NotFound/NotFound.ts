@@ -18,5 +18,5 @@ export const NotFound = () =>
         weight: 600,
       }),
     ],
-    classname: 'flex flex-col justify-center items-center h-full gap-6',
+    classname: 'flex flex-col justify-center items-center gap-6 min-h-screen',
   })
