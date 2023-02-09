@@ -17,11 +17,10 @@ export const PreviewDocument = ({ id }: СontentProps) => {
   })
 
   // TODO: text variable to debug development, will be deleted after adding back-end to the project
-  const text =
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.'
+  const text = 'fish'
   const content = Text({
     tagName: 'p',
-    classname: 'line-clamp-3 max-w-3xl',
+    classname: 'line-clamp-3',
     innerText: text,
   })
 
