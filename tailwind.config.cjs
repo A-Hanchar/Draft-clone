@@ -5,12 +5,8 @@ module.exports = {
   theme: {
     screens: {
       md: { max: '767px' },
-
       sm: { max: '450px' },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-    // ...
-  ],
+  plugins: [require('@tailwindcss/line-clamp')],
 }
