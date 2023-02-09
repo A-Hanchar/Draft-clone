@@ -3,7 +3,6 @@ import { Text } from 'components/Text'
 
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-import styles from './styles.module.css'
 import { type СontentProps } from './types'
 
 export const PreviewDocument = ({ id }: СontentProps) => {
@@ -18,10 +17,11 @@ export const PreviewDocument = ({ id }: СontentProps) => {
   })
 
   // TODO: text variable to debug development, will be deleted after adding back-end to the project
-  const text = 'fish text'
+  const text =
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima non in numquam. Obcaecati vitae deleniti ea aperiam labore suscipit voluptas magni? Alias, inventore nemo quasi voluptates ipsum rerum quam ducimus.'
   const content = Text({
     tagName: 'p',
-    classname: styles.content,
+    classname: 'line-clamp-3 max-w-3xl',
     innerText: text,
   })
 
