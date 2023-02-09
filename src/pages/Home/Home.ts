@@ -17,7 +17,7 @@ export const Home = () => {
     tagName: 'h3',
     innerText: "A Simple Writer's tool",
     textTransform: 'uppercase',
-    classname: 'text-center text-sm sm:text-red-500',
+    classname: 'text-center text-sm',
   })
 
   const titleWrapper = createElementWithClassNameAndAppendNode({ tagName: 'div', children: [title, subTitle] })
