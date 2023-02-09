@@ -9,4 +9,8 @@ module.exports = {
       sm: { max: '450px' },
     },
   },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    // ...
+  ],
 }
