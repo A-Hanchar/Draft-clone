@@ -13,6 +13,7 @@ const getAlias = (aliases: string[]): AliasOptions =>
 
 const alias: AliasOptions = getAlias([
   'api',
+  'observers',
   'assets',
   'constants',
   'components',

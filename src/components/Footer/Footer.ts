@@ -4,12 +4,8 @@ import { GitHubLink } from 'components/GitHubLink'
 import { Image } from 'components/Image/Image'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
-import {
-  createElementWithClassNameAndAppendNode,
-  getTruthyClasses,
-  isClientWidthAbove450,
-  isClientWidthAbove767,
-} from 'helpers'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
+import { DOMObserver } from 'observers'
 
 import styles from './styles.module.css'
 
@@ -51,35 +47,23 @@ export const Footer = () => {
     children: Image({ url: RSSvg, alt: 'RSS', classname: 'w-16' }),
   })
 
-  let isRslinkDisplayed = isClientWidthAbove767()
-  let isGitLogoDisplayed = isClientWidthAbove450()
-
   const footerWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'footer',
-    children: [linksWrap, isRslinkDisplayed && RSLink],
+    children: [linksWrap, RSLink],
     classname: getTruthyClasses(['flex', 'items-center', 'justify-around', 'text-sm', styles.footer]),
   })
 
-  window.addEventListener('resize', () => {
-    if (!isClientWidthAbove767() && isRslinkDisplayed) {
-      RSLink.remove()
-      isRslinkDisplayed = false
-    }
-    if (isClientWidthAbove767() && !isRslinkDisplayed) {
-      footerWrapper.append(RSLink)
-      isRslinkDisplayed = true
-    }
+  DOMObserver.subscribe({
+    observedElement: footerWrapper,
+    managedNodes: [
+      { checkedWindowSize: 767, insertType: 'append', managedNode: RSLink },
+      { checkedWindowSize: 450, managedNode: gitLogo, insertType: 'before', beforeAfterElement: wrapperCopyright },
+    ],
+  })
 
-    if (!isClientWidthAbove450() && isGitLogoDisplayed) {
-      gitLogo.remove()
-      copyright.remove()
-      isGitLogoDisplayed = false
-    }
-    if (isClientWidthAbove450() && !isGitLogoDisplayed) {
-      linksWrap.prepend(gitLogo)
-      wrapperCopyright.append(copyright)
-      isGitLogoDisplayed = true
-    }
+  DOMObserver.subscribe({
+    observedElement: wrapperCopyright,
+    managedNodes: [{ checkedWindowSize: 450, insertType: 'append', managedNode: copyright }],
   })
 
   return footerWrapper
