@@ -13,7 +13,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
   const main = createElementWithClassNameAndAppendNode({
     tagName: 'main',
     children,
-    classname: getTruthyClasses(['p-4', styles.main]),
+    classname: getTruthyClasses(['pr-6', styles.main]),
   })
 
   addClassnameToElement({
@@ -21,8 +21,10 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
     classname: getTruthyClasses([
       'grid',
       'grid-rows-[1fr_auto]',
-      'grid-cols-[15rem_1fr]',
+      'grid-cols-[20rem_1fr]',
       'min-h-screen',
+      'pt-6',
+      'gap-y-10',
       colorsConfig.bg.lightGray,
       styles.body,
     ]),

@@ -1,4 +1,4 @@
-import { type TextTransform, type FontWeightKeys } from 'variables/css'
+import { type TextTransform, type FontWeightKeys, type ColorKeys } from 'variables/css'
 
 export type TextProps<K extends keyof HTMLElementTagNameMap> = {
   tagName: K
@@ -6,4 +6,5 @@ export type TextProps<K extends keyof HTMLElementTagNameMap> = {
   innerText: string
   textTransform?: TextTransform
   weight?: FontWeightKeys
+  color?: ColorKeys
 }
