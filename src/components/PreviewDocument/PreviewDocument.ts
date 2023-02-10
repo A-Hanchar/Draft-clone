@@ -20,7 +20,7 @@ export const PreviewDocument = ({ id }: СontentProps) => {
   const text = 'fish'
   const content = Text({
     tagName: 'p',
-    classname: 'line-clamp-3',
+    classname: 'line-clamp-1',
     innerText: text,
   })
 
@@ -28,7 +28,13 @@ export const PreviewDocument = ({ id }: СontentProps) => {
     month: 'long',
     day: 'numeric',
   })
-  const data = Text({ tagName: 'p', innerText: monthDay, classname: 'text-end border-b-2 border-slate-900' })
+  const data = Text({
+    textTransform: 'uppercase',
+    tagName: 'p',
+    innerText: monthDay,
+    classname: 'pb-2.5 text-end border-b border-slate-300',
+    color: 'neutral',
+  })
 
   const documentComponent = createElementWithClassNameAndAppendNode({
     tagName: 'div',
