@@ -58,12 +58,8 @@ export const Footer = () => {
     managedNodes: [
       { checkedWindowSize: 767, insertType: 'append', managedNode: RSLink },
       { checkedWindowSize: 450, managedNode: gitLogo, insertType: 'before', beforeAfterElement: wrapperCopyright },
+      { checkedWindowSize: 450, insertType: 'after', managedNode: copyright, beforeAfterElement: links },
     ],
-  })
-
-  DOMObserver.subscribe({
-    observedElement: wrapperCopyright,
-    managedNodes: [{ checkedWindowSize: 450, insertType: 'append', managedNode: copyright }],
   })
 
   return footerWrapper
