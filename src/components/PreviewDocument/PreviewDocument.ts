@@ -25,9 +25,10 @@ export const PreviewDocument = ({ id }: СontentProps) => {
   })
 
   const monthDay = new Date().toLocaleString('en-US', {
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   })
+
   const data = Text({
     textTransform: 'uppercase',
     tagName: 'p',
