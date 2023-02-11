@@ -1,45 +1,46 @@
+import { signInByEmail } from 'api'
 import { Button } from 'components/Button'
-import { Input } from 'components/Input'
+import { Form } from 'components/Form'
 import { Link } from 'components/Link'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { routerPathes } from 'router'
+import { renderComponent, routerPathes } from 'router'
 
 export const SignIn = () => {
-  const commonInputClassname =
-    'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3'
-  const commonLabelClassname = 'block text-gray-700 text-sm font-bold mb-2'
-
-  const emailInput = Input({
-    className: commonInputClassname,
-    id: 'email',
-    type: 'email',
-    placeholder: 'apple@google.com',
-    labelClassName: commonLabelClassname,
-    labelInnerText: 'Email',
+  const { labelElement: emailLabel, input: emailInput } = Form.Email.WithLabel({
+    inputProps: { classname: 'w-full' },
+    weight: 700,
+  })
+  const { labelElement: passwordLabel, input: passwordInput } = Form.Password.WithLabel({
+    inputProps: { classname: 'w-full' },
+    weight: 700,
   })
 
-  const passwordInput = Input({
-    className: commonInputClassname,
-    id: 'password',
-    type: 'password',
-    placeholder: '******************',
-    labelClassName: commonLabelClassname,
-    labelInnerText: 'Password',
-  })
+  const handleFormSubmit = async () => {
+    try {
+      await signInByEmail({ email: emailInput.value, password: passwordInput.value })
+
+      window.history.pushState({}, '', routerPathes.documents)
+      renderComponent()
+    } catch (error) {
+      // const errorCode = error.code
+      // const errorMessage = error.message
+    }
+  }
 
   const signInButton = Button({
     textTransform: 'uppercase',
     children: 'sign in',
     appearanceType: 'primary',
     weight: 700,
+    type: 'submit',
   })
 
   const signUpButton = Link({
-    classname: 'text-blue-500',
     href: routerPathes.signUp,
     children: 'sign up',
     textTransform: 'uppercase',
     weight: 700,
+    color: 'blue',
   })
 
   const signInControls = createElementWithClassNameAndAppendNode({
@@ -48,11 +49,11 @@ export const SignIn = () => {
     children: [signInButton, signUpButton],
   })
 
-  const signInForm = createElementWithClassNameAndAppendNode({
-    tagName: 'form',
-    classname: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-6',
-    children: [emailInput, passwordInput, signInControls],
+  const form = Form({
+    children: [emailLabel, passwordLabel, signInControls],
+    classname: 'flex flex-col gap-6 w-80',
+    onSubmit: handleFormSubmit,
   })
 
-  return signInForm
+  return form
 }

@@ -25,8 +25,8 @@ export type ButtonAppearanceProps =
 export type ButtonProps = PropsWithChildren<
   {
     classname?: string
-    onclick?: () => void
-    type?: string
+    onclick?: () => void | Promise<void>
+    type?: 'button' | 'submit' | 'reset'
     disabled?: boolean
     textTransform?: TextTransform
     rounded?: boolean

@@ -1,6 +1,6 @@
 import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
 import { renderComponent } from 'router'
-import { fontWeights, buttonConfig, textTransformConfig } from 'variables/css'
+import { fontWeights, buttonConfig, textTransformConfig, colorsConfig } from 'variables/css'
 
 import { type LinkProps } from './types'
 
@@ -36,6 +36,13 @@ export const Link = ({
     addClassnameToElement({
       element: a,
       classname: `py-2 px-4 rounded ${buttonConfig.commonStyles} ${buttonConfig.getClassByColorType({ colorType })}`,
+    })
+  } else {
+    const { color = 'darkGray' } = restProps
+
+    addClassnameToElement({
+      element: a,
+      classname: colorsConfig.text[color],
     })
   }
 

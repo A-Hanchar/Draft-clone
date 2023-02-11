@@ -1,6 +1,6 @@
 import { Body } from 'components/Body'
 import { Footer } from 'components/Footer'
-import { addClassnameToElement, createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses, replaceAllClassnameToElement } from 'helpers'
 import { type PropsWithChildren } from 'types'
 import { colorsConfig } from 'variables/css'
 
@@ -16,7 +16,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
     classname: getTruthyClasses(['pr-6', styles.main]),
   })
 
-  addClassnameToElement({
+  replaceAllClassnameToElement({
     element: Body,
     classname: getTruthyClasses([
       'grid',

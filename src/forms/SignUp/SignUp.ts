@@ -1,30 +1,17 @@
 import { Button } from 'components/Button'
-import { Input } from 'components/Input'
+import { Form } from 'components/Form'
 import { Link } from 'components/Link'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { routerPathes } from 'router'
 
 export const SignUp = () => {
-  const commonInputClassname =
-    'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-3'
-  const commonLabelClassname = 'block text-gray-700 text-sm font-bold mb-2'
-
-  const emailInput = Input({
-    className: commonInputClassname,
-    id: 'email',
-    type: 'email',
-    placeholder: 'apple@google.com',
-    labelClassName: commonLabelClassname,
-    labelInnerText: 'Email',
+  const { labelElement: emailLabel } = Form.Email.WithLabel({
+    inputProps: { classname: 'w-full' },
+    weight: 700,
   })
-
-  const passwordInput = Input({
-    className: commonInputClassname,
-    id: 'password',
-    type: 'password',
-    placeholder: '******************',
-    labelClassName: commonLabelClassname,
-    labelInnerText: 'Password',
+  const { labelElement: passwordLabel } = Form.Password.WithLabel({
+    inputProps: { classname: 'w-full' },
+    weight: 700,
   })
 
   const signUpButton = Button({
@@ -35,11 +22,11 @@ export const SignUp = () => {
   })
 
   const signInButton = Link({
-    classname: 'text-blue-500',
     href: routerPathes.signIn,
     children: 'sign in',
     textTransform: 'uppercase',
     weight: 700,
+    color: 'blue',
   })
 
   const signUpControls = createElementWithClassNameAndAppendNode({
@@ -48,11 +35,10 @@ export const SignUp = () => {
     children: [signUpButton, signInButton],
   })
 
-  const signUpForm = createElementWithClassNameAndAppendNode({
-    tagName: 'form',
-    classname: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-6',
-    children: [emailInput, passwordInput, signUpControls],
+  const form = Form({
+    children: [emailLabel, passwordLabel, signUpControls],
+    classname: 'flex flex-col gap-6 w-80',
   })
 
-  return signUpForm
+  return form
 }

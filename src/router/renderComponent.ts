@@ -1,3 +1,4 @@
+import { auth } from 'api'
 import { Body } from 'components/Body'
 import { Layout } from 'components/Layout'
 
@@ -11,6 +12,15 @@ export const renderComponent = () => {
 
   if (path === routerPathes.notFound) {
     window.history.pushState({}, '', routerPathes.notFound)
+  }
+
+  if (route.isProtected && path !== routerPathes.home) {
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        window.history.pushState({}, '', routerPathes.home)
+        renderComponent()
+      }
+    })
   }
 
   if (route.layoutType === 'Authorization') {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { type ButtonProps } from './types'
@@ -25,10 +26,8 @@ export const Button = ({
   button.type = type
   button.disabled = disabled
 
-  const handleClick = (event: Event) => {
-    event.preventDefault()
-
-    onclick?.()
+  const handleClick = async () => {
+    await onclick?.()
   }
 
   button.addEventListener('click', handleClick)
