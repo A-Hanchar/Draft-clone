@@ -5,12 +5,6 @@ import { isClientWidthAboveSize } from 'helpers'
 import { type ManagedNodesType, type NewObserverElement, type ObserverElement } from './types'
 
 export class DOMManipulationObserver {
-  observers: ObserverElement[]
-
-  constructor() {
-    this.observers = []
-  }
-
   subscribe(subscriber: NewObserverElement) {
     const updatedManagedNodes: ManagedNodesType[] = subscriber.managedNodes.map(
       ({ checkedWindowSize, ...restNodeProps }) => ({
@@ -25,17 +19,13 @@ export class DOMManipulationObserver {
       managedNodes: updatedManagedNodes,
     }
 
-    this.observers.push(newObserverElement)
-
     this.checkNewNodeElements(updatedManagedNodes)
     this.addResizeListener(newObserverElement)
   }
 
   private checkNewNodeElements(newManagedNodes: ManagedNodesType[]) {
-    newManagedNodes.forEach(({ checkedWindowSize, isElementDisplayed, managedNode }) => {
-      const isClientWidthAbove = isClientWidthAboveSize(checkedWindowSize)
-
-      if (!isClientWidthAbove && !isElementDisplayed) {
+    newManagedNodes.forEach(({ isElementDisplayed, managedNode }) => {
+      if (!isElementDisplayed) {
         managedNode.remove()
       }
     })
