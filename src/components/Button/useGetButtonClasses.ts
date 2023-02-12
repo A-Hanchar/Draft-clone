@@ -32,7 +32,7 @@ export const useGetButtonClasses = ({
     const isNoneButtonType = appearanceType === 'none'
 
     if (!(isCloseButtonType || isNoneButtonType)) {
-      classes.push(`py-2 px-4 rounded ${buttonConfig.getClassByColorType({ colorType: appearanceType })}`)
+      classes.push(`py-1 px-3 rounded ${buttonConfig.getClassByColorType({ colorType: appearanceType })}`)
     }
 
     if (isNoneButtonType) {

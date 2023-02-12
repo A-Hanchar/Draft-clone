@@ -1,4 +1,4 @@
-import { type ChildrenNode } from 'types'
+import { type Falsy, type ChildrenNode } from 'types'
 
 import { createElementWithClassName } from './createElementWithClassName'
 
@@ -9,7 +9,7 @@ export const createElementWithClassNameAndAppendNode = <K extends keyof HTMLElem
 }: {
   tagName: K
   classname?: string
-  children?: ChildrenNode | Array<ChildrenNode | undefined>
+  children?: ChildrenNode | Array<ChildrenNode | Falsy>
 }) => {
   const element = createElementWithClassName({ tagName, classname })
 
@@ -21,7 +21,7 @@ export const createElementWithClassNameAndAppendNode = <K extends keyof HTMLElem
     const filteredChildren = children.filter(Boolean)
 
     filteredChildren.forEach((node) => {
-      element.append(node!)
+      node && element.append(node)
     })
 
     return element
