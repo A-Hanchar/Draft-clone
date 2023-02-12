@@ -3,12 +3,11 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 export const Documents = () => {
   // TODO: delete this mock array when backend is working
-
   const mockDocuments = [
     PreviewDocument({ id: '1' }),
-    PreviewDocument({ id: '1' }),
-    PreviewDocument({ id: '1' }),
-    PreviewDocument({ id: '1' }),
+    PreviewDocument({ id: '2' }),
+    PreviewDocument({ id: '3' }),
+    PreviewDocument({ id: '4' }),
   ]
 
   const wrapperDocument = createElementWithClassNameAndAppendNode({
