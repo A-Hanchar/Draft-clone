@@ -10,9 +10,9 @@ export const PreviewDocument = ({ id }: СontentProps) => {
     tagName: 'div',
     classname: 'flex gap-2',
     children: [
-      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase' }),
-      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase' }),
-      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase' }),
+      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase', weight: 700 }),
+      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase', weight: 700 }),
+      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase', weight: 700 }),
     ],
   })
 
@@ -33,8 +33,9 @@ export const PreviewDocument = ({ id }: СontentProps) => {
     textTransform: 'uppercase',
     tagName: 'p',
     innerText: monthDay,
-    classname: 'pb-2.5 text-end border-b border-slate-300',
+    classname: 'pb-2 text-end border-b border-slate-300',
     color: 'neutral',
+    weight: 700,
   })
 
   const documentComponent = createElementWithClassNameAndAppendNode({
