@@ -21,7 +21,7 @@ export const PreviewDocument = ({ id }: СontentProps) => {
   const content = Text({
     tagName: 'p',
     classname: 'line-clamp-1',
-    innerText: text,
+    children: text,
   })
 
   const monthDay = new Date().toLocaleString('en-US', {
@@ -32,7 +32,7 @@ export const PreviewDocument = ({ id }: СontentProps) => {
   const data = Text({
     textTransform: 'uppercase',
     tagName: 'p',
-    innerText: monthDay,
+    children: monthDay,
     classname: 'pb-2 text-end border-b border-slate-300',
     color: 'neutral',
     weight: 700,

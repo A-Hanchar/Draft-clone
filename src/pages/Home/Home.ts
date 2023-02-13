@@ -8,14 +8,14 @@ export const Home = () => {
   const title = Text({
     tagName: 'h1',
     classname: 'text-center text-4xl',
-    innerText: 'Write better with drafter',
+    children: 'Write better with drafter',
     textTransform: 'uppercase',
     weight: 900,
   })
 
   const subTitle = Text({
     tagName: 'h3',
-    innerText: "A Simple Writer's tool",
+    children: "A Simple Writer's tool",
     textTransform: 'uppercase',
     classname: 'text-center text-sm',
   })
@@ -30,7 +30,7 @@ export const Home = () => {
 
   const quote = Text({
     tagName: 'p',
-    innerText: '"When I\'m not writing on paper, I write with drafter."',
+    children: '"When I\'m not writing on paper, I write with drafter."',
     classname: 'text-base text-center',
   })
 

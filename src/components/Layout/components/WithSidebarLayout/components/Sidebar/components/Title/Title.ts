@@ -4,7 +4,7 @@ import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 export const Title = () => {
-  const title = Text({ tagName: 'h2', innerText: 'Draft', weight: 700 })
+  const title = Text({ tagName: 'h2', children: 'Draft', weight: 700 })
   const iconHome = Image({ alt: 'Draft Icon', url: homeIcon, classname: 'w-6 h-6' })
 
   return createElementWithClassNameAndAppendNode({

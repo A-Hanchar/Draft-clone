@@ -22,7 +22,7 @@ export const Footer = () => {
 
   const copyright = Text({
     tagName: 'p',
-    innerText: '© 2023',
+    children: '© 2023',
     textTransform: 'uppercase',
     weight: 500,
     classname: 'md:text-xs',
