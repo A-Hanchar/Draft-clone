@@ -26,8 +26,8 @@ export const Button = ({
   button.type = type
   button.disabled = disabled
 
-  const handleClick = async () => {
-    await onclick?.()
+  const handleClick = () => {
+    onclick?.()
   }
 
   button.addEventListener('click', handleClick)
