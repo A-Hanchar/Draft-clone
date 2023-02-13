@@ -15,5 +15,5 @@ export const getDocumentIdParam = () => {
     }
   }
 
-  throw new Error('pathname must to start from "documents"')
+  throw new Error('pathname must begin with "documents"')
 }

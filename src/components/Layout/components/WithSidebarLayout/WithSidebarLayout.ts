@@ -1,36 +1,24 @@
 import { Body } from 'components/Body'
-import { Footer } from 'components/Footer'
-import { createElementWithClassNameAndAppendNode, getTruthyClasses, replaceAllClassnameToElement } from 'helpers'
+import { createElementWithClassNameAndAppendNode, replaceAllClassnameToElement } from 'helpers'
 import { type PropsWithChildren } from 'types'
 import { colorsConfig } from 'variables/css'
 
 import { Sidebar } from './components/Sidebar'
-
-import styles from './styles.module.css'
 
 export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
   const fragment = document.createDocumentFragment()
   const main = createElementWithClassNameAndAppendNode({
     tagName: 'main',
     children,
-    classname: getTruthyClasses(['pr-6', styles.main]),
+    classname: 'pr-6 basis-2/3',
   })
 
   replaceAllClassnameToElement({
     element: Body,
-    classname: getTruthyClasses([
-      'grid',
-      'grid-rows-[1fr_auto]',
-      'grid-cols-[20rem_1fr]',
-      'min-h-screen',
-      'pt-6',
-      'gap-y-10',
-      colorsConfig.bg.lightGray,
-      styles.body,
-    ]),
+    classname: `flex min-h-screen pt-6 ${colorsConfig.bg.lightGray} md:flex-col p-10 gap-y-14`,
   })
 
-  fragment.append(Sidebar(), main, Footer())
+  fragment.append(Sidebar(), main)
 
   return fragment
 }

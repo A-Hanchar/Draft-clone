@@ -7,4 +7,5 @@ export const CreateDocumentButton = () =>
     textTransform: 'uppercase',
     classname: 'self-start',
     rounded: false,
+    weight: 700,
   })
