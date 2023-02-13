@@ -6,7 +6,13 @@ import { openModalWithContent } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
 export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
-  const link = Link({ href: 'https://github.com/A-Hanchar/Draft-clone/issues', children: 'GitHub.', target: '_blank' })
+  const link = Link({
+    classname: 'underline',
+    href: 'https://github.com/A-Hanchar/Draft-clone/issues',
+    children: 'GitHub.',
+    target: '_blank',
+    weight: 700,
+  })
   const helpText = Text({
     tagName: 'p',
     children: ['Please leave any enquiries or suggestions in the issues tab on ', link],
