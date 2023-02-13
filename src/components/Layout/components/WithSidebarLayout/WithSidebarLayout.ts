@@ -1,5 +1,5 @@
 import { Body } from 'components/Body'
-import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, replaceAllClassnameToElement } from 'helpers'
 import { type PropsWithChildren } from 'types'
 import { colorsConfig } from 'variables/css'
 
@@ -13,7 +13,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
     classname: 'pr-6 basis-2/3',
   })
 
-  addClassnameToElement({
+  replaceAllClassnameToElement({
     element: Body,
     classname: `flex min-h-screen pt-6 ${colorsConfig.bg.lightGray} md:flex-col p-10 gap-y-14`,
   })

@@ -2,6 +2,7 @@ import { type LayoutTypeKeys } from 'components/Layout'
 
 export type RouterOwnObject = {
   path: string
+  isProtected?: boolean
   childrenRoutes?: RouterOwnObject[]
 } & (
   | {

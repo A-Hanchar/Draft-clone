@@ -1,5 +1,5 @@
 import { type ChildrenNode, type Falsy } from 'types'
-import { type TextTransform, type FontWeightKeys, type ColorKeys } from 'variables/css'
+import { type TextTransform, type FontWeightKeys, type ColorTextKeys } from 'variables/css'
 
 export type TextProps<K extends keyof HTMLElementTagNameMap> = {
   children?: ChildrenNode | Array<ChildrenNode | Falsy>
@@ -7,5 +7,5 @@ export type TextProps<K extends keyof HTMLElementTagNameMap> = {
   classname?: string
   textTransform?: TextTransform
   weight?: FontWeightKeys
-  color?: ColorKeys
+  color?: ColorTextKeys
 }

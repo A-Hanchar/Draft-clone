@@ -1,6 +1,6 @@
 import { Body } from 'components/Body'
 import { Footer } from 'components/Footer'
-import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, replaceAllClassnameToElement } from 'helpers'
 import { type PropsWithChildren } from 'types'
 import { colorsConfig } from 'variables/css'
 
@@ -11,7 +11,7 @@ export const CommonLayout = ({ children }: PropsWithChildren) => {
     children,
   })
 
-  addClassnameToElement({
+  replaceAllClassnameToElement({
     element: Body,
     classname: colorsConfig.bg.lightGray,
   })

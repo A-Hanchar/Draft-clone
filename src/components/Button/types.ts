@@ -26,7 +26,7 @@ export type ButtonProps = PropsWithChildren<
   {
     classname?: string
     onclick?: () => void
-    type?: string
+    type?: 'button' | 'submit' | 'reset'
     disabled?: boolean
     textTransform?: TextTransform
     rounded?: boolean

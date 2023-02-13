@@ -1,5 +1,5 @@
 import { type PropsWithChildren } from 'types'
-import { type TextTransform, type FontWeightKeys, type ButtonTypeGeneral } from 'variables/css'
+import { type TextTransform, type FontWeightKeys, type ButtonTypeGeneral, type ColorTextKeys } from 'variables/css'
 
 export type LinkProps = PropsWithChildren<
   {
@@ -16,6 +16,7 @@ export type LinkProps = PropsWithChildren<
       }
     | {
         appearance?: 'link'
+        color?: ColorTextKeys
       }
   )
 >
