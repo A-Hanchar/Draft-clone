@@ -2,8 +2,8 @@ import { signInByEmail } from 'api'
 import { Button } from 'components/Button'
 import { Form } from 'components/Form'
 import { Link } from 'components/Link'
-import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { renderComponent, routerPathes } from 'router'
+import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
+import { routerPathes } from 'router'
 
 export const SignIn = () => {
   const { labelElement: emailLabel, input: emailInput } = Form.Email.WithLabel({
@@ -19,8 +19,7 @@ export const SignIn = () => {
     try {
       await signInByEmail({ email: emailInput.value, password: passwordInput.value })
 
-      window.history.pushState({}, '', routerPathes.documents)
-      renderComponent()
+      goToPageAndRenderRoute(routerPathes.documents)
     } catch (error) {
       // const errorCode = error.code
       // const errorMessage = error.message

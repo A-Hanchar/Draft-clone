@@ -1,15 +1,14 @@
 import { signOut } from 'api/auth'
 import { Button } from 'components/Button'
-import { getTruthyClasses } from 'helpers'
-import { renderComponent, routerPathes } from 'router'
+import { getTruthyClasses, goToPageAndRenderRoute } from 'helpers'
+import { routerPathes } from 'router'
 import { type PropsWithClassname } from 'types'
 
 export const LogOutButton = ({ classname }: PropsWithClassname) => {
   const handleButtonClick = async () => {
     await signOut()
 
-    window.history.pushState({}, '', routerPathes.home)
-    renderComponent()
+    goToPageAndRenderRoute(routerPathes.home)
   }
 
   const logOutButton = Button({

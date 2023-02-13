@@ -1,5 +1,4 @@
-import { addClassnameToElement, createElementWithClassNameAndAppendNode } from 'helpers'
-import { renderComponent } from 'router'
+import { addClassnameToElement, createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
 import { fontWeights, buttonConfig, textTransformConfig, colorsConfig } from 'variables/css'
 
 import { type LinkProps } from './types'
@@ -53,8 +52,7 @@ export const Link = ({
 
     event.preventDefault()
 
-    window.history.pushState({}, '', href)
-    renderComponent()
+    goToPageAndRenderRoute(href)
   }
 
   a.addEventListener('click', handleLinkClick)
