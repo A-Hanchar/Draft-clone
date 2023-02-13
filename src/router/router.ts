@@ -33,10 +33,12 @@ export const router: RouterOwnObject[] = [
     path: routerPathes.documents,
     content: Documents,
     layoutType: 'WithSidebar',
+    isProtected: true,
     childrenRoutes: [
       {
         path: routerPathes.document,
         content: Document,
+        isProtected: true,
       },
     ],
   },

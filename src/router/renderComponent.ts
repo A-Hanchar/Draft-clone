@@ -1,5 +1,7 @@
+import { auth } from 'api'
 import { Body } from 'components/Body'
 import { Layout } from 'components/Layout'
+import { goToPageAndRenderRoute } from 'helpers'
 
 import { routerPathes } from './routerPathes'
 import { getRoute } from './utils'
@@ -11,6 +13,14 @@ export const renderComponent = () => {
 
   if (path === routerPathes.notFound) {
     window.history.pushState({}, '', routerPathes.notFound)
+  }
+
+  if (route.isProtected && path !== routerPathes.home) {
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        goToPageAndRenderRoute(routerPathes.home)
+      }
+    })
   }
 
   if (route.layoutType === 'Authorization') {

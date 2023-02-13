@@ -1,6 +1,6 @@
 {
   "name": "draft-clone",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "App clone",
   "main": "index.js",
   "scripts": {
@@ -89,6 +89,7 @@
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
     "autoprefixer": "^10.4.13",
+    "firebase": "^9.17.1",
     "vite": "^4.0.4",
     "vite-plugin-tsc-watch": "^2.0.1"
   }
