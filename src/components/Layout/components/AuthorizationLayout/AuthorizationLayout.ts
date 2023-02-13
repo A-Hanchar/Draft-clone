@@ -17,7 +17,7 @@ export const AuthorizationLayout = ({ titleText, form }: AuthorizationLayoutProp
   const title = Text({
     tagName: 'h1',
     classname: 'text-center text-4xl md:text-3xl',
-    innerText: titleText,
+    children: titleText,
     textTransform: 'uppercase',
     weight: 900,
   })

@@ -1,6 +1,6 @@
 {
   "name": "draft-clone",
-  "version": "1.16.0",
+  "version": "1.17.0",
   "description": "App clone",
   "main": "index.js",
   "scripts": {
