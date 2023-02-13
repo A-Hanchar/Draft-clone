@@ -12,12 +12,10 @@ export const replaceAllClassnameToElement = ({
   const classnamesArray = classname.split(SYMBOL.SPACE).filter(Boolean)
 
   if (!classnamesArray.length) {
-    return element
+    return
   }
 
   classnamesArray.forEach((cssClass) => {
     element.classList.add(cssClass)
   })
-
-  return element
 }
