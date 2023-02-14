@@ -1,4 +1,4 @@
-import { SYMBOL } from 'enums'
+import { addClassnameToElement } from './addClassnameToElement'
 
 export const replaceAllClassnameToElement = ({
   element,
@@ -9,13 +9,5 @@ export const replaceAllClassnameToElement = ({
 }) => {
   element.removeAttribute('class')
 
-  const classnamesArray = classname.split(SYMBOL.SPACE).filter(Boolean)
-
-  if (!classnamesArray.length) {
-    return
-  }
-
-  classnamesArray.forEach((cssClass) => {
-    element.classList.add(cssClass)
-  })
+  addClassnameToElement({ element, classname })
 }

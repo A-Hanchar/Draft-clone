@@ -17,12 +17,16 @@ export const SignIn = () => {
 
   const handleFormSubmit = async () => {
     try {
+      signInButton.setLoading(true)
+      signInButton.setDisable(true)
+
       await signInByEmail({ email: emailInput.value, password: passwordInput.value })
 
       goToPageAndRenderRoute(routerPathes.documents)
     } catch (error) {
-      // const errorCode = error.code
-      // const errorMessage = error.message
+    } finally {
+      signInButton.setLoading(false)
+      signInButton.setDisable(false)
     }
   }
 

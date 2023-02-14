@@ -7,7 +7,6 @@ export const useGetButtonClasses = ({
   weight,
   rounded = true,
   textTransform,
-  disabled,
   classname,
   ...restProps
 }: {
@@ -18,11 +17,10 @@ export const useGetButtonClasses = ({
   classname?: string
 } & ButtonAppearanceProps) => {
   const classes = [
-    buttonConfig.commonStyles,
     weight && fontWeights[weight],
     rounded && 'rounded',
     textTransform && textTransformConfig[textTransform],
-    disabled && 'opacity-50 cursor-not-allowed',
+    'relative',
     classname,
   ]
 

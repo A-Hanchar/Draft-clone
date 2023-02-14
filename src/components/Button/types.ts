@@ -31,5 +31,10 @@ export type ButtonProps = PropsWithChildren<
     textTransform?: TextTransform
     rounded?: boolean
     weight?: FontWeightKeys
+    loading?: boolean
   } & ButtonAppearanceProps
 >
+
+export type ButtonLoadingProps = {
+  rounded?: boolean
+}

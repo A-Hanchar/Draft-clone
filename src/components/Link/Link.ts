@@ -34,7 +34,7 @@ export const Link = ({
 
     addClassnameToElement({
       element: a,
-      classname: `py-2 px-4 rounded ${buttonConfig.commonStyles} ${buttonConfig.getClassByColorType({ colorType })}`,
+      classname: `py-2 px-4 rounded pointer ${buttonConfig.getClassByColorType({ colorType })}`,
     })
   } else {
     const { color = 'darkGray' } = restProps
