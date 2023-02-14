@@ -26,3 +26,6 @@ coverage
 
 #vscode
 .vscode
+
+# Ignore specific env files
+.env
