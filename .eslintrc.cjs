@@ -99,7 +99,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'error',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
-    '@typescript-eslint/no-misused-promises': 'warn',
+    '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
     'no-template-curly-in-string': 'error',
     'no-self-compare': 'error',
