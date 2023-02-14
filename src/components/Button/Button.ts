@@ -7,7 +7,7 @@ import { type ButtonProps } from './types'
 import { useGetButtonClasses } from './useGetButtonClasses'
 
 export const Button = ({
-  children = '',
+  children,
   classname,
   onclick,
   type = 'button',
@@ -18,7 +18,7 @@ export const Button = ({
   loading = false,
   ...restProps
 }: ButtonProps) => {
-  const buttonClasses = useGetButtonClasses({ classname, disabled, rounded, textTransform, weight, ...restProps })
+  const buttonClasses = useGetButtonClasses({ classname, rounded, textTransform, weight, ...restProps })
 
   const buttonContent = createElementWithClassNameAndAppendNode({ tagName: 'div', children })
 

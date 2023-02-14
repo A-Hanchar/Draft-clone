@@ -2,7 +2,7 @@ import { addClassnameToElement } from './addClassnameToElement'
 
 export const createElementWithClassName = <K extends keyof HTMLElementTagNameMap>({
   tagName,
-  classname = '',
+  classname,
 }: {
   tagName: K
   classname?: string

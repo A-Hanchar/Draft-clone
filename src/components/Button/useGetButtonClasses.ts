@@ -13,14 +13,12 @@ export const useGetButtonClasses = ({
   weight?: FontWeightKeys
   rounded?: boolean
   textTransform?: TextTransform
-  disabled?: boolean
   classname?: string
 } & ButtonAppearanceProps) => {
   const classes = [
     weight && fontWeights[weight],
     rounded && 'rounded',
     textTransform && textTransformConfig[textTransform],
-    'relative',
     classname,
   ]
 

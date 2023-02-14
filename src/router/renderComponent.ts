@@ -2,7 +2,7 @@ import { auth } from 'api'
 import { Body } from 'components/Body'
 import { Layout } from 'components/Layout'
 import { goToPageAndRenderRoute } from 'helpers'
-import { Loading } from 'pages/Loading'
+import { Loading } from 'pages'
 
 import { routerPathes } from './routerPathes'
 import { getRoute } from './utils'

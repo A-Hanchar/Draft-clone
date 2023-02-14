@@ -15,6 +15,7 @@ export const setButtonLoading = ({
 
   return (isLoading: boolean) => {
     if (isLoading) {
+      addClassnameToElement({ element: button, classname: 'relative' })
       addClassnameToElement({ element: buttonContent, classname: 'invisible' })
 
       button.append(buttonLoading)
@@ -23,6 +24,7 @@ export const setButtonLoading = ({
     }
 
     removeClassnameFromElement({ element: buttonContent, classname: 'invisible' })
+    removeClassnameFromElement({ element: button, classname: 'relative' })
     buttonLoading.remove()
   }
 }
