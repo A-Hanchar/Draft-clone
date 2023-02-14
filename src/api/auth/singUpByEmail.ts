@@ -4,9 +4,7 @@ import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/
 export const signUpByEmail = async ({ email, password }: { email: string; password: string }) => {
   const { user } = await createUserWithEmailAndPassword(auth, email, password)
 
-  try {
-    await sendEmailVerification(user)
-  } catch (error) {}
+  await sendEmailVerification(user)
 
   return user
 }
