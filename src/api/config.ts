@@ -2,14 +2,14 @@ import { initializeApp, type FirebaseOptions } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig: FirebaseOptions = {
-  apiKey: 'AIzaSyDlu9vSnbiC_0AIws3ugrLdJ6--bq0vwwM',
-  authDomain: 'draft-clone.firebaseapp.com',
-  databaseURL: 'https://draft-clone-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'draft-clone',
-  storageBucket: 'draft-clone.appspot.com',
-  messagingSenderId: '572501815906',
-  appId: '1:572501815906:web:0f9cc9e29c882ee9b1573b',
-  measurementId: 'G-F3Z60W9WNZ',
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 }
 
 const app = initializeApp(firebaseConfig)
