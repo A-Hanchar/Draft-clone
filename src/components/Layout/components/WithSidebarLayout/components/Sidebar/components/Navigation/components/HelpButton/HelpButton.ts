@@ -2,7 +2,6 @@ import { Button } from 'components/Button'
 import { Link } from 'components/Link'
 import { Modal } from 'components/Modal'
 import { Text } from 'components/Text'
-import { openModalWithContent } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
 export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
@@ -13,10 +12,12 @@ export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
     target: '_blank',
     weight: 700,
   })
+
   const helpText = Text({
     tagName: 'p',
     children: ['Please leave any enquiries or suggestions in the issues tab on ', link],
   })
+
   const modal = Modal({
     children: helpText,
     title: 'Get In Touch',
@@ -28,8 +29,6 @@ export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
     color: 'blue',
     weight: 700,
     classname: `relative ${classname}`,
-    onclick: () => {
-      openModalWithContent(modal)
-    },
+    onclick: modal.handleOpen,
   })
 }
