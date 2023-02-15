@@ -1,8 +1,9 @@
 import { Button } from 'components/Button'
 import { Drawer } from 'components/Drawer'
+import { getTruthyClasses } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
-export const SettingButton = ({ classname = '' }: PropsWithClassname) => {
+export const SettingButton = ({ classname }: PropsWithClassname) => {
   const modal = Drawer({
     children: 'options',
     title: 'settings',
@@ -13,7 +14,7 @@ export const SettingButton = ({ classname = '' }: PropsWithClassname) => {
     appearanceType: 'none',
     color: 'blue',
     weight: 700,
-    classname: `relative ${classname}`,
+    classname: getTruthyClasses(['relative', classname]),
     onclick: modal.handleOpen,
   })
 }

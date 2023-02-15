@@ -2,10 +2,10 @@ import { Body } from 'components/Body'
 
 import { startAnimationDrawer } from './animation'
 
-export const handleDrawerOpen = ({ modal }: { modal: HTMLDivElement }) => {
-  return () => {
+export const handleDrawerOpen =
+  ({ modal }: { modal: HTMLDivElement }) =>
+  () => {
     Body.append(modal)
 
-    startAnimationDrawer(400, modal, true)
+    startAnimationDrawer(800, modal, 'right')
   }
-}

@@ -1,7 +1,6 @@
 import { Body } from 'components/Body'
 
-export const startAnimationDrawer = (duration: number, element: HTMLDivElement, isDirection: boolean) => {
-  const distance = element.clientWidth
+export const startAnimationDrawer = (duration: number, element: HTMLDivElement, direction: 'left' | 'right') => {
   let startAnimation: number | null = null
 
   requestAnimationFrame(function measure(time) {
@@ -9,14 +8,17 @@ export const startAnimationDrawer = (duration: number, element: HTMLDivElement, 
       startAnimation = time
     }
 
-    const progress = (time - startAnimation) / duration
-    const translate = isDirection ? progress * distance - distance - 50 : -progress * distance - 50
-    element.style.transform = `translateX(${translate}px)`
+    const progress = ((time - startAnimation) / duration) * 100
+    const left = direction === 'right' ? 100 - progress : progress
+    element.style.left = `-${left}%`
 
-    if (progress < 1) {
+    if (progress < 100) {
       requestAnimationFrame(measure)
-    } else if (!isDirection) {
-      Body.removeChild(element)
+    } else {
+      element.style.left = `0%`
+      if (direction === 'left') {
+        Body.removeChild(element)
+      }
     }
   })
 }
