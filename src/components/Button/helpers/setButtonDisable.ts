@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { replaceClassnameToElement } from 'helpers'
 
 export const setButtonDisable = ({ button }: { button: HTMLButtonElement }) => {

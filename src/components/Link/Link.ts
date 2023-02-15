@@ -1,4 +1,9 @@
-import { addClassnameToElement, createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
+import {
+  addClassnameToElement,
+  createElementWithClassNameAndAppendNode,
+  getTruthyClasses,
+  goToPageAndRenderRoute,
+} from 'helpers'
 import { fontWeights, buttonConfig, textTransformConfig, colorsConfig } from 'variables/css'
 
 import { type LinkProps } from './types'
@@ -6,7 +11,7 @@ import { type LinkProps } from './types'
 export const Link = ({
   children,
   href,
-  classname = '',
+  classname,
   target = '_self',
   weight = 400,
   textTransform = 'none',
@@ -15,7 +20,7 @@ export const Link = ({
 }: LinkProps) => {
   const a = createElementWithClassNameAndAppendNode({
     tagName: 'a',
-    classname: `${fontWeights[weight]} ${textTransformConfig[textTransform]} ${classname}`,
+    classname: getTruthyClasses([fontWeights[weight], textTransformConfig[textTransform], classname]),
     children,
   })
 

@@ -2,9 +2,10 @@ import { Button } from 'components/Button'
 import { Link } from 'components/Link'
 import { Modal } from 'components/Modal'
 import { Text } from 'components/Text'
+import { getTruthyClasses } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
-export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
+export const HelpButton = ({ classname }: PropsWithClassname) => {
   const link = Link({
     classname: 'underline',
     href: 'https://github.com/A-Hanchar/Draft-clone/issues',
@@ -28,7 +29,7 @@ export const HelpButton = ({ classname = '' }: PropsWithClassname) => {
     appearanceType: 'none',
     color: 'blue',
     weight: 700,
-    classname: `relative ${classname}`,
+    classname: getTruthyClasses(['relative', classname]),
     onclick: modal.handleOpen,
   })
 }

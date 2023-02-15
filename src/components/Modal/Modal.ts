@@ -12,7 +12,7 @@ export const Modal = ({ children, title, onCancel }: ModalProps) => {
   const wrapper = createElementWithClassName({
     tagName: 'div',
     classname: getTruthyClasses([
-      'h-screen w-screen flex items-center justify-center z-[999] fixed top-0 left-0',
+      'h-screen w-screen flex items-center justify-center z-[999] fixed top-0 left-0 px-4',
       colorsConfig.bg['neutral/75'],
       styles.modal,
     ]),
@@ -23,7 +23,7 @@ export const Modal = ({ children, title, onCancel }: ModalProps) => {
 
   const contentWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `relative p-9 ${colorsConfig.bg.white} rounded`,
+    classname: `relative p-9 ${colorsConfig.bg.white} rounded md:p-6`,
     children: [CloseButton({ onclick: handleClose }), Title({ title }), children],
   })
 
