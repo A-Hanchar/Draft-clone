@@ -1,3 +1,3 @@
-export type СontentProps = {
+export type PreviewDocumentProps = {
   id: string
 }

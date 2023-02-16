@@ -3,9 +3,9 @@ import { Text } from 'components/Text'
 
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-import { type СontentProps } from './types'
+import { type PreviewDocumentProps } from './types'
 
-export const PreviewDocument = ({ id }: СontentProps) => {
+export const PreviewDocument = ({ id }: PreviewDocumentProps) => {
   const wrapperButtons = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-2',
@@ -16,15 +16,12 @@ export const PreviewDocument = ({ id }: СontentProps) => {
     ],
   })
 
-  // TODO: text variable to debug development, will be deleted after adding back-end to the project
-  const text = 'fish'
   const content = Text({
     tagName: 'p',
     classname: 'line-clamp-1',
-    children: text,
   })
 
-  const monthDay = new Date().toLocaleString('en-US', {
+  const monthDay = new Date().toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
   })
