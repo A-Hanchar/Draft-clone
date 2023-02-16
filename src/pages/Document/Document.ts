@@ -1,6 +1,5 @@
-import { storage, auth } from 'api'
+import { getDocument, saveDocument } from 'api/documents'
 import { TextArea } from 'components/TextArea'
-import { getBlob, ref } from 'firebase/storage'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { getDocumentIdParam } from 'router'
 
@@ -9,17 +8,15 @@ export const Document = () => {
 
   const textArea = TextArea({ classname: 'document-text w-full h-full p-2 focus:outline-none' })
 
-  const getDocument = async () => {
-    try {
-      if (auth.currentUser && documentId) {
-        const file = await getBlob(ref(storage, `${auth.currentUser.uid}/${documentId}.txt`))
-        const content = await file.text()
-        textArea.value = content
-      }
-    } catch (error) {}
-  }
+  getDocument(documentId!, textArea)
 
-  getDocument()
+  document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 's') {
+      e.preventDefault()
+      console.dir('doc saved')
+      saveDocument(documentId!, textArea)
+    }
+  })
 
   return createElementWithClassNameAndAppendNode({
     tagName: 'div',

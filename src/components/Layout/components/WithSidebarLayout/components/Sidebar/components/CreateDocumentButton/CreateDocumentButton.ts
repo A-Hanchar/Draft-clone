@@ -1,18 +1,16 @@
-import { auth, storage } from 'api'
+import { auth, getStorageRef } from 'api'
 import { Button } from 'components/Button'
-import { uploadBytes, ref } from 'firebase/storage'
-import { goToPageAndRenderRoute } from 'helpers'
+import { uploadBytes } from 'firebase/storage'
+import { goToPageAndRenderRoute, createBlob } from 'helpers'
 import { routerPathes } from 'router'
 
 export const CreateDocumentButton = () => {
   const createDocument = async () => {
-    const file = new Blob([], {
-      type: 'text/plain',
-    })
+    const file = createBlob()
     try {
       if (auth.currentUser) {
-        const docName = Date.now()
-        await uploadBytes(ref(storage, `${auth.currentUser.uid}/${docName}.txt`), file)
+        const docName = String(Date.now())
+        await uploadBytes(getStorageRef(docName), file)
 
         goToPageAndRenderRoute(`${routerPathes.documents}/${docName}`)
       }
