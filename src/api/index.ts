@@ -1,2 +1,2 @@
-export { auth, database } from './config'
+export { auth, database, storage } from './config'
 export { signInByEmail, signUpByEmail } from './auth'

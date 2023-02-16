@@ -5,7 +5,7 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { type PreviewDocumentProps } from './types'
 
-export const PreviewDocument = ({ id }: PreviewDocumentProps) => {
+export const PreviewDocument = ({ id, previewText, date }: PreviewDocumentProps) => {
   const wrapperButtons = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-2',
@@ -19,9 +19,10 @@ export const PreviewDocument = ({ id }: PreviewDocumentProps) => {
   const content = Text({
     tagName: 'p',
     classname: 'line-clamp-1',
+    children: [previewText],
   })
 
-  const monthDay = new Date().toLocaleDateString('en-US', {
+  const monthDay = date.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
   })
