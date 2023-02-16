@@ -7,5 +7,5 @@ export const handleDrawerOpen =
   () => {
     Body.append(modal)
 
-    startAnimationDrawer(800, modal, 'right')
+    startAnimationDrawer(modal, 'right')
   }

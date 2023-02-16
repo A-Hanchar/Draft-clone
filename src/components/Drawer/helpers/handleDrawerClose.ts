@@ -5,5 +5,5 @@ export const handleDrawerClose =
   () => {
     onCancel?.()
 
-    startAnimationDrawer(800, modal, 'left')
+    startAnimationDrawer(modal, 'left')
   }
