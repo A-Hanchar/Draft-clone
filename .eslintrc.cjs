@@ -170,7 +170,7 @@ module.exports = {
         allowEmptyCatch: true,
       },
     ],
-    'no-param-reassign': 'error',
+    'no-param-reassign': 'off',
     'no-undef-init': 'error',
     'import/prefer-default-export': 'off',
     'import/order': [
