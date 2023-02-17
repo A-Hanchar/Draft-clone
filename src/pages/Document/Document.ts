@@ -6,20 +6,21 @@ import { getDocumentIdParam } from 'router'
 export const Document = () => {
   const { documentId } = getDocumentIdParam()
 
-  const textArea = TextArea({ classname: 'document-text w-full h-full p-2 focus:outline-none' })
+  const textArea = TextArea({ classname: 'w-1/2 p-2 h-[90vh] focus:outline-none' })
 
   getDocument(documentId!, textArea)
 
   document.addEventListener('keydown', (e) => {
-    if (e.ctrlKey && e.key === 's') {
+    if (e.ctrlKey && e.key === 'q') {
       e.preventDefault()
       console.dir('doc saved')
-      saveDocument(documentId!, textArea)
+      saveDocument(documentId!, textArea.value)
     }
   })
 
   return createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    children: [`Document Page: id - ${documentId ?? ''}`, textArea],
+    classname: 'flex justify-center p-10',
+    children: [textArea],
   })
 }

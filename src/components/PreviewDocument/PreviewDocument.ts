@@ -1,7 +1,8 @@
 import { Button } from 'components/Button'
 import { Text } from 'components/Text'
 
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
+import { routerPathes } from 'router'
 
 import { type PreviewDocumentProps } from './types'
 
@@ -10,9 +11,16 @@ export const PreviewDocument = ({ id, previewText, date }: PreviewDocumentProps)
     tagName: 'div',
     classname: 'flex gap-2',
     children: [
-      Button({ appearanceType: 'success', children: 'view', textTransform: 'uppercase', weight: 700 }),
-      Button({ appearanceType: 'primary', children: 'share', textTransform: 'uppercase', weight: 700 }),
-      Button({ appearanceType: 'alert', children: 'edit', textTransform: 'uppercase', weight: 700 }),
+      Button({
+        appearanceType: 'success',
+        children: 'open',
+        textTransform: 'uppercase',
+        weight: 700,
+        onclick: () => {
+          goToPageAndRenderRoute(`${routerPathes.documents}/${documentComponent.id}`)
+        },
+      }),
+      Button({ appearanceType: 'alert', children: 'delete', textTransform: 'uppercase', weight: 700 }),
     ],
   })
 
@@ -43,7 +51,7 @@ export const PreviewDocument = ({ id, previewText, date }: PreviewDocumentProps)
   })
 
   // TODO: remove this line after adding back-end to the project
-  documentComponent.id = id
+  documentComponent.id = id.slice(0, -4)
 
   return documentComponent
 }
