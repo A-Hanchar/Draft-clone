@@ -1,11 +1,17 @@
 import { Button } from 'components/Button'
 import { Drawer } from 'components/Drawer'
-import { getTruthyClasses } from 'helpers'
+import { getTruthyClasses, toggleClassnameToElement } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
 export const SettingButton = ({ classname }: PropsWithClassname) => {
+  const theme = Button({
+    children: 'theme',
+    onclick() {
+      toggleClassnameToElement({ element: document.documentElement, classname: 'dark' })
+    },
+  })
   const modal = Drawer({
-    children: 'options',
+    children: theme,
     title: 'settings',
   })
 

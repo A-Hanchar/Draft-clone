@@ -1,5 +1,5 @@
 export type ColorTextKeys = 'darkGray' | 'blue' | 'red' | 'green' | 'neutral'
-export type ColorBackgroundKeys = 'white' | 'neutral/75' | 'transparent' | 'lightGray'
+export type ColorBackgroundKeys = 'white' | 'neutral/75' | 'transparent' | 'lightGray' | 'darkSlate' | 'darkSlateDrawer'
 
 type ColorsConfig = {
   bg: Record<ColorBackgroundKeys, string>
@@ -12,6 +12,8 @@ export const colorsConfig: ColorsConfig = {
     'neutral/75': 'bg-neutral-900/75',
     transparent: 'bg-transparent',
     lightGray: 'bg-gray-100',
+    darkSlate: 'bg-slate-800',
+    darkSlateDrawer: 'bg-slate-400',
   },
   text: {
     darkGray: 'text-gray-800',
