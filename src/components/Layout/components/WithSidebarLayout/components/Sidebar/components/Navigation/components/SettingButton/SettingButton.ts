@@ -1,17 +1,19 @@
 import { Button } from 'components/Button'
 import { Drawer } from 'components/Drawer'
+import { GuiSwitch } from 'components/GuiSwitch'
 import { getTruthyClasses, toggleClassnameToElement } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
 export const SettingButton = ({ classname }: PropsWithClassname) => {
-  const theme = Button({
-    children: 'theme',
+  const dark = GuiSwitch({
+    name: 'night mode',
     onclick() {
       toggleClassnameToElement({ element: document.documentElement, classname: 'dark' })
     },
   })
+
   const modal = Drawer({
-    children: theme,
+    children: dark,
     title: 'settings',
   })
 
