@@ -1,22 +1,17 @@
 import { auth, getStorageRef } from 'api'
-import { onAuthStateChanged } from 'firebase/auth'
 import { uploadBytes } from 'firebase/storage'
-import { createBlob, goToPageAndRenderRoute } from 'helpers'
-import { routerPathes } from 'router'
+import { createBlob } from 'helpers'
 
-export const createDocument = () => {
+export const createDocument = async () => {
   const file = createBlob()
 
-  onAuthStateChanged(auth, async () => {
-    try {
-      if (auth.currentUser) {
-        const docName = String(Date.now())
-        await uploadBytes(getStorageRef(docName), file)
+  if (auth.currentUser) {
+    const docName = String(Date.now())
 
-        goToPageAndRenderRoute(`${routerPathes.documents}/${docName}`)
-      }
-    } catch (err) {
-      console.dir(err)
-    }
-  })
+    await uploadBytes(getStorageRef(docName), file)
+
+    return docName
+  }
+
+  return null
 }

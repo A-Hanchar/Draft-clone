@@ -18,21 +18,23 @@ export const renderComponent = () => {
     window.history.pushState({}, '', routerPathes.notFound)
   }
 
-  if (route.isProtected && path !== routerPathes.home) {
-    auth.onAuthStateChanged((user) => {
+  auth.onAuthStateChanged(async (user) => {
+    if (route.isProtected && path !== routerPathes.home) {
       if (!user) {
         goToPageAndRenderRoute(routerPathes.home)
       }
-    })
-  }
+    }
 
-  if (route.layoutType === 'Authorization') {
-    const { pageTitle, form } = route
+    if (route.layoutType === 'Authorization') {
+      const { pageTitle, form } = route
 
-    Body.replaceChildren(Layout.Authorization({ titleText: pageTitle, form: form() }))
+      Body.replaceChildren(Layout.Authorization({ titleText: pageTitle, form: form() }))
 
-    return
-  }
+      return
+    }
 
-  Body.replaceChildren(Layout[route.layoutType ?? 'General']({ children: route.content() }))
+    const pageContent = await route.content()
+
+    Body.replaceChildren(Layout[route.layoutType ?? 'General']({ children: pageContent }))
+  })
 }
