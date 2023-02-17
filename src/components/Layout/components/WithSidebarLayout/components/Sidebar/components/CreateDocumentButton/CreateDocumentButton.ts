@@ -1,8 +1,8 @@
 import { createDocument } from 'api'
 import { Button } from 'components/Button'
 
-export const CreateDocumentButton = () => {
-  return Button({
+export const CreateDocumentButton = () =>
+  Button({
     appearanceType: 'success',
     children: 'New Document',
     textTransform: 'uppercase',
@@ -11,4 +11,3 @@ export const CreateDocumentButton = () => {
     weight: 700,
     onclick: createDocument,
   })
-}
