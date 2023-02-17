@@ -1,5 +1,5 @@
 export type PreviewDocumentProps = {
   id: string
-  previewText: string
+  documentContent: string
   date: Date
 }

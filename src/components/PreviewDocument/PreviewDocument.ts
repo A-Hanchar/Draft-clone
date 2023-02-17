@@ -1,33 +1,14 @@
-import { Button } from 'components/Button'
 import { Text } from 'components/Text'
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
-import { routerPathes } from 'router'
-
+import { ManagedButtons } from './components'
 import { type PreviewDocumentProps } from './types'
 
-export const PreviewDocument = ({ id, previewText, date }: PreviewDocumentProps) => {
-  const wrapperButtons = createElementWithClassNameAndAppendNode({
-    tagName: 'div',
-    classname: 'flex gap-2',
-    children: [
-      Button({
-        appearanceType: 'success',
-        children: 'open',
-        textTransform: 'uppercase',
-        weight: 700,
-        onclick: () => {
-          goToPageAndRenderRoute(`${routerPathes.documents}/${documentComponent.id}`)
-        },
-      }),
-      Button({ appearanceType: 'alert', children: 'delete', textTransform: 'uppercase', weight: 700 }),
-    ],
-  })
-
+export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentProps) => {
   const content = Text({
     tagName: 'p',
     classname: 'line-clamp-1',
-    children: [previewText],
+    children: documentContent,
   })
 
   const monthDay = date.toLocaleDateString('en-US', {
@@ -47,11 +28,8 @@ export const PreviewDocument = ({ id, previewText, date }: PreviewDocumentProps)
   const documentComponent = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
-    children: [wrapperButtons, content, data],
+    children: [ManagedButtons({ documentId: id.slice(0, -4) }), content, data],
   })
-
-  // TODO: remove this line after adding back-end to the project
-  documentComponent.id = id.slice(0, -4)
 
   return documentComponent
 }

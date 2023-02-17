@@ -6,7 +6,7 @@ export const Documents = async () => {
   const documentData = await getDocumentList()
 
   const previewDocumentNodes = documentData.map((document) =>
-    PreviewDocument({ id: document.name, date: document.date, previewText: document.content }),
+    PreviewDocument({ id: document.name, date: document.date, documentContent: document.content }),
   )
 
   const documentsWrapper = createElementWithClassNameAndAppendNode({
