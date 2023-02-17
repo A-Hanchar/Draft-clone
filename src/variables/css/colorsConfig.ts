@@ -1,4 +1,4 @@
-export type ColorTextKeys = 'darkGray' | 'blue' | 'red' | 'green' | 'neutral'
+export type ColorTextKeys = 'darkGray' | 'blue' | 'red' | 'green' | 'neutral' | 'darkWhite'
 export type ColorBackgroundKeys = 'white' | 'neutral/75' | 'transparent' | 'lightGray' | 'darkSlate' | 'darkSlateDrawer'
 
 type ColorsConfig = {
@@ -12,8 +12,8 @@ export const colorsConfig: ColorsConfig = {
     'neutral/75': 'bg-neutral-900/75',
     transparent: 'bg-transparent',
     lightGray: 'bg-gray-100',
-    darkSlate: 'bg-slate-800',
-    darkSlateDrawer: 'bg-slate-400',
+    darkSlate: 'dark:bg-slate-800',
+    darkSlateDrawer: 'dark:bg-slate-700',
   },
   text: {
     darkGray: 'text-gray-800',
@@ -21,5 +21,6 @@ export const colorsConfig: ColorsConfig = {
     red: 'text-red-500',
     green: 'text-green-500',
     neutral: 'text-neutral-400',
+    darkWhite: 'dark:text-white',
   },
 }

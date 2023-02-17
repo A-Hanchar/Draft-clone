@@ -18,7 +18,7 @@ export const Drawer = ({ children, title, onCancel }: DrawerProps) => {
 
   const contentWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `relative p-9 w-72 ${colorsConfig.bg.white} rounded`,
+    classname: `relative p-9 w-72 ${colorsConfig.bg.white} ${colorsConfig.bg.darkSlateDrawer} rounded`,
     children: [CloseButton({ onclick: handleClose }), Title({ title }), children],
   })
 

@@ -15,7 +15,7 @@ export const WithSidebarLayout = ({ children }: PropsWithChildren) => {
 
   replaceAllClassnameToElement({
     element: Body,
-    classname: `flex min-h-screen pt-6 ${colorsConfig.bg.lightGray} md:flex-col p-10 gap-y-14`,
+    classname: `flex min-h-screen pt-6 ${colorsConfig.bg.lightGray} ${colorsConfig.bg.darkSlate} md:flex-col p-10 gap-y-14`,
   })
 
   fragment.append(Sidebar(), main)

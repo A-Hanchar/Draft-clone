@@ -1,4 +1,4 @@
-import homeIcon from 'assets/icons/png/home.png'
+import homeIcon from 'assets/icons/png/Home.png'
 import { Image } from 'components/Image'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'

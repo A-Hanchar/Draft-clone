@@ -46,7 +46,7 @@ export const Link = ({
 
     addClassnameToElement({
       element: a,
-      classname: colorsConfig.text[color],
+      classname: `${colorsConfig.text[color]} ${colorsConfig.text.darkWhite}`,
     })
   }
 

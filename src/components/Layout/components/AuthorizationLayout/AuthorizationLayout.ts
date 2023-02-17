@@ -11,7 +11,7 @@ export const AuthorizationLayout = ({ titleText, form }: AuthorizationLayoutProp
 
   replaceAllClassnameToElement({
     element: Body,
-    classname: colorsConfig.bg.lightGray,
+    classname: `${colorsConfig.bg.lightGray} ${colorsConfig.bg.darkSlate}`,
   })
 
   const title = Text({
