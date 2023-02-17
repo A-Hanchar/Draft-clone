@@ -1,3 +1,4 @@
+import { type ButtonComponent } from 'components/Button'
 import { type ChildrenNode } from 'types'
 import { type ColorBackgroundKeys } from 'variables/css'
 
@@ -29,4 +30,10 @@ export type ValidationOptions = {
 
 export type ValidationOptionsExpanded = ValidationOptions & {
   errorMessageWrapper: FormErrorMessageComponent
+  isErrorMessageShow: boolean
+}
+
+export type FormComponents = {
+  fields: ValidationOptionsExpanded[]
+  submitButton?: ButtonComponent
 }

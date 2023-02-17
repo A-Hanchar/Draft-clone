@@ -59,23 +59,26 @@ export const SignUp = () => {
     onSubmit: handleFormSubmit,
   })
 
-  form.registrateFields([
-    {
-      field: emailInput,
-      required: 'Email is required',
-      pattern: {
-        value: EMAIL_PATTERN,
-        message: 'Email must match template: example@domain.xxx',
+  form.registrateFields({
+    fields: [
+      {
+        field: emailInput,
+        required: 'Email is required',
+        pattern: {
+          value: EMAIL_PATTERN,
+          message: 'Email must match template: example@domain.xxx',
+        },
       },
-    },
-    {
-      field: passwordInput,
-      minLength: {
-        value: 6,
-        message: 'Password is incorrect',
+      {
+        field: passwordInput,
+        minLength: {
+          value: 6,
+          message: 'Password is incorrect',
+        },
       },
-    },
-  ])
+    ],
+    submitButton: signUpButton,
+  })
 
   return form
 }

@@ -1,32 +1,36 @@
 import { subscribeErrorMessage } from './subscribeErrorMessage'
-import { type ValidationOptionsExpanded } from '../types'
+import { type FormComponents } from '../types'
 
-export const isFormValidAndRenderErrorMessage = (checkedInputs: ValidationOptionsExpanded[]) => {
-  let isValidate = true
+export const isFormValidAndRenderErrorMessage = (formComponents: FormComponents) => {
+  formComponents.fields.forEach((checkedField) => {
+    const { field, minLength, pattern, required, errorMessageWrapper } = checkedField
 
-  checkedInputs.forEach(({ field, minLength, pattern, required, errorMessageWrapper }) => {
     const renderErrorMessage = subscribeErrorMessage({ errorMessageWrapper, field })
     const value = field.value
 
     if (required && !value.length) {
-      isValidate = false
+      checkedField.isErrorMessageShow = true
       renderErrorMessage(required)
 
       return
     }
 
     if (minLength && value.length < minLength.value) {
-      isValidate = false
+      checkedField.isErrorMessageShow = true
       renderErrorMessage(minLength.message)
 
       return
     }
 
     if (pattern && !pattern.value.test(value)) {
-      isValidate = false
+      checkedField.isErrorMessageShow = true
       renderErrorMessage(pattern.message)
     }
   })
 
-  return isValidate
+  const isFormValid = formComponents.fields.every(({ isErrorMessageShow }) => !isErrorMessageShow)
+
+  formComponents.submitButton?.setDisable(!isFormValid)
+
+  return isFormValid
 }

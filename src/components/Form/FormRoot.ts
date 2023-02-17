@@ -5,7 +5,7 @@ import { isFormValidAndRenderErrorMessage, registrateFields } from './helpers'
 import { type FormProps } from './types'
 
 export const FormRoot = ({ classname, children, bgColor = 'white', onSubmit }: FormProps) => {
-  const { checkedFields, subscribeFields } = registrateFields()
+  const { formFields, subscribeFields } = registrateFields()
 
   const form = createElementWithClassNameAndAppendNode({
     tagName: 'form',
@@ -18,9 +18,11 @@ export const FormRoot = ({ classname, children, bgColor = 'white', onSubmit }: F
   form.onsubmit = (event: Event) => {
     event.preventDefault()
 
-    const isFormValid = isFormValidAndRenderErrorMessage(checkedFields)
+    const isFormValid = isFormValidAndRenderErrorMessage(formFields)
 
-    if (isFormValid) onSubmit?.()
+    if (isFormValid) {
+      onSubmit?.()
+    }
   }
 
   return Object.assign(form, {

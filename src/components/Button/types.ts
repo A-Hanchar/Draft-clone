@@ -38,3 +38,8 @@ export type ButtonProps = PropsWithChildren<
 export type ButtonLoadingProps = {
   rounded?: boolean
 }
+
+export type ButtonComponent = HTMLButtonElement & {
+  setLoading: (isLoading: boolean) => void
+  setDisable: (isDisable: boolean) => void
+}
