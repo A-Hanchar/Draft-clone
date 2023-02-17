@@ -15,7 +15,6 @@ export const Document = () => {
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.key === 'q') {
       e.preventDefault()
-      console.dir('doc saved')
       saveDocument(documentId!, textArea.value)
     }
   })
