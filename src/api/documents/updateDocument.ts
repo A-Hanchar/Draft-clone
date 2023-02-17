@@ -1,10 +1,10 @@
 import { auth, getStorageRef } from 'api'
 import { onAuthStateChanged } from 'firebase/auth'
 import { uploadBytes } from 'firebase/storage'
-import { createBlob } from 'helpers'
+import { createNewTextFile } from 'helpers'
 
 export const updateDocument = (documentId: string, content: string) => {
-  const file = createBlob(content)
+  const file = createNewTextFile(content)
 
   onAuthStateChanged(auth, async () => {
     if (auth.currentUser) {

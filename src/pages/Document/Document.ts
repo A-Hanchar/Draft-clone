@@ -1,4 +1,4 @@
-import { getDocument, updateDocument } from 'api'
+import { getDocumentContent, updateDocument } from 'api'
 import { TextArea } from 'components/TextArea'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { getDocumentIdParam } from 'router'
@@ -6,7 +6,7 @@ import { getDocumentIdParam } from 'router'
 export const Document = async () => {
   const { documentId } = getDocumentIdParam()
 
-  const content = await getDocument(documentId!)
+  const content = await getDocumentContent(documentId!)
 
   const textArea = TextArea({
     classname: 'w-1/2 p-2 h-[90vh] focus:outline-none bg-gray-100 overflow-auto scrollbar-hide',
