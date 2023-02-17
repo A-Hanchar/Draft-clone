@@ -1,22 +1,24 @@
 import { type ButtonConfigType } from './types'
 
 export const buttonConfig: ButtonConfigType = {
-  commonStyles: 'cursor-pointer',
   buttonType: {
     primary: {
       color: 'text-white',
-      bgColor: 'bg-blue-500 hover:bg-blue-700',
+      bgColor: 'bg-blue-500',
       outline: 'focus:outline-none focus:shadow-outline',
+      hover: 'hover:bg-blue-700',
     },
     alert: {
       color: 'text-white',
-      bgColor: 'bg-red-500 hover:bg-red-700',
+      bgColor: 'bg-red-500',
       outline: 'focus:outline-none focus:shadow-outline',
+      hover: 'hover:bg-red-700',
     },
     success: {
       color: 'text-white',
-      bgColor: 'bg-green-500 hover:bg-green-700',
+      bgColor: 'bg-green-500',
       outline: 'focus:outline-none focus:shadow-outline',
+      hover: 'hover:bg-green-700',
     },
     close: {
       wrap: {
@@ -40,9 +42,9 @@ export const buttonConfig: ButtonConfigType = {
     darkGray: 'text-gray-800',
   },
   getClassByColorType({ colorType }) {
-    const { bgColor, color, outline } = this.buttonType[colorType]
+    const { bgColor, color, outline, hover } = this.buttonType[colorType]
 
-    return `${bgColor} ${color} ${outline}`
+    return `${bgColor} ${color} ${outline} ${hover}`
   },
   getClassesForCloseButton({ position, color }) {
     const { wrap, after, before } = this.buttonType.close
