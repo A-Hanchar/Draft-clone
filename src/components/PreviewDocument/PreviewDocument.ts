@@ -28,7 +28,7 @@ export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentPr
   const documentComponent = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
-    children: [ManagedButtons({ documentId: id.slice(0, -4) }), content, data],
+    children: [ManagedButtons({ documentId: id }), content, data],
   })
 
   return documentComponent

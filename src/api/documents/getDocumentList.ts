@@ -1,5 +1,6 @@
 import { auth } from 'api/config'
 import { getUserRef } from 'api/refs'
+import { SYMBOL } from 'enums'
 import { listAll, getMetadata } from 'firebase/storage'
 
 import { getDocumentContentById } from './getDocumentContentById'
@@ -13,11 +14,11 @@ export const getDocumentList = async () => {
         const metadata = await getMetadata(document)
 
         const date = new Date(metadata.updated)
-        const name = document.name
+        const [name, ext] = document.name.split(SYMBOL.DOT)
 
-        const content = await getDocumentContentById(name.replace('.txt', ''))
+        const content = await getDocumentContentById(name!)
 
-        return { content, date, name }
+        return { content, date, name, ext }
       }),
     )
 
