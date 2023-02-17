@@ -1,4 +1,4 @@
-import { auth, getStorageRef } from 'api'
+import { auth, getUserDocumentRef } from 'api'
 import { uploadBytes } from 'firebase/storage'
 import { createNewTextFile } from 'helpers'
 
@@ -8,7 +8,7 @@ export const createDocument = async () => {
   if (auth.currentUser) {
     const docName = Date.now()
 
-    await uploadBytes(getStorageRef(docName), file)
+    await uploadBytes(getUserDocumentRef(docName), file)
 
     return docName
   }

@@ -1,11 +1,11 @@
-import { auth, getStorageRef } from 'api'
+import { auth, getUserDocumentRef } from 'api'
 
 import { getBlob } from 'firebase/storage'
 import { createNewTextFile } from 'helpers'
 
 export const getDocument = async (documentId: string) => {
   if (auth.currentUser) {
-    const file = await getBlob(getStorageRef(documentId))
+    const file = await getBlob(getUserDocumentRef(documentId))
 
     return file
   }

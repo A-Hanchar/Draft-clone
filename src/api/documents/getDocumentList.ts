@@ -1,10 +1,10 @@
-import { storage, auth } from 'api'
+import { storage, auth, getUserRef } from 'api'
 import { PreviewDocument } from 'components/PreviewDocument'
 import { ref, listAll, getBlob, getMetadata } from 'firebase/storage'
 
 export const getDocumentList = async () => {
   if (auth.currentUser) {
-    const documentList = await listAll(ref(storage, auth.currentUser.uid))
+    const documentList = await listAll(getUserRef(auth.currentUser.uid))
 
     const documentData = await Promise.all(
       documentList.items.map(async (document) => {

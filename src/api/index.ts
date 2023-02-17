@@ -1,6 +1,6 @@
 export { auth, database, storage } from './config'
 export { signInByEmail, signUpByEmail } from './auth'
-export { getStorageRef } from './refs/getStorageRef'
+export { getUserDocumentRef, getUserRef } from './refs'
 export { createDocument } from './documents/createDocument'
 export { getDocumentContent } from './documents/getDocumentContent'
 export { updateDocument } from './documents/updateDocument'
