@@ -1,6 +1,6 @@
 import { SYMBOL } from 'enums'
 
-export const addClassnameToElement = ({
+export const removeClassnameFromElement = ({
   element,
   classname = '',
 }: {
@@ -10,6 +10,6 @@ export const addClassnameToElement = ({
   const classnamesArray = classname.split(SYMBOL.SPACE).filter(Boolean)
 
   classnamesArray.forEach((cssClass) => {
-    element.classList.add(cssClass)
+    element.classList.remove(cssClass)
   })
 }

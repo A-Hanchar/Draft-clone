@@ -1,21 +1,7 @@
-import { SYMBOL } from 'enums'
+import { addClassnameToElement } from './addClassnameToElement'
 
-export const replaceAllClassnameToElement = ({
-  element,
-  classname = '',
-}: {
-  element: HTMLElement
-  classname?: string
-}) => {
+export const replaceAllClassnameToElement = ({ element, classname }: { element: HTMLElement; classname?: string }) => {
   element.removeAttribute('class')
 
-  const classnamesArray = classname.split(SYMBOL.SPACE).filter(Boolean)
-
-  if (!classnamesArray.length) {
-    return
-  }
-
-  classnamesArray.forEach((cssClass) => {
-    element.classList.add(cssClass)
-  })
+  addClassnameToElement({ element, classname })
 }
