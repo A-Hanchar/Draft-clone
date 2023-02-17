@@ -13,22 +13,21 @@ export const getDocumentList = (documentsWrapper: HTMLDivElement) => {
           documentList.items.map(async (document) => {
             const metadata = await getMetadata(document)
             const date = new Date(metadata.updated)
-            return { document, metadata, date }
+            return { document, date }
           }),
         )
 
         const sortedDocumentData = documentData.sort((a, b) => Number(b.date) - Number(a.date))
 
-        const previewDocuments = sortedDocumentData.map(({ document, date }) => {
-          const file = getBlob(ref(storage, document.fullPath))
-          const previewText = file.then((blob) => blob.text())
-          return Promise.all([document.name, date, previewText])
+        const previewDocumentPromises = sortedDocumentData.map(async ({ document, date }) => {
+          const file = await getBlob(ref(storage, document.fullPath))
+          const previewText = await file.text()
+          return PreviewDocument({ id: document.name, date, previewText })
         })
 
-        const resolvedPreviewDocuments = await Promise.all(previewDocuments)
+        const previewDocuments = await Promise.all(previewDocumentPromises)
 
-        resolvedPreviewDocuments.forEach(([id, date, previewText]) => {
-          const previewDocument = PreviewDocument({ id, date, previewText })
+        previewDocuments.forEach((previewDocument) => {
           documentsWrapper.appendChild(previewDocument)
         })
       }
