@@ -12,14 +12,13 @@ type CloseButtonConfig = {
 }
 
 export type ButtonTypeGeneral = 'primary' | 'alert' | 'success'
-type ButtonTypeGeneralColorsKeys = 'color' | 'bgColor' | 'outline'
+type ButtonTypeGeneralColorsKeys = 'color' | 'bgColor' | 'outline' | 'hover'
 
 export type ButtonType = ButtonTypeClose | ButtonTypeGeneral
 
 export type ButtonConfigType = {
   buttonType: Record<ButtonTypeGeneral, Record<ButtonTypeGeneralColorsKeys, string>> &
     Record<ButtonTypeClose, CloseButtonConfig>
-  commonStyles: string
   color: Record<ButtonTextColor, string>
   getClassByColorType: (params: { colorType: ButtonTypeGeneral }) => string
   getClassesForCloseButton: (params: { position: ButtonTypePositionClose; color: ButtonTextColor }) => string

@@ -1,0 +1,33 @@
+.modal {
+
+  &.open {
+    animation: modal-open 0.5s;
+  }
+
+  &.close {
+    animation: modal-close 0.5s;
+  }
+}
+
+/* Animation */
+@keyframes modal-open {
+
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-close {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}

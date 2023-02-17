@@ -17,10 +17,17 @@ export const SignUp = () => {
 
   const handleFormSubmit = async () => {
     try {
+      signUpButton.setLoading(true)
+      signUpButton.setDisable(true)
+
       await signUpByEmail({ email: emailInput.value, password: passwordInput.value })
 
       goToPageAndRenderRoute(routerPathes.documents)
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      signUpButton.setLoading(false)
+      signUpButton.setDisable(false)
+    }
   }
 
   const signUpButton = Button({

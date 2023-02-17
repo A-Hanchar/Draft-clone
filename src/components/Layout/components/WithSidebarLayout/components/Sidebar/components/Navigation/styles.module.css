@@ -1,6 +1,7 @@
 .navigation {
 
   & .button {
+    position: relative;
 
     &:not(:last-child) {
       @apply after:absolute after:w-px after:h-5/6 after:-right-3 after:inset-y-0 after:m-auto after:bg-gray-800;
