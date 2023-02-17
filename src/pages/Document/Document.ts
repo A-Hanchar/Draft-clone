@@ -1,12 +1,12 @@
-import { getDocumentContent, updateDocument } from 'api'
+import { getDocumentContentById, updateDocument } from 'api'
 import { TextArea } from 'components/TextArea'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { getDocumentIdParam } from 'router'
 
 export const Document = async () => {
-  const { documentId } = getDocumentIdParam()
+  const { documentId = '' } = getDocumentIdParam()
 
-  const content = await getDocumentContent(documentId!)
+  const content = await getDocumentContentById(documentId)
 
   const textArea = TextArea({
     classname: 'w-1/2 p-2 h-[90vh] focus:outline-none bg-gray-100 overflow-auto scrollbar-hide',
@@ -16,7 +16,7 @@ export const Document = async () => {
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.key === 'q') {
       e.preventDefault()
-      updateDocument(documentId!, textArea.value)
+      updateDocument({ documentId, content: textArea.value })
     }
   })
 

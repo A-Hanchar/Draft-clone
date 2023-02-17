@@ -2,7 +2,7 @@ import { auth } from 'api/config'
 import { getUserRef } from 'api/refs'
 import { listAll, getMetadata } from 'firebase/storage'
 
-import { getDocumentContent } from './getDocumentContent'
+import { getDocumentContentById } from './getDocumentContentById'
 
 export const getDocumentList = async () => {
   if (auth.currentUser) {
@@ -15,7 +15,7 @@ export const getDocumentList = async () => {
         const date = new Date(metadata.updated)
         const name = document.name
 
-        const content = await getDocumentContent(name.replace('.txt', ''))
+        const content = await getDocumentContentById(name.replace('.txt', ''))
 
         return { content, date, name }
       }),

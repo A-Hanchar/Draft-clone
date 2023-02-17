@@ -1,5 +1,5 @@
-export { getDocumentContent } from './getDocumentContent'
+export { getDocumentContentById } from './getDocumentContentById'
 export { updateDocument } from './updateDocument'
 export { createDocument } from './createDocument'
 export { getDocumentList } from './getDocumentList'
-export { getDocument } from './getDocument'
+export { getDocumentById } from './getDocumentById'
