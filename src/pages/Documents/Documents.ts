@@ -1,19 +1,19 @@
 import { getDocumentList } from 'api'
-import { createElementWithClassName } from 'helpers'
+import { PreviewDocument } from 'components/PreviewDocument'
+import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 export const Documents = async () => {
-  const documentsWrapper = createElementWithClassName({
+  const documentData = await getDocumentList()
+
+  const previewDocumentNodes = documentData.map((document) =>
+    PreviewDocument({ id: document.name, date: document.date, previewText: document.content }),
+  )
+
+  const documentsWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-6 max-w-3xl',
+    children: previewDocumentNodes,
   })
-
-  const previewDocuments = await getDocumentList()
-
-  if (previewDocuments) {
-    previewDocuments.forEach((previewDocument) => {
-      documentsWrapper.appendChild(previewDocument)
-    })
-  }
 
   return documentsWrapper
 }
