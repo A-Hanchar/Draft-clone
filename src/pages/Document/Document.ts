@@ -6,7 +6,9 @@ import { getDocumentIdParam } from 'router'
 export const Document = () => {
   const { documentId } = getDocumentIdParam()
 
-  const textArea = TextArea({ classname: 'w-1/2 p-2 h-[90vh] focus:outline-none' })
+  const textArea = TextArea({
+    classname: 'w-1/2 p-2 h-[90vh] focus:outline-none bg-gray-100 overflow-auto scrollbar-hide',
+  })
 
   getDocument(documentId!, textArea)
 
