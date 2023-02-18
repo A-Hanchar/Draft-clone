@@ -18,7 +18,7 @@ export const getDocumentList = async () => {
 
         const content = await getDocumentContentById(name!)
 
-        return { content, date, name: name!, ext }
+        return { content, date, name: name!, ext: ext! }
       }),
     )
 

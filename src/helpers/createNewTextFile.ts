@@ -1,5 +1,4 @@
-export const createNewTextFile = (content = '') => {
-  return new Blob([content], {
+export const createNewTextFile = (content = '') =>
+  new Blob([content], {
     type: 'text/plain',
   })
-}

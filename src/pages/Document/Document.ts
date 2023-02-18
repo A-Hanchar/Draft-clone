@@ -1,6 +1,6 @@
 import { getDocumentContentById, updateDocument } from 'api'
 import { Error } from 'components/Error'
-import { TextArea } from 'components/TextArea'
+import { Form } from 'components/Form'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { getDocumentIdParam } from 'router'
 
@@ -10,7 +10,7 @@ export const Document = async () => {
   try {
     const content = await getDocumentContentById(documentId)
 
-    const textArea = TextArea({
+    const textArea = Form.Textarea({
       classname: 'w-1/2 p-2 h-[90vh] focus:outline-none bg-gray-100 overflow-auto scrollbar-hide',
       innerText: content,
     })

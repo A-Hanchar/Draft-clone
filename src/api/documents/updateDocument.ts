@@ -2,13 +2,11 @@ import { auth, getUserDocumentRef } from 'api'
 import { uploadBytes } from 'firebase/storage'
 import { createNewTextFile } from 'helpers'
 
-export const updateDocument = async ({ documentId, content }: { documentId: string; content: string }) => {
-  const file = createNewTextFile(content)
-
+export const updateDocument = ({ documentId, content }: { documentId: string; content: string }) => {
   if (auth.currentUser) {
-    await uploadBytes(getUserDocumentRef(documentId), file)
+    const file = createNewTextFile(content)
 
-    return
+    return uploadBytes(getUserDocumentRef(documentId), file)
   }
 
   throw new Error(`Error at updating the doc. User is null`)
