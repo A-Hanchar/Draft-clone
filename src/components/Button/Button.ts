@@ -3,7 +3,7 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { setButtonDisable, setButtonLoading } from './helpers'
 
-import { type ButtonProps } from './types'
+import { type ButtonComponent, type ButtonProps } from './types'
 import { useGetButtonClasses } from './useGetButtonClasses'
 
 export const Button = ({
@@ -17,7 +17,7 @@ export const Button = ({
   weight,
   loading = false,
   ...restProps
-}: ButtonProps) => {
+}: ButtonProps): ButtonComponent => {
   const buttonClasses = useGetButtonClasses({ classname, rounded, textTransform, weight, ...restProps })
 
   const buttonContent = createElementWithClassNameAndAppendNode({ tagName: 'div', children })

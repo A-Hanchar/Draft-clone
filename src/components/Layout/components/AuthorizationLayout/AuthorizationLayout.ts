@@ -24,7 +24,7 @@ export const AuthorizationLayout = ({ titleText, form }: AuthorizationLayoutProp
 
   const wrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `${colorsConfig.text.darkGray} flex justify-center items-center h-screen flex-col gap-10`,
+    classname: `${colorsConfig.text.darkGray} flex justify-center items-center min-h-screen flex-col gap-10`,
     children: [title, LoginMethods(), form],
   })
 
