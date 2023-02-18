@@ -4,6 +4,7 @@ import { Form } from 'components/Form'
 import { Link } from 'components/Link'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
 import { routerPathes } from 'router'
+import { EMAIL_PATTERN } from 'utils'
 
 export const SignUp = () => {
   const { labelElement: emailLabel, input: emailInput } = Form.Email.WithLabel({
@@ -56,6 +57,27 @@ export const SignUp = () => {
     children: [emailLabel, passwordLabel, signUpControls],
     classname: 'flex flex-col gap-6 w-80',
     onSubmit: handleFormSubmit,
+  })
+
+  form.registrateFields({
+    fields: [
+      {
+        field: emailInput,
+        required: 'Email is required',
+        pattern: {
+          value: EMAIL_PATTERN,
+          message: 'Email must match template: example@domain.xxx',
+        },
+      },
+      {
+        field: passwordInput,
+        minLength: {
+          value: 6,
+          message: 'Password is incorrect',
+        },
+      },
+    ],
+    submitButton: signUpButton,
   })
 
   return form
