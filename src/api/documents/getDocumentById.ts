@@ -1,7 +1,6 @@
 import { auth, getUserDocumentRef } from 'api'
 
 import { getBlob } from 'firebase/storage'
-import { createNewTextFile } from 'helpers'
 
 export const getDocumentById = async (documentId: string) => {
   if (auth.currentUser) {
@@ -10,5 +9,5 @@ export const getDocumentById = async (documentId: string) => {
     return file
   }
 
-  return createNewTextFile()
+  throw new Error(`Error at getting the doc. User is null`)
 }

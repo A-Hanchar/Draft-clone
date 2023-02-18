@@ -7,5 +7,9 @@ export const updateDocument = async ({ documentId, content }: { documentId: stri
 
   if (auth.currentUser) {
     await uploadBytes(getUserDocumentRef(documentId), file)
+
+    return
   }
+
+  throw new Error(`Error at updating the doc. User is null`)
 }

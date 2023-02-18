@@ -18,7 +18,7 @@ export const getDocumentList = async () => {
 
         const content = await getDocumentContentById(name!)
 
-        return { content, date, name, ext }
+        return { content, date, name: name!, ext }
       }),
     )
 
@@ -27,5 +27,5 @@ export const getDocumentList = async () => {
     return documentData
   }
 
-  return []
+  throw new Error(`Error at getting doc list. User is null`)
 }

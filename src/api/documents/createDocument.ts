@@ -13,5 +13,5 @@ export const createDocument = async () => {
     return docName
   }
 
-  return null
+  throw new Error(`Error at creating a doc. User is null`)
 }
