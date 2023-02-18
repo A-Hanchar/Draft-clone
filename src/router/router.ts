@@ -38,6 +38,7 @@ export const router: RouterOwnObject[] = [
       {
         path: routerPathes.document,
         content: Document,
+        layoutType: 'Document',
         isProtected: true,
       },
     ],

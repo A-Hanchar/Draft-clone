@@ -3,6 +3,7 @@ import { FormEmail, FormEmailWithLabel } from './FormEmail'
 import { FormInput, FormInputWithLabel } from './FormInput'
 import { FormPassword, FormPasswordWithLabel } from './FormPassword'
 import { FormRoot } from './FormRoot'
+import { FormTextarea } from './FormTextarea'
 
 export const Form = Object.assign(FormRoot, {
   Input: Object.assign(FormInput, {
@@ -14,4 +15,5 @@ export const Form = Object.assign(FormRoot, {
   Password: Object.assign(FormPassword, {
     WithLabel: FormPasswordWithLabel,
   }),
+  Textarea: FormTextarea,
 })

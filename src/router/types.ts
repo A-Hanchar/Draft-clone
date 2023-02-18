@@ -7,7 +7,7 @@ export type RouterOwnObject = {
 } & (
   | {
       layoutType?: Exclude<LayoutTypeKeys, 'Authorization'>
-      content: () => Node
+      content: () => Node | Promise<Node>
     }
   | {
       layoutType: Extract<LayoutTypeKeys, 'Authorization'>
