@@ -1,0 +1,36 @@
+.switch {
+  position: relative;
+  width: 2.875rem;
+  height: 1.625rem;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7C7C7C;
+  border-radius: 0.8125rem;
+}
+
+.slider::before {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s;
+}
+
+.switch input:checked ~ .slider {
+  background-color: hsl(80deg 60% 45%);
+}
+
+.switch input:checked ~ .slider::before {
+  transform: translateX(100%);
+}
