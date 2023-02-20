@@ -8,5 +8,5 @@ export const ManagedButtons = ({ documentId }: ManagedButtonsProps) =>
   createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-2',
-    children: [OpenButton({ documentId }), DeleteButton()],
+    children: [OpenButton({ documentId }), DeleteButton({ documentId })],
   })
