@@ -1,4 +1,4 @@
-export type GuiSwitchProps = {
+export type ToggleSwitchProps = {
   name?: string
   onclick?: () => void
 }

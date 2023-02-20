@@ -11,7 +11,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #7C7C7C;
   border-radius: 0.8125rem;
 }
 
@@ -28,7 +27,7 @@
 }
 
 .switch input:checked ~ .slider {
-  background-color: hsl(80deg 60% 45%);
+  background-color: rgb(34 197 94);
 }
 
 .switch input:checked ~ .slider::before {

@@ -1,15 +1,20 @@
 import { Button } from 'components/Button'
 import { Drawer } from 'components/Drawer'
-import { GuiSwitch } from 'components/GuiSwitch'
-import { getTruthyClasses } from 'helpers'
+import { ToggleSwitch } from 'components/ToggleSwitch'
+import { getTruthyClasses, toggleClassnameToElement } from 'helpers'
 import { type PropsWithClassname } from 'types'
 
-import { nightMode } from './helpers'
-
 export const SettingButton = ({ classname }: PropsWithClassname) => {
-  const dark = GuiSwitch({
+  const dark = ToggleSwitch({
     name: 'night mode',
-    onclick: nightMode,
+    onclick() {
+      toggleClassnameToElement({ element: document.documentElement, classname: 'dark' })
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('dark', JSON.stringify(true))
+      } else {
+        localStorage.setItem('dark', JSON.stringify(false))
+      }
+    },
   })
 
   const modal = Drawer({

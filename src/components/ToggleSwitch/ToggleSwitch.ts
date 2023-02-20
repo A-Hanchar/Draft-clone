@@ -1,11 +1,12 @@
 import { Text } from 'components/Text'
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
+import { colorsConfig } from 'variables/css'
 
 import styles from './styles.module.css'
 
-import { type GuiSwitchProps } from './type'
+import { type ToggleSwitchProps } from './type'
 
-export const GuiSwitch = ({ name, onclick }: GuiSwitchProps) => {
+export const ToggleSwitch = ({ name, onclick }: ToggleSwitchProps) => {
   const title = Text({ tagName: 'span', children: name })
 
   const checkbox = createElementWithClassNameAndAppendNode({
@@ -21,7 +22,7 @@ export const GuiSwitch = ({ name, onclick }: GuiSwitchProps) => {
 
   const slider = Text({
     tagName: 'span',
-    classname: styles.slider,
+    classname: getTruthyClasses([styles.slider, colorsConfig.bg.lightGray]),
   })
 
   const label = createElementWithClassNameAndAppendNode({
