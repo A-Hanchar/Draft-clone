@@ -1,1 +1,1 @@
-export { renderDocumentList } from './renderDocumentList'
+export { getDocumentsWrapper } from './getDocumentsWrapper'
