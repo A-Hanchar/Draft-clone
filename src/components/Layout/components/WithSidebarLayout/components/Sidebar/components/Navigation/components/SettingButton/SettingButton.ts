@@ -2,6 +2,7 @@ import { Button } from 'components/Button'
 import { Drawer } from 'components/Drawer'
 import { ToggleSwitch } from 'components/ToggleSwitch'
 import { getTruthyClasses, toggleClassnameToElement } from 'helpers'
+import { darkInstance } from 'helpers/instances/StorageInstance'
 import { type PropsWithClassname } from 'types'
 
 export const SettingButton = ({ classname }: PropsWithClassname) => {
@@ -10,9 +11,9 @@ export const SettingButton = ({ classname }: PropsWithClassname) => {
     onclick() {
       toggleClassnameToElement({ element: document.documentElement, classname: 'dark' })
       if (document.documentElement.classList.contains('dark')) {
-        localStorage.setItem('dark', JSON.stringify(true))
+        darkInstance.setTheme('dark')
       } else {
-        localStorage.setItem('dark', JSON.stringify(false))
+        darkInstance.setTheme('light')
       }
     },
   })
