@@ -1,6 +1,7 @@
 import { Button } from 'components/Button'
 import { Drawer } from 'components/Drawer'
 import { ToggleSwitch } from 'components/ToggleSwitch'
+import { KEYS } from 'enums'
 import { getTruthyClasses, toggleClassnameToElement } from 'helpers'
 import { darkInstance } from 'helpers/instances/StorageInstance'
 import { type PropsWithClassname } from 'types'
@@ -8,12 +9,13 @@ import { type PropsWithClassname } from 'types'
 export const SettingButton = ({ classname }: PropsWithClassname) => {
   const dark = ToggleSwitch({
     name: 'night mode',
+    key: KEYS.DARK,
     onclick() {
-      toggleClassnameToElement({ element: document.documentElement, classname: 'dark' })
-      if (document.documentElement.classList.contains('dark')) {
-        darkInstance.setTheme('dark')
+      toggleClassnameToElement({ element: document.documentElement, classname: KEYS.DARK })
+      if (document.documentElement.classList.contains(KEYS.DARK)) {
+        darkInstance.setTheme(KEYS.DARK)
       } else {
-        darkInstance.setTheme('light')
+        darkInstance.setTheme(KEYS.LIGHT)
       }
     },
   })

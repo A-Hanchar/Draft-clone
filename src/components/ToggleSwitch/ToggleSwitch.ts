@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 
 import { type ToggleSwitchProps } from './type'
 
-export const ToggleSwitch = ({ name, onclick }: ToggleSwitchProps) => {
+export const ToggleSwitch = ({ name, key, onclick }: ToggleSwitchProps) => {
   const title = Text({ tagName: 'span', children: name })
 
   const checkbox = createElementWithClassNameAndAppendNode({
@@ -14,11 +14,7 @@ export const ToggleSwitch = ({ name, onclick }: ToggleSwitchProps) => {
     classname: 'hidden',
   })
   checkbox.type = 'checkbox'
-  if (document.documentElement.classList.contains('dark')) {
-    checkbox.checked = true
-  } else {
-    checkbox.checked = false
-  }
+  checkbox.checked = !!document.documentElement.classList.contains(key)
 
   const slider = Text({
     tagName: 'span',
