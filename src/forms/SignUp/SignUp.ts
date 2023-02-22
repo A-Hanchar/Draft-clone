@@ -48,7 +48,6 @@ export const SignUp = () => {
       form.setFormError('Something went wrong')
     } finally {
       signUpButton.setLoading(false)
-      signUpButton.setDisable(false)
     }
   }
 
