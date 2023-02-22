@@ -2,6 +2,8 @@ import { signUpByEmail } from 'api/auth'
 import { Button } from 'components/Button'
 import { Form } from 'components/Form'
 import { Link } from 'components/Link'
+import { AUTH_ERROR_CODE } from 'enums'
+import { FirebaseError } from 'firebase/app'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
 import { routerPathes } from 'router'
 import { EMAIL_PATTERN } from 'utils'
@@ -25,6 +27,25 @@ export const SignUp = () => {
 
       goToPageAndRenderRoute(routerPathes.documents)
     } catch (error) {
+      if (error instanceof FirebaseError) {
+        const { code } = error
+
+        const errorCode = code as AUTH_ERROR_CODE
+
+        switch (errorCode) {
+          case AUTH_ERROR_CODE.EMAIL_ALREADY_IN_USE:
+            form.setFormError('User with this email exist')
+            return
+          case AUTH_ERROR_CODE.WEAK_PASSWORD:
+            form.setFormError('Password should be at least 6 characters')
+            return
+          default:
+            form.setFormError('Unknown error.')
+            return
+        }
+      }
+
+      form.setFormError('Something went wrong')
     } finally {
       signUpButton.setLoading(false)
       signUpButton.setDisable(false)
@@ -73,7 +94,7 @@ export const SignUp = () => {
         field: passwordInput,
         minLength: {
           value: 6,
-          message: 'Password is incorrect',
+          message: 'Password should be at least 6 characters',
         },
       },
     ],

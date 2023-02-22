@@ -2,6 +2,8 @@ import { signInByEmail } from 'api'
 import { Button } from 'components/Button'
 import { Form } from 'components/Form'
 import { Link } from 'components/Link'
+import { AUTH_ERROR_CODE } from 'enums'
+import { FirebaseError } from 'firebase/app'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
 import { routerPathes } from 'router'
 import { EMAIL_PATTERN } from 'utils'
@@ -22,12 +24,36 @@ export const SignIn = () => {
       signInButton.setDisable(true)
 
       await signInByEmail({ email: emailInput.value, password: passwordInput.value })
+      signInButton.setDisable(false)
 
       goToPageAndRenderRoute(routerPathes.documents)
     } catch (error) {
+      if (error instanceof FirebaseError) {
+        const { code } = error
+
+        const errorCode = code as AUTH_ERROR_CODE
+
+        switch (errorCode) {
+          case AUTH_ERROR_CODE.USER_NOT_FOUND:
+            form.setFormError('User Not Found')
+            return
+          case AUTH_ERROR_CODE.WRONG_PASSWORD:
+            form.setFormError('Wrong password')
+            return
+          case AUTH_ERROR_CODE.TOO_MANY_REQUESTS:
+            form.setFormError(
+              'Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.',
+            )
+            return
+          default:
+            form.setFormError('Unknown error.')
+            return
+        }
+      }
+
+      form.setFormError('Something went wrong')
     } finally {
       signInButton.setLoading(false)
-      signInButton.setDisable(false)
     }
   }
 
