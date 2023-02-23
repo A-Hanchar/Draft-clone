@@ -6,7 +6,6 @@ export type FormTextareaProps = {
   classname?: string
   weight?: FontWeightKeys
   color?: ColorTextKeys
-
   value?: string
   disabled?: boolean
   placeholder?: string
