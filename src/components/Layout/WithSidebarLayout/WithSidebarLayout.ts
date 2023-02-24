@@ -1,6 +1,7 @@
 import { Sidebar } from 'components/Sidebar'
 
 import { getBodyClasses } from './getBodyClasses'
+import styles from './styles.module.css'
 import { type WithSidebarLayoutProps } from './types'
 import { ExtendedLayout } from '../ExtendedLayout'
 
@@ -9,13 +10,13 @@ export const WithSidebarLayout = ({ children, withFooter, withHeader }: WithSide
     children,
     withFooter,
     withHeader,
-    mainNodeProps: { classname: 'pr-10' },
+    mainNodeProps: { classname: styles.main },
     bodyNodeProps: {
       classname: getBodyClasses({ withFooter, withHeader }),
     },
   })
 
-  layout.main.before(Sidebar({ classname: 'pl-10' }))
+  layout.main.before(Sidebar({ classname: styles.sidebar }))
 
   return layout
 }

@@ -4,22 +4,22 @@ import styles from './styles.module.css'
 import { type ExtendedLayoutProps } from '../ExtendedLayout'
 
 export const getBodyClasses = ({ withHeader, withFooter }: ExtendedLayoutProps) => {
-  const bodyClasses: Array<string | undefined> = ['grid', 'min-h-screen', 'gap-y-8', 'grid-cols-[1fr_2fr]']
+  const bodyClasses: Array<string | undefined> = [styles.body]
 
   if (withHeader && withFooter) {
-    bodyClasses.push(styles['with-header-and-footer'], 'grid-rows-[auto_1fr_auto]')
+    bodyClasses.push(styles['with-header-and-footer'])
   }
 
   if (withHeader && !withFooter) {
-    bodyClasses.push(styles['with-header'], 'grid-rows-[auto_1fr]')
+    bodyClasses.push(styles['with-header'])
   }
 
   if (!withHeader && withFooter) {
-    bodyClasses.push(styles['with-footer'], 'grid-rows-[1fr_auto]', 'pt-6')
+    bodyClasses.push(styles['with-footer'])
   }
 
   if (!withHeader && !withFooter) {
-    bodyClasses.push(styles['sidebar-only'], 'pt-6')
+    bodyClasses.push(styles['sidebar-only'])
   }
 
   return getTruthyClasses(bodyClasses)

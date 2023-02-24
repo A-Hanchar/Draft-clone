@@ -4,18 +4,18 @@ import styles from './styles.module.css'
 import { type ExtendedLayoutProps } from './types'
 
 export const getBodyClasses = ({ withFooter, withHeader }: ExtendedLayoutProps) => {
-  const bodyClasses: Array<string | undefined> = ['grid', 'gap-y-8', 'min-h-screen']
+  const bodyClasses: Array<string | undefined> = [styles.body]
 
   if (withHeader && withFooter) {
-    bodyClasses.push('grid-rows-[auto_1fr_auto]', styles['with-header-and-footer'])
+    bodyClasses.push(styles['with-header-and-footer'])
   }
 
   if (withHeader && !withFooter) {
-    bodyClasses.push('grid-rows-[auto_1fr]', styles['with-header'])
+    bodyClasses.push(styles['with-header'])
   }
 
   if (!withHeader && withFooter) {
-    bodyClasses.push('grid-rows-[1fr_auto]', styles['with-footer'])
+    bodyClasses.push(styles['with-footer'])
   }
 
   if (!withHeader && !withFooter) {

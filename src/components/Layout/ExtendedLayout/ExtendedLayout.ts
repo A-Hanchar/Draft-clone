@@ -20,7 +20,7 @@ export const ExtendedLayout = ({
   const main = createElementWithClassNameAndAppendNode({
     tagName: 'main',
     children,
-    classname: getTruthyClasses([mainNodeProps?.classname ?? 'p-6', styles.main]),
+    classname: getTruthyClasses([mainNodeProps?.classname ?? styles.main]),
   })
 
   replaceAllClassnameToElement({
@@ -34,11 +34,11 @@ export const ExtendedLayout = ({
   fragment.append(main)
 
   if (withHeader) {
-    fragment.prepend(Header())
+    fragment.prepend(Header({ classname: styles.header }))
   }
 
   if (withFooter) {
-    fragment.append(Footer())
+    fragment.append(Footer({ classname: styles.footer }))
   }
 
   return Object.assign(fragment, { main })

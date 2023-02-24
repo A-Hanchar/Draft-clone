@@ -1,5 +1,0 @@
-.sidebar {
-  grid-area: sidebar;
-
-  @apply flex flex-col gap-6;
-}

@@ -9,7 +9,7 @@ import { type RouterOwnObject } from './types'
 export const rootRoute: RouterOwnObject = {
   path: routerPathes.home,
   content: Home,
-  layoutType: 'Simple',
+  layoutType: 'Extended',
 }
 
 export const notFoundRoute: RouterOwnObject = {

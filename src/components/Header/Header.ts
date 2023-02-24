@@ -1,6 +1,5 @@
 import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { type PropsWithClassname } from 'types'
 
-import styles from './styles.module.css'
-
-export const Header = () =>
-  createElementWithClassNameAndAppendNode({ tagName: 'header', children: 'Header', classname: styles.header })
+export const Header = ({ classname }: PropsWithClassname) =>
+  createElementWithClassNameAndAppendNode({ tagName: 'header', children: 'Header', classname })
