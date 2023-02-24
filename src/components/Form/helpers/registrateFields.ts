@@ -46,8 +46,11 @@ export const registrateFields = () => {
     })
   }
 
+  const getSubmitButton = () => formFields.submitButton
+
   return {
     formFields,
     subscribeFields,
+    getSubmitButton,
   }
 }
