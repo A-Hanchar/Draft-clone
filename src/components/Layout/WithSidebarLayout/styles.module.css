@@ -1,0 +1,19 @@
+.with-header {
+  grid-template-areas: "header header"
+    "sidebar content";
+}
+
+.with-header-and-footer {
+  grid-template-areas: "header header"
+    "sidebar content"
+    "footer footer";
+}
+
+.with-footer {
+  grid-template-areas: "sidebar content"
+    "footer footer";
+}
+
+.sidebar-only {
+  grid-template-areas: "sidebar content";
+}

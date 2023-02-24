@@ -26,15 +26,36 @@ export const renderComponent = () => {
     }
 
     if (route.layoutType === 'Authorization') {
-      const { pageTitle, form } = route
+      const { pageTitle, form, extendedLayoutProps } = route
 
-      Body.replaceChildren(Layout.Authorization({ titleText: pageTitle, form: form() }))
+      Body.replaceChildren(
+        Layout.Authorization({
+          titleText: pageTitle,
+          form: form(),
+          withHeader: extendedLayoutProps?.withHeader,
+          withFooter: extendedLayoutProps?.withFooter,
+        }),
+      )
 
       return
     }
 
     const pageContent = await route.content()
 
-    Body.replaceChildren(Layout[route.layoutType ?? 'General']({ children: pageContent }))
+    if (route.layoutType === 'Extended' || route.layoutType === 'WithSidebar') {
+      const { extendedLayoutProps } = route
+
+      Body.replaceChildren(
+        Layout[route.layoutType]({
+          children: pageContent,
+          withHeader: extendedLayoutProps?.withHeader,
+          withFooter: extendedLayoutProps?.withFooter,
+        }),
+      )
+
+      return
+    }
+
+    Body.replaceChildren(Layout.Simple({ children: pageContent }))
   })
 }

@@ -1,0 +1,45 @@
+import { Body } from 'components/Body'
+import { Footer } from 'components/Footer'
+import { Header } from 'components/Header'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses, replaceAllClassnameToElement } from 'helpers'
+import { colorsConfig } from 'variables/css'
+
+import { getBodyClasses } from './getBodyClasses'
+import styles from './styles.module.css'
+import { type ExtendedLayoutOwnProps } from './types'
+
+export const ExtendedLayout = ({
+  children,
+  withFooter,
+  withHeader,
+  mainNodeProps,
+  bodyNodeProps,
+}: ExtendedLayoutOwnProps) => {
+  const fragment = document.createDocumentFragment()
+
+  const main = createElementWithClassNameAndAppendNode({
+    tagName: 'main',
+    children,
+    classname: getTruthyClasses([mainNodeProps?.classname ?? 'p-6', styles.main]),
+  })
+
+  replaceAllClassnameToElement({
+    element: Body,
+    classname: getTruthyClasses([
+      bodyNodeProps?.classname ?? getBodyClasses({ withFooter, withHeader }),
+      colorsConfig.bg.lightGray,
+    ]),
+  })
+
+  fragment.append(main)
+
+  if (withHeader) {
+    fragment.prepend(Header())
+  }
+
+  if (withFooter) {
+    fragment.append(Footer())
+  }
+
+  return Object.assign(fragment, { main })
+}

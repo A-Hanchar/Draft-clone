@@ -1,11 +1,9 @@
 import { Body } from 'components/Body'
-import { Footer } from 'components/Footer'
 import { createElementWithClassNameAndAppendNode, replaceAllClassnameToElement } from 'helpers'
 import { type PropsWithChildren } from 'types'
 import { colorsConfig } from 'variables/css'
 
-export const CommonLayout = ({ children }: PropsWithChildren) => {
-  const fragment = document.createDocumentFragment()
+export const RootLayout = ({ children }: PropsWithChildren) => {
   const main = createElementWithClassNameAndAppendNode({
     tagName: 'main',
     children,
@@ -16,7 +14,5 @@ export const CommonLayout = ({ children }: PropsWithChildren) => {
     classname: colorsConfig.bg.lightGray,
   })
 
-  fragment.append(main, Footer())
-
-  return fragment
+  return main
 }

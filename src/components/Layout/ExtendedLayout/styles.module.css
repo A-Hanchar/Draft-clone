@@ -1,0 +1,23 @@
+.with-header {
+  grid-template-areas: "header"
+    "content";
+}
+
+.with-footer {
+  grid-template-areas: "content"
+    "footer";
+}
+
+.with-header-and-footer {
+  grid-template-areas: "header"
+    "content"
+    "footer";
+}
+
+.content-only {
+  grid-template-areas: "content";
+}
+
+.main {
+  grid-area: content;
+}

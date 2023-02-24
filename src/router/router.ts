@@ -8,11 +8,13 @@ import { type RouterOwnObject } from './types'
 export const rootRoute: RouterOwnObject = {
   path: routerPathes.home,
   content: Home,
+  layoutType: 'Simple',
 }
 
 export const notFoundRoute: RouterOwnObject = {
   path: routerPathes.notFound,
   content: NotFound,
+  layoutType: 'Simple',
 }
 
 export const router: RouterOwnObject[] = [
@@ -38,7 +40,7 @@ export const router: RouterOwnObject[] = [
       {
         path: routerPathes.document,
         content: Document,
-        layoutType: 'Document',
+        layoutType: 'Simple',
         isProtected: true,
       },
     ],

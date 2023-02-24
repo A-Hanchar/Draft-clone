@@ -1,12 +1,12 @@
-import { type PropsWithChildren } from 'types'
+import { type AuthorizationLayout } from './AuthorizationLayout'
 
-import { type AuthorizationLayoutProps } from './components/AuthorizationLayout/types'
-
-export type LayoutTypeKeys = 'General' | 'WithSidebar' | 'Authorization' | 'Document'
+import { type ExtendedLayout } from './ExtendedLayout'
+import { type RootLayout } from './RootLayout'
+import { type WithSidebarLayout } from './WithSidebarLayout'
 
 export type LayoutType = {
-  General: (params: PropsWithChildren) => DocumentFragment
-  WithSidebar: (params: PropsWithChildren) => DocumentFragment
-  Authorization: (params: AuthorizationLayoutProps) => DocumentFragment
-  Document: (params: PropsWithChildren) => DocumentFragment
+  Simple: typeof RootLayout
+  WithSidebar: typeof WithSidebarLayout
+  Authorization: typeof AuthorizationLayout
+  Extended: typeof ExtendedLayout
 }

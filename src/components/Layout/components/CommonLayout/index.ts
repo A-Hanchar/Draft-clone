@@ -1,1 +1,0 @@
-export { CommonLayout } from './CommonLayout'

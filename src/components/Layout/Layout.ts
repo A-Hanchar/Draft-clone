@@ -1,13 +1,13 @@
-import { AuthorizationLayout } from './components/AuthorizationLayout'
+import { AuthorizationLayout } from './AuthorizationLayout'
 
-import { CommonLayout } from './components/CommonLayout'
-import { DocumentLayout } from './components/DocumentLayout'
-import { WithSidebarLayout } from './components/WithSidebarLayout'
+import { ExtendedLayout } from './ExtendedLayout'
+import { RootLayout } from './RootLayout'
+import { WithSidebarLayout } from './WithSidebarLayout'
 import { type LayoutType } from './types'
 
 export const Layout: LayoutType = {
-  General: CommonLayout,
-  WithSidebar: WithSidebarLayout,
+  Simple: RootLayout,
   Authorization: AuthorizationLayout,
-  Document: DocumentLayout,
+  WithSidebar: WithSidebarLayout,
+  Extended: ExtendedLayout,
 }
