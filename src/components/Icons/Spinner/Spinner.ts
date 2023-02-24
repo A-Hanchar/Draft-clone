@@ -3,15 +3,12 @@ import { colorsConfig } from 'variables/css'
 
 import styles from './styles.module.css'
 import { type SpinnerProps } from './types'
+import { SVGElement } from '../SVGContainer'
+import { linkW3OrgSVG } from '../SVGContainer/constants'
 
 export const Spinner = ({ classname, color = 'green' }: SpinnerProps) => {
-  const linkW3OrgSVG = 'http://www.w3.org/2000/svg'
-
-  const svg = document.createElementNS(linkW3OrgSVG, 'svg')
-  svg.setAttribute('viewBox', '0 0 50 50')
-
-  addClassnameToElement({
-    element: svg,
+  const svg = SVGElement({
+    viewBox: '0 0 50 50',
     classname: getTruthyClasses(['w-10', 'h-10', styles.spinner, colorsConfig.text[color], classname]),
   })
 

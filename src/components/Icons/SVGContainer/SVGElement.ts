@@ -1,3 +1,5 @@
+import { addClassnameToElement } from 'helpers'
+
 import { initialFillColor, initialHeight, initialStroke, initialViewBox, initialWidth, linkW3OrgSVG } from './constants'
 import { converterPxToRem } from './converterPxToRem'
 import { type SVGElementProps } from './type'
@@ -8,7 +10,7 @@ export const SVGElement = ({
   width = initialWidth,
   viewBox = initialViewBox,
   stroke = initialStroke,
-  classname = '',
+  classname,
 }: SVGElementProps) => {
   const iconSvg = document.createElementNS(linkW3OrgSVG, 'svg')
 
@@ -17,7 +19,8 @@ export const SVGElement = ({
   iconSvg.setAttribute('stroke', stroke)
   iconSvg.setAttribute('width', converterPxToRem(width))
   iconSvg.setAttribute('height', converterPxToRem(height))
-  iconSvg.setAttribute('class', classname)
+
+  addClassnameToElement({ element: iconSvg, classname })
 
   return iconSvg
 }

@@ -1,5 +1,5 @@
 import { Body } from 'components/Body'
-import { Spinner } from 'components/Spinner'
+import { Spinner } from 'components/Icons/Spinner'
 import { createElementWithClassNameAndAppendNode, replaceAllClassnameToElement } from 'helpers'
 import { colorsConfig } from 'variables/css'
 
