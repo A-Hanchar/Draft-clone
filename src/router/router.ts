@@ -25,6 +25,9 @@ export const router: RouterOwnObject[] = [
     form: SignIn,
     layoutType: 'Authorization',
     pageTitle: en.signInPage.title,
+    extendedLayoutProps: {
+      withFooter: true,
+    },
   },
   {
     path: routerPathes.signUp,
