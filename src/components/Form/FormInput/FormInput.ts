@@ -10,6 +10,7 @@ export const FormInput = ({
   inputType = 'text',
   color = 'darkGray',
   weight = 400,
+  checked,
 }: FormInputCurrentProps) => {
   const input = createElementWithClassName({
     tagName: 'input',
@@ -31,6 +32,7 @@ export const FormInput = ({
 
   if (id) input.id = id
   if (placeholder) input.placeholder = placeholder
+  if (checked) input.checked = checked
 
   input.type = inputType
 

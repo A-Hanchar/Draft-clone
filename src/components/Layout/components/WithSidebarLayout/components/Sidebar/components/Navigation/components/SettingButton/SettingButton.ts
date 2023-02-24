@@ -9,7 +9,7 @@ import { type PropsWithClassname } from 'types'
 export const SettingButton = ({ classname }: PropsWithClassname) => {
   const dark = ToggleSwitch({
     name: 'night mode',
-    key: KEYS.DARK,
+    keyLocalStorage: KEYS.DARK,
     onclick() {
       toggleClassnameToElement({ element: document.documentElement, classname: KEYS.DARK })
       if (document.documentElement.classList.contains(KEYS.DARK)) {

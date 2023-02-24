@@ -2,7 +2,7 @@ import { type ColorTextKeys, type FontWeightKeys } from 'variables/css'
 
 import { type FormLabelProps } from '../FormLabelWrapper'
 
-type FormInputType = 'email' | 'number' | 'password' | 'search' | 'submit' | 'text' | 'button' | 'hidden'
+type FormInputType = 'email' | 'number' | 'password' | 'search' | 'submit' | 'text' | 'button' | 'hidden' | 'checkbox'
 
 export type FormInputProps = {
   classname?: string
@@ -10,6 +10,7 @@ export type FormInputProps = {
   placeholder?: string
   weight?: FontWeightKeys
   color?: ColorTextKeys
+  checked: boolean
 }
 
 export type FormInputCurrentProps = FormInputProps & {

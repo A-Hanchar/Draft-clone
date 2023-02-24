@@ -1,20 +1,22 @@
+import { Form } from 'components/Form'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 import { colorsConfig } from 'variables/css'
+
+import { ShowChecked } from './helpers'
 
 import styles from './styles.module.css'
 
 import { type ToggleSwitchProps } from './type'
 
-export const ToggleSwitch = ({ name, key, onclick }: ToggleSwitchProps) => {
+export const ToggleSwitch = ({ name, keyLocalStorage, onclick }: ToggleSwitchProps) => {
   const title = Text({ tagName: 'span', children: name })
 
-  const checkbox = createElementWithClassNameAndAppendNode({
-    tagName: 'input',
+  const checkbox = Form.Input({
+    inputType: 'checkbox',
     classname: 'hidden',
+    checked: ShowChecked(keyLocalStorage),
   })
-  checkbox.type = 'checkbox'
-  checkbox.checked = !!document.documentElement.classList.contains(key)
 
   const slider = Text({
     tagName: 'span',
