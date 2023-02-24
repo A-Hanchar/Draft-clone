@@ -2,7 +2,7 @@ import { getDocumentList } from 'api'
 import { PreviewDocument } from 'components/PreviewDocument'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-export const getDocumentsWrapper = async () => {
+export const DocumentsWrapper = async () => {
   const documentData = await getDocumentList()
 
   const previewDocumentNodes = documentData.map((document) =>

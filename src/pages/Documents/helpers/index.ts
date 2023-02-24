@@ -1,1 +1,0 @@
-export { getDocumentsWrapper } from './getDocumentsWrapper'

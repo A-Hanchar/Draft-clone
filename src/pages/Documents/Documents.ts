@@ -1,10 +1,10 @@
 import { Error } from 'components/Error'
 
-import { getDocumentsWrapper } from './helpers'
+import { DocumentsWrapper } from './components/DocumentsWrapper'
 
 export const Documents = async () => {
   try {
-    return await getDocumentsWrapper()
+    return await DocumentsWrapper()
   } catch (error) {
     return Error({ error })
   }

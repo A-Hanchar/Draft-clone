@@ -7,8 +7,10 @@ import { type DeleteButtonProps } from './types'
 
 export const DeleteButton = ({ documentId }: DeleteButtonProps) => {
   const handleDeleteDocument = async () => {
-    await deleteDocumentById(documentId)
-    goToPageAndRenderRoute(`${routerPathes.documents}`)
+    try {
+      await deleteDocumentById(documentId)
+      goToPageAndRenderRoute(`${routerPathes.documents}`)
+    } catch (error) {}
   }
 
   return Button({
