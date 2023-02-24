@@ -35,7 +35,11 @@ export const Link = ({
   }
 
   if (restProps.appearance === 'button') {
-    const { appearanceButtonColor: colorType } = restProps
+    const { appearanceButtonColor: colorType, download } = restProps
+
+    if (download) {
+      a.download = download
+    }
 
     addClassnameToElement({
       element: a,

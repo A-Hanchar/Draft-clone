@@ -13,6 +13,7 @@ export type LinkProps = PropsWithChildren<
     | {
         appearance: 'button'
         appearanceButtonColor: ButtonTypeGeneral
+        download?: string
       }
     | {
         appearance?: 'link'
