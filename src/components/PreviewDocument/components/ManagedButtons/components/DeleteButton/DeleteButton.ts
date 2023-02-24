@@ -8,16 +8,25 @@ import { type DeleteButtonProps } from './types'
 export const DeleteButton = ({ documentId }: DeleteButtonProps) => {
   const handleDeleteDocument = async () => {
     try {
+      button.setDisable(true)
+      button.setLoading(true)
+
       await deleteDocumentById(documentId)
       goToPageAndRenderRoute(`${routerPathes.documents}`)
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      button.setDisable(false)
+      button.setLoading(false)
+    }
   }
 
-  return Button({
+  const button = Button({
     appearanceType: 'alert',
     children: 'delete',
     textTransform: 'uppercase',
     weight: 700,
     onclick: handleDeleteDocument,
   })
+
+  return button
 }
