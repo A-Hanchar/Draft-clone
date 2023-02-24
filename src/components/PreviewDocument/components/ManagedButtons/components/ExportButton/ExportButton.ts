@@ -5,29 +5,40 @@ import { type ExportButtonProps } from './types'
 
 export const ExportButton = ({ documentId }: ExportButtonProps) => {
   const handleDocumentExport = async () => {
-    const file = await getDocumentById(documentId)
+    try {
+      button.setDisable(true)
+      button.setLoading(true)
 
-    const downloadUrl = URL.createObjectURL(file)
-    const downloadLink = document.createElement('a')
+      const file = await getDocumentById(documentId)
 
-    downloadLink.style.display = 'none'
-    downloadLink.href = downloadUrl
-    downloadLink.setAttribute('download', 'draft.txt')
+      const downloadUrl = URL.createObjectURL(file)
+      const downloadLink = document.createElement('a')
 
-    document.body.appendChild(downloadLink)
+      downloadLink.style.display = 'none'
+      downloadLink.href = downloadUrl
+      downloadLink.setAttribute('download', 'draft.txt')
 
-    downloadLink.click()
+      document.body.appendChild(downloadLink)
 
-    document.body.removeChild(downloadLink)
+      downloadLink.click()
 
-    URL.revokeObjectURL(downloadUrl)
+      document.body.removeChild(downloadLink)
+
+      URL.revokeObjectURL(downloadUrl)
+    } catch {
+    } finally {
+      button.setDisable(false)
+      button.setLoading(false)
+    }
   }
 
-  return Button({
+  const button = Button({
     appearanceType: 'primary',
     children: 'Export',
     textTransform: 'uppercase',
     weight: 700,
     onclick: handleDocumentExport,
   })
+
+  return button
 }
