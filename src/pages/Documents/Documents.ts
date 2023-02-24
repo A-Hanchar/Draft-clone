@@ -1,20 +1,24 @@
+import { getDocumentList } from 'api'
+import { Error } from 'components/Error'
 import { PreviewDocument } from 'components/PreviewDocument'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-export const Documents = () => {
-  // TODO: delete this mock array when backend is working
-  const mockDocuments = [
-    PreviewDocument({ id: '1' }),
-    PreviewDocument({ id: '2' }),
-    PreviewDocument({ id: '3' }),
-    PreviewDocument({ id: '4' }),
-  ]
+export const Documents = async () => {
+  try {
+    const documentData = await getDocumentList()
 
-  const wrapperDocument = createElementWithClassNameAndAppendNode({
-    tagName: 'div',
-    classname: 'flex flex-col gap-6 max-w-3xl',
-    children: mockDocuments,
-  })
+    const previewDocumentNodes = documentData.map((document) =>
+      PreviewDocument({ id: document.name, date: document.date, documentContent: document.content }),
+    )
 
-  return wrapperDocument
+    const documentsWrapper = createElementWithClassNameAndAppendNode({
+      tagName: 'div',
+      classname: 'flex flex-col gap-6 max-w-3xl',
+      children: previewDocumentNodes,
+    })
+
+    return documentsWrapper
+  } catch (error) {
+    return Error({ error })
+  }
 }
