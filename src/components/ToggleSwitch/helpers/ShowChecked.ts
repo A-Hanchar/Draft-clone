@@ -7,7 +7,7 @@ export const ShowChecked = (keyLocalStorage: KYELocalStorage): boolean => {
 
   switch (keyLocalStorage) {
     case KEYS.DARK:
-      checked = !!document.documentElement.classList.contains(keyLocalStorage)
+      checked = document.documentElement.classList.contains(keyLocalStorage)
       break
 
     default:

@@ -1,4 +1,7 @@
-export type KYELocalStorage = 'dark'
+import { type KEYS } from 'enums'
+
+export type KYELocalStorage = KEYS
+
 export type ToggleSwitchProps = {
   name?: string
   keyLocalStorage: KYELocalStorage

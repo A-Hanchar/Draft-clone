@@ -20,13 +20,29 @@ export const ToggleSwitch = ({ name, keyLocalStorage, onclick }: ToggleSwitchPro
 
   const slider = Text({
     tagName: 'span',
-    classname: getTruthyClasses([styles.slider, colorsConfig.bg.lightGray]),
+    classname: getTruthyClasses([
+      styles.slider,
+      colorsConfig.bg['neutral/75'],
+      'absolute',
+      'top-0',
+      'left-0',
+      'w-full',
+      'h-full',
+      'rounded-xl',
+      'before:absolute',
+      'before:top-0.5',
+      'before:left-0.5',
+      'before:w-5',
+      'before:h-5',
+      `before:${colorsConfig.bg.white}`,
+      'before:rounded-full',
+    ]),
   })
 
   const label = createElementWithClassNameAndAppendNode({
     tagName: 'label',
     children: [checkbox, slider],
-    classname: styles.switch,
+    classname: getTruthyClasses([styles.switch, 'relative', 'w-11', 'h-6', 'cursor-pointer']),
   })
 
   const handleClick = () => {
