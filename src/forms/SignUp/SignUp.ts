@@ -5,6 +5,7 @@ import { Link } from 'components/Link'
 import { AUTH_ERROR_CODE } from 'enums'
 import { FirebaseError } from 'firebase/app'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
+import { en } from 'langs'
 import { routerPathes } from 'router'
 import { EMAIL_PATTERN } from 'utils'
 
@@ -34,18 +35,18 @@ export const SignUp = () => {
 
         switch (errorCode) {
           case AUTH_ERROR_CODE.EMAIL_ALREADY_IN_USE:
-            form.setFormError('User with this email exist')
+            form.setFormError(en.error.emailAlreadyInUse)
             return
           case AUTH_ERROR_CODE.WEAK_PASSWORD:
-            form.setFormError('Password should be at least 6 characters')
+            form.setFormError(en.error.weakPassword)
             return
           default:
-            form.setFormError('Unknown error.')
+            form.setFormError(en.error.unknownError)
             return
         }
       }
 
-      form.setFormError('Something went wrong')
+      form.setFormError(en.error.somethingWentWrong)
     } finally {
       signUpButton.setLoading(false)
     }
@@ -53,7 +54,7 @@ export const SignUp = () => {
 
   const signUpButton = Button({
     textTransform: 'uppercase',
-    children: 'sign up',
+    children: en.button.signUp,
     appearanceType: 'primary',
     weight: 700,
     type: 'submit',
@@ -61,7 +62,7 @@ export const SignUp = () => {
 
   const signInButton = Link({
     href: routerPathes.signIn,
-    children: 'sign in',
+    children: en.button.signIn,
     textTransform: 'uppercase',
     weight: 700,
     color: 'blue',
@@ -83,17 +84,17 @@ export const SignUp = () => {
     fields: [
       {
         field: emailInput,
-        required: 'Email is required',
+        required: en.form.validation.email.required,
         pattern: {
           value: EMAIL_PATTERN,
-          message: 'Email must match template: example@domain.xxx',
+          message: en.form.validation.email.pattern,
         },
       },
       {
         field: passwordInput,
         minLength: {
           value: 6,
-          message: 'Password should be at least 6 characters',
+          message: en.form.validation.password.minLength,
         },
       },
     ],
