@@ -1,1 +1,1 @@
-export { SVGElement } from './SVGElement'
+export { SVGElement } from './SVGContainer/SVGElement'
