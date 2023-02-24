@@ -2,7 +2,10 @@ import { signInByEmail } from 'api'
 import { Button } from 'components/Button'
 import { Form } from 'components/Form'
 import { Link } from 'components/Link'
+import { AUTH_ERROR_CODE } from 'enums'
+import { FirebaseError } from 'firebase/app'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
+import { en } from 'langs'
 import { routerPathes } from 'router'
 import { EMAIL_PATTERN } from 'utils'
 
@@ -22,18 +25,40 @@ export const SignIn = () => {
       signInButton.setDisable(true)
 
       await signInByEmail({ email: emailInput.value, password: passwordInput.value })
+      signInButton.setDisable(false)
 
       goToPageAndRenderRoute(routerPathes.documents)
     } catch (error) {
+      if (error instanceof FirebaseError) {
+        const { code } = error
+
+        const errorCode = code as AUTH_ERROR_CODE
+
+        switch (errorCode) {
+          case AUTH_ERROR_CODE.USER_NOT_FOUND:
+            form.setFormError(en.error.userNotFound)
+            return
+          case AUTH_ERROR_CODE.WRONG_PASSWORD:
+            form.setFormError(en.error.wrongPassword)
+            return
+          case AUTH_ERROR_CODE.TOO_MANY_REQUESTS:
+            form.setFormError(en.error.manyFailedLoginAttempts)
+            return
+          default:
+            form.setFormError(en.error.unknownError)
+            return
+        }
+      }
+
+      form.setFormError(en.error.somethingWentWrong)
     } finally {
       signInButton.setLoading(false)
-      signInButton.setDisable(false)
     }
   }
 
   const signInButton = Button({
     textTransform: 'uppercase',
-    children: 'sign in',
+    children: en.button.signIn,
     appearanceType: 'primary',
     weight: 700,
     type: 'submit',
@@ -41,7 +66,7 @@ export const SignIn = () => {
 
   const signUpButton = Link({
     href: routerPathes.signUp,
-    children: 'sign up',
+    children: en.button.signUp,
     textTransform: 'uppercase',
     weight: 700,
     color: 'blue',
@@ -63,17 +88,17 @@ export const SignIn = () => {
     fields: [
       {
         field: emailInput,
-        required: 'Email is required',
+        required: en.form.validation.email.required,
         pattern: {
           value: EMAIL_PATTERN,
-          message: 'Email must match template: example@domain.xxx',
+          message: en.form.validation.email.pattern,
         },
       },
       {
         field: passwordInput,
         minLength: {
           value: 6,
-          message: 'Password is incorrect',
+          message: en.form.validation.password.minLength,
         },
       },
     ],
