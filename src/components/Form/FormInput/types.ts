@@ -10,7 +10,7 @@ export type FormInputProps = {
   placeholder?: string
   weight?: FontWeightKeys
   color?: ColorTextKeys
-  checked: boolean
+  checked?: boolean
 }
 
 export type FormInputCurrentProps = FormInputProps & {
