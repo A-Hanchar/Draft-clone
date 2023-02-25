@@ -1,4 +1,4 @@
 export type ManagedButtonsProps = {
   documentId: string
-  previewDocument: HTMLDivElement
+  handleDocumentDelete: () => void
 }

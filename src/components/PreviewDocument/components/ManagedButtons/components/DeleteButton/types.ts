@@ -1,4 +1,4 @@
 export type DeleteButtonProps = {
   documentId: string
-  previewDocument: HTMLDivElement
+  handleDocumentDelete: () => void
 }

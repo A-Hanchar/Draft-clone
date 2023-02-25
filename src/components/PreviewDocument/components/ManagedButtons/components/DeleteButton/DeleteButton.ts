@@ -4,7 +4,7 @@ import { en } from 'langs'
 
 import { type DeleteButtonProps } from './types'
 
-export const DeleteButton = ({ documentId, previewDocument }: DeleteButtonProps) => {
+export const DeleteButton = ({ documentId, handleDocumentDelete }: DeleteButtonProps) => {
   const handleDeleteDocument = async () => {
     try {
       button.setDisable(true)
@@ -12,7 +12,7 @@ export const DeleteButton = ({ documentId, previewDocument }: DeleteButtonProps)
 
       await deleteDocumentById(documentId)
 
-      previewDocument.remove()
+      handleDocumentDelete()
     } catch (error) {
     } finally {
       button.setDisable(false)

@@ -19,7 +19,11 @@ export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentPr
     ],
   })
 
-  const managedButtons = ManagedButtons({ documentId: id, previewDocument })
+  const handleDocumentDelete = () => {
+    previewDocument.remove()
+  }
+
+  const managedButtons = ManagedButtons({ documentId: id, handleDocumentDelete })
 
   previewDocument.prepend(managedButtons)
 
