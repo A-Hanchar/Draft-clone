@@ -90,6 +90,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "autoprefixer": "^10.4.13",
     "firebase": "^9.17.1",
+    "i18next": "^22.4.10",
     "vite": "^4.0.4",
     "vite-plugin-tsc-watch": "^2.0.1"
   }
