@@ -1,19 +1,18 @@
 import { deleteDocumentById } from 'api'
 import { Button } from 'components/Button'
-import { goToPageAndRenderRoute } from 'helpers'
 import { en } from 'langs'
-import { routerPathes } from 'router'
 
 import { type DeleteButtonProps } from './types'
 
-export const DeleteButton = ({ documentId }: DeleteButtonProps) => {
+export const DeleteButton = ({ documentId, previewDocument }: DeleteButtonProps) => {
   const handleDeleteDocument = async () => {
     try {
       button.setDisable(true)
       button.setLoading(true)
 
       await deleteDocumentById(documentId)
-      goToPageAndRenderRoute(`${routerPathes.documents}`)
+
+      previewDocument.remove()
     } catch (error) {
     } finally {
       button.setDisable(false)

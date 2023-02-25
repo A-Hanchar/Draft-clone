@@ -5,12 +5,11 @@ import { ManagedButtons } from './components'
 import { DocumentDate } from './components/DocumentDate'
 import { type PreviewDocumentProps } from './types'
 
-export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentProps) =>
-  createElementWithClassNameAndAppendNode({
+export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentProps) => {
+  const previewDocument = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
     children: [
-      ManagedButtons({ documentId: id }),
       Text({
         tagName: 'p',
         classname: 'line-clamp-1',
@@ -19,3 +18,10 @@ export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentPr
       DocumentDate({ date }),
     ],
   })
+
+  const managedButtons = ManagedButtons({ documentId: id, previewDocument })
+
+  previewDocument.prepend(managedButtons)
+
+  return previewDocument
+}
