@@ -1,5 +1,5 @@
-import { getDocumentById } from 'api'
 import { Button } from 'components/Button'
+import { exportDocument } from 'helpers'
 
 import { type ExportButtonProps } from './types'
 
@@ -9,22 +9,7 @@ export const ExportButton = ({ documentId }: ExportButtonProps) => {
       button.setDisable(true)
       button.setLoading(true)
 
-      const file = await getDocumentById(documentId)
-
-      const downloadUrl = URL.createObjectURL(file)
-      const downloadLink = document.createElement('a')
-
-      downloadLink.style.display = 'none'
-      downloadLink.href = downloadUrl
-      downloadLink.setAttribute('download', 'draft.txt')
-
-      document.body.appendChild(downloadLink)
-
-      downloadLink.click()
-
-      document.body.removeChild(downloadLink)
-
-      URL.revokeObjectURL(downloadUrl)
+      await exportDocument(documentId)
     } catch {
     } finally {
       button.setDisable(false)
