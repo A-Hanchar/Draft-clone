@@ -1,3 +1,4 @@
+import { getDocumentById } from 'api'
 import { Button } from 'components/Button'
 import { exportDocument } from 'helpers'
 
@@ -9,7 +10,9 @@ export const ExportButton = ({ documentId }: ExportButtonProps) => {
       button.setDisable(true)
       button.setLoading(true)
 
-      await exportDocument(documentId)
+      const file = await getDocumentById(documentId)
+
+      exportDocument(file)
     } catch {
     } finally {
       button.setDisable(false)

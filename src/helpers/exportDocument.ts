@@ -1,8 +1,4 @@
-import { getDocumentById } from 'api'
-
-export const exportDocument = async (documentId: string) => {
-  const file = await getDocumentById(documentId)
-
+export const exportDocument = (file: Blob) => {
   const downloadUrl = URL.createObjectURL(file)
   const downloadLink = document.createElement('a')
 
