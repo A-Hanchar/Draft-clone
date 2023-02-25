@@ -38,7 +38,7 @@ export const Home = () => {
 
   const wrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `${colorsConfig.text.darkGray} flex justify-center items-center h-screen flex-col gap-10`,
+    classname: `${colorsConfig.text.darkGray} flex justify-center items-center h-full flex-col gap-10`,
     children: [titleWrapper, loginLink, quote],
   })
 
