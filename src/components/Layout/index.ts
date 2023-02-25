@@ -1,2 +1,3 @@
 export { Layout } from './Layout'
-export { type LayoutType, type LayoutTypeKeys } from './types'
+export { type LayoutType } from './types'
+export { type ExtendedLayoutProps } from './ExtendedLayout/types'

@@ -1,9 +1,11 @@
+import { en } from 'langs'
+
 import { FormPassword } from './FormPassword'
 import { type FormPasswordWithLabelProps } from './types'
 import { FormLabelWrapper } from '../FormLabelWrapper'
 
 export const FormPasswordWithLabel = ({
-  labelText = 'Password',
+  labelText = en.form.label.password,
   inputProps,
   ...restLabelProps
 }: FormPasswordWithLabelProps) => {

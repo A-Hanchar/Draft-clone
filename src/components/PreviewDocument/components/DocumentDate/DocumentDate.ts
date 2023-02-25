@@ -6,6 +6,7 @@ export const DocumentDate = ({ date }: DocumentDateProps) =>
   Text({
     textTransform: 'uppercase',
     tagName: 'p',
+    // TODO: convert date for languages
     children: date.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',

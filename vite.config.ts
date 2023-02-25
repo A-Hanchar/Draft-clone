@@ -27,6 +27,7 @@ const alias: AliasOptions = getAlias([
   'types',
   'utils',
   'mocks',
+  'langs',
 ])
 
 /**
