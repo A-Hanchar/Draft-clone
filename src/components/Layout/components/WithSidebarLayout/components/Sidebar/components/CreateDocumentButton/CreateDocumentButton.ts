@@ -4,18 +4,25 @@ import { goToPageAndRenderRoute } from 'helpers'
 import { en } from 'langs'
 import { routerPathes } from 'router'
 
-const handleClick = async () => {
-  try {
-    const docId = await createDocument()
+export const CreateDocumentButton = () => {
+  const handleClick = async () => {
+    try {
+      button.setDisable(true)
+      button.setLoading(true)
 
-    if (docId) {
-      goToPageAndRenderRoute(`${routerPathes.documents}/${docId}`)
+      const docId = await createDocument()
+
+      if (docId) {
+        goToPageAndRenderRoute(`${routerPathes.documents}/${docId}`)
+      }
+    } catch (error) {
+    } finally {
+      button.setDisable(false)
+      button.setLoading(false)
     }
-  } catch (error) {}
-}
+  }
 
-export const CreateDocumentButton = () =>
-  Button({
+  const button = Button({
     appearanceType: 'success',
     children: en.button.newDocument,
     textTransform: 'uppercase',
@@ -24,3 +31,6 @@ export const CreateDocumentButton = () =>
     weight: 700,
     onclick: handleClick,
   })
+
+  return button
+}
