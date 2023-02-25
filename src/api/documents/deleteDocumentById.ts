@@ -2,11 +2,9 @@ import { auth, getUserDocumentRef } from 'api'
 
 import { deleteObject } from 'firebase/storage'
 
-export const deleteDocumentById = async (documentId: string) => {
+export const deleteDocumentById = (documentId: string) => {
   if (auth.currentUser) {
-    await deleteObject(getUserDocumentRef(documentId))
-
-    return
+    return deleteObject(getUserDocumentRef(documentId))
   }
 
   throw new Error(`Error at deleting the doc. User is null`)
