@@ -6,6 +6,10 @@ import { DocumentDate } from './components/DocumentDate'
 import { type PreviewDocumentProps } from './types'
 
 export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentProps) => {
+  const handleDocumentDelete = () => {
+    previewDocument.remove()
+  }
+
   const previewDocument = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
@@ -13,19 +17,11 @@ export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentPr
       Text({
         tagName: 'p',
         classname: 'line-clamp-1',
-        children: documentContent,
+        children: [ManagedButtons({ documentId: id, handleDocumentDelete }), documentContent],
       }),
       DocumentDate({ date }),
     ],
   })
-
-  const handleDocumentDelete = () => {
-    previewDocument.remove()
-  }
-
-  const managedButtons = ManagedButtons({ documentId: id, handleDocumentDelete })
-
-  previewDocument.prepend(managedButtons)
 
   return previewDocument
 }
