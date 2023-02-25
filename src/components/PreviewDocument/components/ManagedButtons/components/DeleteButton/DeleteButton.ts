@@ -1,6 +1,7 @@
 import { deleteDocumentById } from 'api'
 import { Button } from 'components/Button'
 import { goToPageAndRenderRoute } from 'helpers'
+import { en } from 'langs'
 import { routerPathes } from 'router'
 
 import { type DeleteButtonProps } from './types'
@@ -22,7 +23,7 @@ export const DeleteButton = ({ documentId }: DeleteButtonProps) => {
 
   const button = Button({
     appearanceType: 'alert',
-    children: 'delete',
+    children: en.button.delete,
     textTransform: 'uppercase',
     weight: 700,
     onclick: handleDeleteDocument,

@@ -1,6 +1,7 @@
 import { createDocument } from 'api'
 import { Button } from 'components/Button'
 import { goToPageAndRenderRoute } from 'helpers'
+import { en } from 'langs'
 import { routerPathes } from 'router'
 
 export const CreateDocumentButton = () => {
@@ -23,7 +24,7 @@ export const CreateDocumentButton = () => {
 
   const button = Button({
     appearanceType: 'success',
-    children: 'New Document',
+    children: en.button.newDocument,
     textTransform: 'uppercase',
     classname: 'self-start',
     rounded: false,

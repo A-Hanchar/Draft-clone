@@ -12,7 +12,7 @@ export const Document = async () => {
 
     const textArea = Form.Textarea({
       classname: 'w-1/2 p-2 h-[90vh] focus:outline-none bg-gray-100 overflow-auto scrollbar-hide',
-      innerText: content,
+      defaultValue: content,
     })
 
     document.addEventListener('keydown', (e) => {

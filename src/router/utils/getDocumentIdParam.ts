@@ -1,5 +1,6 @@
 import { SYMBOL } from 'enums'
 import { urlInstance } from 'helpers'
+import { en } from 'langs'
 import { routerPathes } from 'router/routerPathes'
 
 export const getDocumentIdParam = () => {
@@ -15,5 +16,5 @@ export const getDocumentIdParam = () => {
     }
   }
 
-  throw new Error('pathname must begin with "documents"')
+  throw new Error(en.documentPage.pathnameError)
 }
