@@ -1,10 +1,11 @@
-import { createElementWithClassNameAndAppendNode } from 'helpers'
+import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
+import { type PropsWithClassname } from 'types'
 
 import { CreateDocumentButton } from './components/CreateDocumentButton'
 import { Navigation } from './components/Navigation'
 import { Title } from './components/Title'
 
-export const Sidebar = () => {
+export const Sidebar = ({ classname }: PropsWithClassname) => {
   const titleWithNavigation = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     children: [Title(), Navigation()],
@@ -13,7 +14,7 @@ export const Sidebar = () => {
   const aside = createElementWithClassNameAndAppendNode({
     tagName: 'aside',
     children: [titleWithNavigation, CreateDocumentButton()],
-    classname: 'flex flex-col gap-6 basis-96 md:basis-auto',
+    classname: getTruthyClasses(['flex flex-col gap-6', classname]),
   })
 
   return aside

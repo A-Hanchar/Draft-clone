@@ -7,10 +7,9 @@ import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
 import { en } from 'langs'
 import { DOMObserver } from 'observers'
+import { type PropsWithClassname } from 'types'
 
-import styles from './styles.module.css'
-
-export const Footer = () => {
+export const Footer = ({ classname }: PropsWithClassname) => {
   const links = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex gap-4 md:text-xs',
@@ -51,7 +50,7 @@ export const Footer = () => {
   const footerWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'footer',
     children: [linksWrap, RSLink],
-    classname: getTruthyClasses(['flex', 'items-center', 'justify-around', 'text-sm', styles.footer]),
+    classname: getTruthyClasses(['flex items-center justify-around text-sm', classname]),
   })
 
   DOMObserver.subscribe({
