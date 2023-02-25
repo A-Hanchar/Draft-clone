@@ -6,7 +6,7 @@ import { type FormInputCurrentProps } from './types'
 export const FormInput = ({
   classname,
   id,
-  placeholder = '',
+  placeholder,
   inputType = 'text',
   color = 'darkGray',
   weight = 400,
@@ -29,12 +29,10 @@ export const FormInput = ({
     ]),
   })
 
-  if (id) {
-    input.id = id
-  }
+  if (id) input.id = id
+  if (placeholder) input.placeholder = placeholder
 
   input.type = inputType
-  input.placeholder = placeholder
 
   return input
 }

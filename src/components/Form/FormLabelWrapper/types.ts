@@ -9,5 +9,5 @@ export type FormLabelProps = {
 }
 
 export type FormLabelWrapperProps = FormLabelProps & {
-  children: HTMLInputElement
+  children: HTMLInputElement | HTMLTextAreaElement
 }
