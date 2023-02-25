@@ -2,6 +2,7 @@ import { auth } from 'api'
 import { Body } from 'components/Body'
 import { Layout } from 'components/Layout'
 import { goToPageAndRenderRoute } from 'helpers'
+import { i18n } from 'i18n'
 import { Loading } from 'pages'
 
 import { routerPathes } from './routerPathes'
@@ -9,6 +10,7 @@ import { getRoute } from './utils'
 
 export const renderComponent = () => {
   Body.replaceChildren(Loading())
+  i18n.clearAllManagedNodes()
 
   const route = getRoute()
 
@@ -29,6 +31,7 @@ export const renderComponent = () => {
       const { pageTitle, form } = route
 
       Body.replaceChildren(Layout.Authorization({ titleText: pageTitle, form: form() }))
+      i18n.renderTranslatedText()
 
       return
     }
@@ -36,5 +39,7 @@ export const renderComponent = () => {
     const pageContent = await route.content()
 
     Body.replaceChildren(Layout[route.layoutType ?? 'General']({ children: pageContent }))
+
+    i18n.renderTranslatedText()
   })
 }

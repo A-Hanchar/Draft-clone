@@ -1,12 +1,12 @@
 {
   "homePage": {
     "title": "Пишите лучше с помощью программы drafter",
-    "subTitle": "A Simple Writer's tool",
-    "quote": "\"When I'm not writing on paper, I write with drafter.\""
+    "subTitle": "Простой инструмент писателя",
+    "quote": "\"Когда я не пишу на бумаге, я пишу с помощью черновика.\""
   },
   "notFoundPage": {
-    "error404": "Error: 404",
-    "notFound": "Page Not Fount"
+    "error404": "Ошибка: 404",
+    "notFound": "Страница не найдена"
   },
   "documentPage": {
     "pathnameError": "pathname must begin with \"documents\""
@@ -18,7 +18,7 @@
     "title": "Sign Up to drafter"
   },
   "button": {
-    "login": "Login",
+    "login": "Войти",
     "goHome": "Go Home",
     "newDocument": "New Document",
     "help": "Help",
