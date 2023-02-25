@@ -27,7 +27,8 @@
     "delete": "Delete",
     "open": "Open",
     "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "export": "Export"
   },
   "error": {
     "undefinedError": "undefined error",

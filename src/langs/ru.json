@@ -9,48 +9,49 @@
     "notFound": "Страница не найдена"
   },
   "documentPage": {
-    "pathnameError": "pathname must begin with \"documents\""
+    "pathnameError": "pathname должен начинаться с \"documents\""
   },
   "signInPage": {
-    "title": "Login to drafter"
+    "title": "Войти в drafter"
   },
   "signUpPage": {
-    "title": "Sign Up to drafter"
+    "title": "Зарегистрироваться в drafter"
   },
   "button": {
     "login": "Войти",
-    "goHome": "Go Home",
-    "newDocument": "New Document",
-    "help": "Help",
-    "logOut": "Log Out",
-    "setting": "Settings",
-    "delete": "Delete",
-    "open": "Open",
-    "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "goHome": "Домой",
+    "newDocument": "Новый Документ",
+    "help": "Помощь",
+    "logOut": "Выйти",
+    "setting": "Настройки",
+    "delete": "Удалить",
+    "open": "Открыть",
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "export": "Экспорт"
   },
   "error": {
-    "undefinedError": "undefined error",
-    "userNotFound": "User Not Found",
-    "wrongPassword": "Wrong password",
-    "manyFailedLoginAttempts": "Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.",
-    "unknownError": "Unknown error.",
-    "somethingWentWrong": "Something went wrong",
-    "emailAlreadyInUse": "User with this email exist",
-    "weakPassword": "Password should be at least 6 characters"
+    "undefinedError": "Неизвестная ошибка",
+    "userNotFound": "Пользователь не найден",
+    "wrongPassword": "Неверный пароль",
+    "manyFailedLoginAttempts": "Доступ к этой учетной записи был временно отключен из-за многочисленных неудачных попыток входа. Вы можете немедленно восстановить его, сбросив пароль, или повторить попытку позже.",
+    "unknownError": "Неизвестная ошибка.",
+    "somethingWentWrong": "Что-то пошло не так",
+    "emailAlreadyInUse": "Пользователь с таким email существует",
+    "weakPassword": "Пароль должен состоять не менее чем из 6 символов"
   },
   "gitHubUser": {
     "A-Hanchar": {
       "username": "A-Hanchar",
-      "name": "Artsiom Hanchar"
+      "name": "Артём Гончар"
     },
     "sohodoll": {
       "username": "sohodoll",
-      "name": "Vitaly Kovalev"
+      "name": "Виталий Ковалев"
     },
     "yauheniZabotsin": {
       "username": "yauheniZabotsin",
-      "name": "Yauheni Zabotsin"
+      "name": "Евгений Заботин"
     }
   },
   "form": {
@@ -60,36 +61,36 @@
     },
     "label": {
       "email": "Email",
-      "password": "Password"
+      "password": "Пароль"
     },
     "validation": {
       "email": {
-        "required": "Email is required",
-        "pattern": "Email must match template: example@domain.xxx"
+        "required": "Email обязателен",
+        "pattern": "Email должен соответствовать шаблону: example@domain.xxx"
       },
       "password": {
-        "minLength": "Password is incorrect"
+        "minLength": "Пароль неверный"
       }
     }
   },
   "modal": {
     "help": {
-      "title": "Get In Touch",
-      "content": "Please leave any enquiries or suggestions in the issues tab on "
+      "title": "Свяжитесь С Нами",
+      "content": "Пожалуйста, оставляйте любые вопросы и предложения во вкладке \"Вопросы\" на сайте "
     },
     "settings": {
-      "title": "Settings",
-      "content": "Options"
+      "title": "Настройки",
+      "content": "Опции"
     }
   },
   "authorizationMethod": {
     "google": {
-      "title": "Google Authorization"
+      "title": "Авторизация через Google"
     }
   },
   "copyright": "© 2023",
   "gitHub": "GitHub",
   "rsSchool": "RSS",
   "draft": "Draft",
-  "draftIcon": "Draft Icon"
+  "draftIcon": "Draft Иконка"
 }

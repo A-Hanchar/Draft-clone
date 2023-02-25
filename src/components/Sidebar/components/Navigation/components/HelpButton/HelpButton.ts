@@ -3,30 +3,30 @@ import { Link } from 'components/Link'
 import { Modal } from 'components/Modal'
 import { Text } from 'components/Text'
 import { getTruthyClasses } from 'helpers'
-import { en } from 'langs'
+import { t } from 'i18n'
 import { type PropsWithClassname } from 'types'
 
 export const HelpButton = ({ classname }: PropsWithClassname) => {
   const link = Link({
     classname: 'underline',
     href: 'https://github.com/A-Hanchar/Draft-clone/issues',
-    children: en.gitHub,
+    children: t('gitHub'),
     target: '_blank',
     weight: 700,
   })
 
   const helpText = Text({
     tagName: 'p',
-    children: [en.modal.help.content, link],
+    children: [t('modal.help.content'), link],
   })
 
   const modal = Modal({
     children: helpText,
-    title: en.modal.help.title,
+    title: t('modal.help.title'),
   })
 
   return Button({
-    children: en.button.help,
+    children: t('button.help'),
     appearanceType: 'none',
     color: 'blue',
     weight: 700,

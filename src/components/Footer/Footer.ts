@@ -5,7 +5,7 @@ import { Image } from 'components/Image/Image'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
-import { en } from 'langs'
+import { t } from 'i18n'
 import { DOMObserver } from 'observers'
 import { type PropsWithClassname } from 'types'
 
@@ -14,15 +14,15 @@ export const Footer = ({ classname }: PropsWithClassname) => {
     tagName: 'div',
     classname: 'flex gap-4 md:text-xs',
     children: [
-      GitHubLink({ username: en.gitHubUser['A-Hanchar'].username, name: en.gitHubUser['A-Hanchar'].name }),
-      GitHubLink({ username: en.gitHubUser.yauheniZabotsin.username, name: en.gitHubUser.yauheniZabotsin.name }),
-      GitHubLink({ username: en.gitHubUser.sohodoll.username, name: en.gitHubUser.sohodoll.name }),
+      GitHubLink({ username: t('gitHubUser["A-Hanchar"].username'), name: t('gitHubUser["A-Hanchar"].name') }),
+      GitHubLink({ username: t('gitHubUser.yauheniZabotsin.username'), name: t('gitHubUser.yauheniZabotsin.name') }),
+      GitHubLink({ username: t('gitHubUser.sohodoll.username'), name: t('gitHubUser.sohodoll.name') }),
     ],
   })
 
   const copyright = Text({
     tagName: 'p',
-    children: en.copyright,
+    children: t('copyright'),
     textTransform: 'uppercase',
     weight: 500,
     classname: 'md:text-xs',
@@ -33,7 +33,7 @@ export const Footer = ({ classname }: PropsWithClassname) => {
     children: [links, copyright],
   })
 
-  const gitLogo = Image({ url: gitHubLogo, alt: en.gitHub, classname: 'w-14' })
+  const gitLogo = Image({ url: gitHubLogo, alt: t('gitHub'), classname: 'w-14' })
 
   const linksWrap = createElementWithClassNameAndAppendNode({
     tagName: 'div',
@@ -44,7 +44,7 @@ export const Footer = ({ classname }: PropsWithClassname) => {
   const RSLink = Link({
     href: 'https://rs.school/js/',
     target: '_blank',
-    children: Image({ url: RSSvg, alt: en.rsSchool, classname: 'w-16' }),
+    children: Image({ url: RSSvg, alt: t('rsSchool'), classname: 'w-16' }),
   })
 
   const footerWrapper = createElementWithClassNameAndAppendNode({

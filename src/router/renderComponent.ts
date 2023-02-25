@@ -2,7 +2,6 @@ import { auth } from 'api'
 import { Body } from 'components/Body'
 import { Layout } from 'components/Layout'
 import { goToPageAndRenderRoute } from 'helpers'
-import { i18n } from 'i18n'
 import { Loading } from 'pages'
 
 import { routerPathes } from './routerPathes'
@@ -10,7 +9,6 @@ import { getRoute } from './utils'
 
 export const renderComponent = () => {
   Body.replaceChildren(Loading())
-  i18n.clearAllManagedNodes()
 
   const route = getRoute()
 
@@ -27,37 +25,39 @@ export const renderComponent = () => {
       }
     }
 
-    if (route.layoutType === 'Authorization') {
+    let fullContent: HTMLElement | DocumentFragment | string = ''
+
+    const { layoutType } = route
+
+    if (layoutType === 'Authorization') {
       const { pageTitle, form, extendedLayoutProps } = route
 
-      Body.replaceChildren(
-        Layout.Authorization({
-          titleText: pageTitle,
-          form: form(),
-          withHeader: extendedLayoutProps?.withHeader,
-          withFooter: extendedLayoutProps?.withFooter,
-        }),
-      )
-
-      return
+      fullContent = Layout.Authorization({
+        titleText: pageTitle,
+        form: form(),
+        withHeader: extendedLayoutProps?.withHeader,
+        withFooter: extendedLayoutProps?.withFooter,
+      })
     }
 
-    const pageContent = await route.content()
+    if (layoutType === 'Extended' || layoutType === 'WithSidebar') {
+      const pageContent = await route.content()
 
-    if (route.layoutType === 'Extended' || route.layoutType === 'WithSidebar') {
       const { extendedLayoutProps } = route
 
-      Body.replaceChildren(
-        Layout[route.layoutType]({
-          children: pageContent,
-          withHeader: extendedLayoutProps?.withHeader,
-          withFooter: extendedLayoutProps?.withFooter,
-        }),
-      )
-
-      return
+      fullContent = Layout[route.layoutType]({
+        children: pageContent,
+        withHeader: extendedLayoutProps?.withHeader,
+        withFooter: extendedLayoutProps?.withFooter,
+      })
     }
 
-    Body.replaceChildren(Layout.Simple({ children: pageContent }))
+    if (layoutType === 'Simple') {
+      const pageContent = await route.content()
+
+      fullContent = Layout.Simple({ children: pageContent })
+    }
+
+    Body.replaceChildren(fullContent)
   })
 }

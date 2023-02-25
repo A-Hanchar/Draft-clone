@@ -1,7 +1,7 @@
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { i18n } from 'i18n'
+import { t } from 'i18n'
 import { routerPathes } from 'router'
 import { colorsConfig } from 'variables/css'
 
@@ -11,12 +11,14 @@ export const Home = () => {
     classname: 'text-center text-4xl',
     textTransform: 'uppercase',
     weight: 900,
+    children: t('homePage.title'),
   })
 
   const subTitle = Text({
     tagName: 'h3',
     textTransform: 'uppercase',
     classname: 'text-center text-sm',
+    children: t('homePage.subTitle'),
   })
 
   const titleWrapper = createElementWithClassNameAndAppendNode({ tagName: 'div', children: [title, subTitle] })
@@ -26,11 +28,13 @@ export const Home = () => {
     appearance: 'button',
     appearanceButtonColor: 'primary',
     textTransform: 'uppercase',
+    children: t('button.login'),
   })
 
   const quote = Text({
     tagName: 'p',
     classname: 'text-base text-center',
+    children: t('homePage.quote'),
   })
 
   const wrapper = createElementWithClassNameAndAppendNode({
@@ -38,25 +42,6 @@ export const Home = () => {
     classname: `${colorsConfig.text.darkGray} flex justify-center items-center h-full flex-col gap-10`,
     children: [titleWrapper, loginLink, quote],
   })
-
-  i18n.subscribeManagedNode([
-    {
-      node: title,
-      translatedKey: 'homePage.title',
-    },
-    {
-      node: subTitle,
-      translatedKey: 'homePage.subTitle',
-    },
-    {
-      node: loginLink,
-      translatedKey: 'button.login',
-    },
-    {
-      node: quote,
-      translatedKey: 'homePage.quote',
-    },
-  ])
 
   return wrapper
 }

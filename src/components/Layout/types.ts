@@ -10,3 +10,5 @@ export type LayoutType = {
   Authorization: typeof AuthorizationLayout
   Extended: typeof ExtendedLayout
 }
+
+export type LayoutTypeKeys = keyof LayoutType
