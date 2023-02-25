@@ -3,15 +3,15 @@ import { PathElement } from '../SVGContainer/component'
 import { linkW3OrgSVG } from '../SVGContainer/constants'
 import { type SVGProps } from '../type'
 
-export const Home = ({ fill, width, height, classname = '' }: SVGProps) => {
+export const Home = ({ fill, width, height, classname = '', alt }: SVGProps) => {
   const svg = SVGElement({
     fill,
     width,
     height,
     viewBox: '0 0 1280.000000 1206.000000',
-
     classname: `fill-black dark:fill-white ${classname}`,
   })
+  svg.setAttribute('alt', alt)
 
   const SvgG = document.createElementNS(linkW3OrgSVG, 'g')
   SvgG.setAttribute('transform', 'translate(0.000000,1206.000000) scale(0.100000,-0.100000)')
