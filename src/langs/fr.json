@@ -1,0 +1,101 @@
+{
+  "homePage": {
+    "title": "Écrire mieux avec drafter",
+    "subTitle": "Un outil simple pour les écrivains",
+    "quote": "\"Quand je n'écris pas sur le papier, j'écris avec le dessinateur.\""
+  },
+  "notFoundPage": {
+    "error404": "Erreur : 404",
+    "notFound": "Page non trouvée"
+  },
+  "documentPage": {
+    "pathnameError": "Le nom du chemin doit commencer par \"documents\""
+  },
+  "signInPage": {
+    "title": "Se connecter à drafter"
+  },
+  "signUpPage": {
+    "title": "S'inscrire à drafter"
+  },
+  "button": {
+    "goHome": "Rentrer à la maison",
+    "newDocument": "Nouveau document",
+    "help": "Aide",
+    "setting": "Paramètres",
+    "delete": "Supprimer",
+    "open": "Ouvrir",
+    "export": "Exportation",
+    "logOut": "Déconnexion",
+    "login": "Connexion"
+  },
+  "error": {
+    "undefinedError": "erreur indéfinie",
+    "userNotFound": "Utilisateur non trouvé",
+    "wrongPassword": "Mot de passe erroné",
+    "manyFailedLoginAttempts": "L'accès à ce compte a été temporairement désactivé en raison de nombreuses tentatives de connexion infructueuses. Vous pouvez le rétablir immédiatement en réinitialisant votre mot de passe ou vous pouvez réessayer plus tard.",
+    "unknownError": "Erreur inconnue.",
+    "somethingWentWrong": "Quelque chose a mal tourné",
+    "emailAlreadyInUse": "L'utilisateur avec cet email existe",
+    "weakPassword": "Le mot de passe doit comporter au moins 6 caractères"
+  },
+  "gitHubUser": {
+    "A-Hanchar": {
+      "username": "A-Hanchar",
+      "name": "Artsiom Hanchar"
+    },
+    "sohodoll": {
+      "username": "sohodoll",
+      "name": "Vitaly Kovalev"
+    },
+    "yauheniZabotsin": {
+      "username": "yauheniZabotsin",
+      "name": "Yauheni Zabotsin"
+    }
+  },
+  "form": {
+    "placeholder": {
+      "email": "apple@google.com",
+      "password": "******************"
+    },
+    "label": {
+      "email": "Courriel",
+      "password": "Mot de passe"
+    },
+    "validation": {
+      "email": {
+        "required": "L'adresse électronique est obligatoire",
+        "pattern": "L'e-mail doit correspondre au modèle: example@domain.xxx"
+      },
+      "password": {
+        "minLength": "Le mot de passe est incorrect"
+      }
+    },
+    "signIn": {
+      "signInButton": "S'inscrire",
+      "signUpButton": "S'inscrire"
+    },
+    "signUp": {
+      "signInButton": "S'inscrire",
+      "signUpButton": "S'inscrire"
+    }
+  },
+  "modal": {
+    "help": {
+      "title": "Prendre contact",
+      "content": "Veuillez laisser toute question ou suggestion dans l'onglet \"Questions\" sur "
+    },
+    "settings": {
+      "title": "Paramètres"
+    }
+  },
+  "authorizationMethod": {
+    "google": {
+      "title": "Autorisation de Google"
+    }
+  },
+  "copyright": "© 2023",
+  "gitHub": "GitHub",
+  "rsSchool": "RSS",
+  "draft": "Draft",
+  "draftIcon": "Draft Icône"
+}

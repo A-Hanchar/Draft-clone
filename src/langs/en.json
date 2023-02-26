@@ -6,7 +6,7 @@
   },
   "notFoundPage": {
     "error404": "Error: 404",
-    "notFound": "Page Not Fount"
+    "notFound": "Page Not Found"
   },
   "documentPage": {
     "pathnameError": "pathname must begin with \"documents\""
