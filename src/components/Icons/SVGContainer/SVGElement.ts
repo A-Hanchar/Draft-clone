@@ -1,26 +1,26 @@
-import { addClassnameToElement } from 'helpers'
+import { getTruthyClasses } from 'helpers'
 
-import { initialFillColor, initialHeight, initialStroke, initialViewBox, initialWidth, linkW3OrgSVG } from './constants'
-import { converterPxToRem } from './converterPxToRem'
+import { converterPxToRem } from 'utils/converterPxToRem'
+import { FillConfig } from 'variables/css/SVG/fillSVG'
+
+import { initialHeight, initialViewBox, initialWidth, linkW3OrgSVG } from './constants'
 import { type SVGElementProps } from './type'
 
 export const SVGElement = ({
-  fill = initialFillColor,
+  fill = FillConfig.light.black,
   height = initialHeight,
   width = initialWidth,
   viewBox = initialViewBox,
-  stroke = initialStroke,
+  stroke,
   classname,
 }: SVGElementProps) => {
   const iconSvg = document.createElementNS(linkW3OrgSVG, 'svg')
 
-  iconSvg.setAttribute('fill', fill)
   iconSvg.setAttribute('viewBox', viewBox)
-  iconSvg.setAttribute('stroke', stroke)
   iconSvg.setAttribute('width', converterPxToRem(width))
   iconSvg.setAttribute('height', converterPxToRem(height))
 
-  addClassnameToElement({ element: iconSvg, classname })
+  iconSvg.setAttribute('class', getTruthyClasses([fill, stroke, classname]))
 
   return iconSvg
 }

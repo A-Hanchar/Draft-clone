@@ -4,7 +4,7 @@ import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { en } from 'langs'
 
 export const Title = () => {
-  const iconHome = Home({ alt: en.draftIcon })
+  const iconHome = Home({})
   const title = Text({ tagName: 'h2', children: en.draft, weight: 700 })
 
   return createElementWithClassNameAndAppendNode({
