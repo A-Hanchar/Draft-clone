@@ -9,7 +9,8 @@
     "notFound": "Страница не найдена"
   },
   "documentPage": {
-    "pathnameError": "pathname должен начинаться с \"documents\""
+    "pathnameError": "pathname должен начинаться с \"documents\"",
+    "documentPlaceholder": "начать печатать..."
   },
   "signInPage": {
     "title": "Войти в drafter"
@@ -26,7 +27,8 @@
     "open": "Открыть",
     "export": "Экспорт",
     "logOut": "Выйти",
-    "login": "Войти"
+    "login": "Войти",
+    "toDocuments": "К документам"
   },
   "error": {
     "undefinedError": "Неизвестная ошибка",
