@@ -17,7 +17,7 @@ export const Document = async () => {
     appearanceType: 'primary',
     children: t('button.toDocuments'),
     textTransform: 'uppercase',
-    classname: 'grow-0 h-10 max-w-[12rem]',
+    classname: 'h-10 max-w-[12rem]',
     weight: 700,
     onclick: toDocuments,
   })
