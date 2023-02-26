@@ -22,6 +22,8 @@ export const renderComponent = () => {
     if (route.isProtected && path !== routerPathes.home) {
       if (!user) {
         goToPageAndRenderRoute(routerPathes.home)
+
+        return
       }
     }
 
