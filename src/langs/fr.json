@@ -79,6 +79,9 @@
       "signUpButton": "S'inscrire"
     }
   },
+  "textarea": {
+    "placeholder": "commencer à taper..."
+  },
   "modal": {
     "help": {
       "title": "Prendre contact",

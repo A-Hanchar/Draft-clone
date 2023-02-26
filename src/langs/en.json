@@ -79,6 +79,9 @@
       "signUpButton": "Sign Up"
     }
   },
+  "textarea": {
+    "placeholder": "start typing..."
+  },
   "modal": {
     "help": {
       "title": "Get In Touch",

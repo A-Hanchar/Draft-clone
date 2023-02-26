@@ -79,6 +79,9 @@
       "signUpButton": "Регистрация"
     }
   },
+  "textarea": {
+    "placeholder": "начать печатать..."
+  },
   "modal": {
     "help": {
       "title": "Свяжитесь С Нами",
