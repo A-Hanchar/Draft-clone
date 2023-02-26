@@ -1,5 +1,5 @@
 import { SYMBOL } from 'enums'
-import { urlInstance } from 'helpers'
+import { urlInstance } from 'instances'
 import { rootRoute, type RouterOwnObject, routerPathes, notFoundRoute, router } from 'router'
 
 export const getRoute = () => {

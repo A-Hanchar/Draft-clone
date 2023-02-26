@@ -1,1 +1,0 @@
-export { urlInstance } from './urlInstance'
