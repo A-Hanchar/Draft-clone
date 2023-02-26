@@ -26,7 +26,8 @@
     "open": "Open",
     "export": "Export",
     "logOut": "Log Out",
-    "login": "Login"
+    "login": "Login",
+    "toDocuments": "To Documents"
   },
   "error": {
     "undefinedError": "undefined error",

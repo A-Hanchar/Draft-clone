@@ -26,7 +26,8 @@
     "open": "Открыть",
     "export": "Экспорт",
     "logOut": "Выйти",
-    "login": "Войти"
+    "login": "Войти",
+    "toDocuments": "К документам"
   },
   "error": {
     "undefinedError": "Неизвестная ошибка",

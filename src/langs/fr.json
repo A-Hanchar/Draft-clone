@@ -26,7 +26,8 @@
     "open": "Ouvrir",
     "export": "Exportation",
     "logOut": "Déconnexion",
-    "login": "Connexion"
+    "login": "Connexion",
+    "toDocuments": "Aux documents"
   },
   "error": {
     "undefinedError": "erreur indéfinie",

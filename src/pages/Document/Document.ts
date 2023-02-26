@@ -15,7 +15,7 @@ export const Document = async () => {
 
   const toDocumentsButton = Button({
     appearanceType: 'primary',
-    children: 'to documents',
+    children: t('button.toDocuments'),
     textTransform: 'uppercase',
     classname: 'grow-0 h-10 max-w-[12rem]',
     weight: 700,
@@ -26,7 +26,7 @@ export const Document = async () => {
     const content = await getDocumentContentById(documentId)
 
     const textArea = Form.Textarea({
-      classname: 'w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none bg-gray-100 overflow-auto scrollbar-hide mx-auto',
+      classname: 'w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none bg-gray-100 overflow: visible scrollbar-hide mx-auto',
       defaultValue: content,
       placeholder: t('textarea.placeholder'),
     })
@@ -40,7 +40,7 @@ export const Document = async () => {
 
     return createElementWithClassNameAndAppendNode({
       tagName: 'div',
-      classname: 'flex justify-center p-10 md:flex-col md:items-center',
+      classname: 'flex justify-center gap-4 p-10 md:flex-col md:items-center',
       children: [toDocumentsButton, textArea],
     })
   } catch (error) {
