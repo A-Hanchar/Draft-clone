@@ -1,0 +1,101 @@
+{
+  "homePage": {
+    "title": "Пишите Лучше С Drafter",
+    "subTitle": "Простой инструмент писателя",
+    "quote": "\"Когда я не пишу на бумаге, я пишу с помощью черновика.\""
+  },
+  "notFoundPage": {
+    "error404": "Ошибка: 404",
+    "notFound": "Страница не найдена"
+  },
+  "documentPage": {
+    "pathnameError": "pathname должен начинаться с \"documents\""
+  },
+  "signInPage": {
+    "title": "Войти в drafter"
+  },
+  "signUpPage": {
+    "title": "Зарегистрироваться в drafter"
+  },
+  "button": {
+    "goHome": "Домой",
+    "newDocument": "Новый Документ",
+    "help": "Помощь",
+    "setting": "Настройки",
+    "delete": "Удалить",
+    "open": "Открыть",
+    "export": "Экспорт",
+    "logOut": "Выйти",
+    "login": "Войти"
+  },
+  "error": {
+    "undefinedError": "Неизвестная ошибка",
+    "userNotFound": "Пользователь не найден",
+    "wrongPassword": "Неверный пароль",
+    "manyFailedLoginAttempts": "Доступ к этой учетной записи был временно отключен из-за многочисленных неудачных попыток входа. Вы можете немедленно восстановить его, сбросив пароль, или повторить попытку позже.",
+    "unknownError": "Неизвестная ошибка.",
+    "somethingWentWrong": "Что-то пошло не так",
+    "emailAlreadyInUse": "Пользователь с таким email существует",
+    "weakPassword": "Пароль должен состоять не менее чем из 6 символов"
+  },
+  "gitHubUser": {
+    "A-Hanchar": {
+      "username": "A-Hanchar",
+      "name": "Артём Гончар"
+    },
+    "sohodoll": {
+      "username": "sohodoll",
+      "name": "Виталий Ковалев"
+    },
+    "yauheniZabotsin": {
+      "username": "yauheniZabotsin",
+      "name": "Евгений Заботин"
+    }
+  },
+  "form": {
+    "placeholder": {
+      "email": "apple@google.com",
+      "password": "******************"
+    },
+    "label": {
+      "email": "Email",
+      "password": "Пароль"
+    },
+    "validation": {
+      "email": {
+        "required": "Email обязателен",
+        "pattern": "Email должен соответствовать шаблону: example@domain.xxx"
+      },
+      "password": {
+        "minLength": "Пароль неверный"
+      }
+    },
+    "signIn": {
+      "signInButton": "Войти",
+      "signUpButton": "Регистрация"
+    },
+    "signUp": {
+      "signInButton": "Вход",
+      "signUpButton": "Регистрация"
+    }
+  },
+  "modal": {
+    "help": {
+      "title": "Свяжитесь С Нами",
+      "content": "Пожалуйста, оставляйте любые вопросы и предложения во вкладке \"Вопросы\" на сайте "
+    },
+    "settings": {
+      "title": "Настройки"
+    }
+  },
+  "authorizationMethod": {
+    "google": {
+      "title": "Авторизация через Google"
+    }
+  },
+  "copyright": "© 2023",
+  "gitHub": "GitHub",
+  "rsSchool": "RSS",
+  "draft": "Draft",
+  "draftIcon": "Draft Иконка"
+}

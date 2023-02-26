@@ -1,6 +1,6 @@
 import { deleteDocumentById } from 'api'
 import { Button } from 'components/Button'
-import { en } from 'langs'
+import { t } from 'i18n'
 
 import { type DeleteButtonProps } from './types'
 
@@ -22,7 +22,7 @@ export const DeleteButton = ({ documentId, onClick }: DeleteButtonProps) => {
 
   const button = Button({
     appearanceType: 'alert',
-    children: en.button.delete,
+    children: t('button.delete'),
     textTransform: 'uppercase',
     weight: 700,
     onclick: handleDeleteDocument,

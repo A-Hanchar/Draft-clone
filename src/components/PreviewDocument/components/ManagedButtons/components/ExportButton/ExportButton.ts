@@ -1,6 +1,7 @@
 import { getDocumentById } from 'api'
 import { Button } from 'components/Button'
 import { exportDocument } from 'helpers'
+import { t } from 'i18n'
 
 import { type ExportButtonProps } from './types'
 
@@ -22,7 +23,7 @@ export const ExportButton = ({ documentId }: ExportButtonProps) => {
 
   const button = Button({
     appearanceType: 'primary',
-    children: 'Export',
+    children: t('button.export'),
     textTransform: 'uppercase',
     weight: 700,
     onclick: handleDocumentExport,

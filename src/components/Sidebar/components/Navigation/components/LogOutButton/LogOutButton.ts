@@ -1,7 +1,7 @@
 import { signOut } from 'api/auth'
 import { Button } from 'components/Button'
 import { getTruthyClasses, goToPageAndRenderRoute } from 'helpers'
-import { en } from 'langs'
+import { t } from 'i18n'
 import { routerPathes } from 'router'
 import { type PropsWithClassname } from 'types'
 
@@ -13,7 +13,7 @@ export const LogOutButton = ({ classname }: PropsWithClassname) => {
   }
 
   const logOutButton = Button({
-    children: en.button.logOut,
+    children: t('button.logOut'),
     appearanceType: 'none',
     color: 'blue',
     weight: 700,

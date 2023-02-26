@@ -1,7 +1,7 @@
 import './index.css'
 
 import { KEYS } from 'enums'
-import { darkInstance } from 'helpers/instances/StorageInstance'
+import { darkInstance } from 'instances/StorageInstance'
 import { renderComponent } from 'router'
 
 window.addEventListener('load', renderComponent)

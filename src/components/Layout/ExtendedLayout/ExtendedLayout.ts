@@ -11,7 +11,7 @@ import { type ExtendedLayoutOwnProps } from './types'
 export const ExtendedLayout = ({
   children,
   withFooter,
-  withHeader,
+  withHeader = true,
   mainNodeProps,
   bodyNodeProps,
 }: ExtendedLayoutOwnProps) => {

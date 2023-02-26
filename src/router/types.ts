@@ -1,21 +1,21 @@
-import { type ExtendedLayoutProps, type LayoutType } from 'components/Layout'
+import { type ExtendedLayoutProps, type LayoutTypeKeys } from 'components/Layout'
 
 type ContentComponent = () => Node | Promise<Node>
 
 type RouteWithAuthorizationLayout = {
-  layoutType: Extract<keyof LayoutType, 'Authorization'>
-  pageTitle: string
+  layoutType: Extract<LayoutTypeKeys, 'Authorization'>
+  titleTranslateKey: string
   form: () => HTMLFormElement
   extendedLayoutProps?: ExtendedLayoutProps
 }
 
 type RouteWithSimpleLayout = {
-  layoutType: Extract<keyof LayoutType, 'Simple'>
+  layoutType: Extract<LayoutTypeKeys, 'Simple'>
   content: ContentComponent
 }
 
 type RouteWithExtensibleLayout = {
-  layoutType: Extract<keyof LayoutType, 'WithSidebar' | 'Extended'>
+  layoutType: Extract<LayoutTypeKeys, 'WithSidebar' | 'Extended'>
   content: ContentComponent
   extendedLayoutProps?: ExtendedLayoutProps
 }

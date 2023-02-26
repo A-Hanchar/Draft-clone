@@ -3,8 +3,8 @@ import { Drawer } from 'components/Drawer'
 import { ToggleSwitch } from 'components/ToggleSwitch'
 import { KEYS } from 'enums'
 import { getTruthyClasses, toggleClassnameToElement } from 'helpers'
-import { darkInstance } from 'helpers/instances/StorageInstance'
-import { en } from 'langs'
+import { t } from 'i18n'
+import { darkInstance } from 'instances/StorageInstance'
 import { type PropsWithClassname } from 'types'
 
 export const SettingButton = ({ classname }: PropsWithClassname) => {
@@ -23,11 +23,11 @@ export const SettingButton = ({ classname }: PropsWithClassname) => {
 
   const modal = Drawer({
     children: dark,
-    title: en.modal.settings.title,
+    title: t('modal.settings.title'),
   })
 
   return Button({
-    children: en.button.setting,
+    children: t('button.setting'),
     appearanceType: 'none',
     color: 'blue',
     weight: 700,

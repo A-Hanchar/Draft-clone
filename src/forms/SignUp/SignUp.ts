@@ -5,7 +5,7 @@ import { Link } from 'components/Link'
 import { AUTH_ERROR_CODE } from 'enums'
 import { FirebaseError } from 'firebase/app'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
-import { en } from 'langs'
+import { t } from 'i18n'
 import { routerPathes } from 'router'
 import { EMAIL_PATTERN } from 'utils'
 
@@ -35,18 +35,18 @@ export const SignUp = () => {
 
         switch (errorCode) {
           case AUTH_ERROR_CODE.EMAIL_ALREADY_IN_USE:
-            form.setFormError(en.error.emailAlreadyInUse)
+            form.setFormError(t('error.emailAlreadyInUse'))
             return
           case AUTH_ERROR_CODE.WEAK_PASSWORD:
-            form.setFormError(en.error.weakPassword)
+            form.setFormError(t('error.weakPassword'))
             return
           default:
-            form.setFormError(en.error.unknownError)
+            form.setFormError(t('error.unknownError'))
             return
         }
       }
 
-      form.setFormError(en.error.somethingWentWrong)
+      form.setFormError(t('error.somethingWentWrong'))
     } finally {
       signUpButton.setLoading(false)
     }
@@ -54,7 +54,7 @@ export const SignUp = () => {
 
   const signUpButton = Button({
     textTransform: 'uppercase',
-    children: en.button.signUp,
+    children: t('form.signUp.signUpButton'),
     appearanceType: 'primary',
     weight: 700,
     type: 'submit',
@@ -62,7 +62,7 @@ export const SignUp = () => {
 
   const signInButton = Link({
     href: routerPathes.signIn,
-    children: en.button.signIn,
+    children: t('form.signIn.signInButton'),
     textTransform: 'uppercase',
     weight: 700,
     color: 'blue',
@@ -84,17 +84,17 @@ export const SignUp = () => {
     fields: [
       {
         field: emailInput,
-        required: en.form.validation.email.required,
+        required: t('form.validation.email.required'),
         pattern: {
           value: EMAIL_PATTERN,
-          message: en.form.validation.email.pattern,
+          message: t('form.validation.email.pattern'),
         },
       },
       {
         field: passwordInput,
         minLength: {
           value: 6,
-          message: en.form.validation.password.minLength,
+          message: t('form.validation.password.minLength'),
         },
       },
     ],

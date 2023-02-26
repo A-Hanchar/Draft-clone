@@ -25,37 +25,39 @@ export const renderComponent = () => {
       }
     }
 
-    if (route.layoutType === 'Authorization') {
-      const { pageTitle, form, extendedLayoutProps } = route
+    let fullContent: HTMLElement | DocumentFragment | string = ''
 
-      Body.replaceChildren(
-        Layout.Authorization({
-          titleText: pageTitle,
-          form: form(),
-          withHeader: extendedLayoutProps?.withHeader,
-          withFooter: extendedLayoutProps?.withFooter,
-        }),
-      )
+    const { layoutType } = route
 
-      return
+    if (layoutType === 'Authorization') {
+      const { titleTranslateKey, form, extendedLayoutProps } = route
+
+      fullContent = Layout.Authorization({
+        titleTranslateKey,
+        form: form(),
+        withHeader: extendedLayoutProps?.withHeader,
+        withFooter: extendedLayoutProps?.withFooter,
+      })
     }
 
-    const pageContent = await route.content()
+    if (layoutType === 'Extended' || layoutType === 'WithSidebar') {
+      const pageContent = await route.content()
 
-    if (route.layoutType === 'Extended' || route.layoutType === 'WithSidebar') {
       const { extendedLayoutProps } = route
 
-      Body.replaceChildren(
-        Layout[route.layoutType]({
-          children: pageContent,
-          withHeader: extendedLayoutProps?.withHeader,
-          withFooter: extendedLayoutProps?.withFooter,
-        }),
-      )
-
-      return
+      fullContent = Layout[route.layoutType]({
+        children: pageContent,
+        withHeader: extendedLayoutProps?.withHeader,
+        withFooter: extendedLayoutProps?.withFooter,
+      })
     }
 
-    Body.replaceChildren(Layout.Simple({ children: pageContent }))
+    if (layoutType === 'Simple') {
+      const pageContent = await route.content()
+
+      fullContent = Layout.Simple({ children: pageContent })
+    }
+
+    Body.replaceChildren(fullContent)
   })
 }

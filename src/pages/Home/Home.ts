@@ -1,7 +1,7 @@
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
-import { en } from 'langs'
+import { t } from 'i18n'
 import { routerPathes } from 'router'
 import { colorsConfig } from 'variables/css'
 
@@ -9,31 +9,32 @@ export const Home = () => {
   const title = Text({
     tagName: 'h1',
     classname: 'text-center text-4xl',
-    children: en.homePage.title,
     textTransform: 'uppercase',
     weight: 900,
+    children: t('homePage.title'),
   })
 
   const subTitle = Text({
     tagName: 'h3',
-    children: en.homePage.subTitle,
     textTransform: 'uppercase',
     classname: 'text-center text-sm',
+    children: t('homePage.subTitle'),
   })
 
   const titleWrapper = createElementWithClassNameAndAppendNode({ tagName: 'div', children: [title, subTitle] })
+
   const loginLink = Link({
-    children: en.button.login,
     href: routerPathes.signIn,
     appearance: 'button',
     appearanceButtonColor: 'primary',
     textTransform: 'uppercase',
+    children: t('button.login'),
   })
 
   const quote = Text({
     tagName: 'p',
-    children: en.homePage.quote,
     classname: 'text-base text-center',
+    children: t('homePage.quote'),
   })
 
   const wrapper = createElementWithClassNameAndAppendNode({
