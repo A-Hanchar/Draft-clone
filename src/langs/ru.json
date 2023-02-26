@@ -9,7 +9,8 @@
     "notFound": "Страница не найдена"
   },
   "documentPage": {
-    "pathnameError": "pathname должен начинаться с \"documents\""
+    "pathnameError": "pathname должен начинаться с \"documents\"",
+    "documentPlaceholder": "начать печатать..."
   },
   "signInPage": {
     "title": "Войти в drafter"
@@ -79,9 +80,6 @@
       "signInButton": "Вход",
       "signUpButton": "Регистрация"
     }
-  },
-  "textarea": {
-    "placeholder": "начать печатать..."
   },
   "modal": {
     "help": {

@@ -9,7 +9,8 @@
     "notFound": "Page non trouvée"
   },
   "documentPage": {
-    "pathnameError": "Le nom du chemin doit commencer par \"documents\""
+    "pathnameError": "Le nom du chemin doit commencer par \"documents\"",
+    "documentPlaceholder": "commencer à taper..."
   },
   "signInPage": {
     "title": "Se connecter à drafter"
@@ -79,9 +80,6 @@
       "signInButton": "S'inscrire",
       "signUpButton": "S'inscrire"
     }
-  },
-  "textarea": {
-    "placeholder": "commencer à taper..."
   },
   "modal": {
     "help": {

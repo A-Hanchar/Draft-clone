@@ -28,7 +28,7 @@ export const Document = async () => {
     const textArea = Form.Textarea({
       classname: 'w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none bg-gray-100 overflow: visible scrollbar-hide mx-auto',
       defaultValue: content,
-      placeholder: t('textarea.placeholder'),
+      placeholder: t('documentPage.documentPlaceholder'),
     })
 
     document.addEventListener('keydown', (e) => {
