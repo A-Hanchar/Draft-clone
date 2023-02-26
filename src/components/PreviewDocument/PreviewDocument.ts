@@ -10,14 +10,20 @@ export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentPr
     previewDocument.remove()
   }
 
+  const previewText = Text({
+    tagName: 'p',
+    children: documentContent,
+    classname: 'max-w-[24rem] md:max-w-[18rem] sm:max-w-[12rem]',
+  })
+
   const previewDocument = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
     children: [
-      Text({
-        tagName: 'p',
+      createElementWithClassNameAndAppendNode({
+        tagName: 'div',
         classname: 'line-clamp-1',
-        children: [ManagedButtons({ documentId: id, handleDocumentDelete }), documentContent],
+        children: [ManagedButtons({ documentId: id, handleDocumentDelete }), previewText],
       }),
       DocumentDate({ date }),
     ],
