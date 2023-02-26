@@ -1,5 +1,6 @@
 import { Menu, type MenuItemsList, type MenuItem } from 'components/Menu'
 import { changeLanguage, getLanguage, LANGUAGE } from 'i18n'
+import { localStorageInstanse } from 'instances'
 
 export const ToggleLanguage = () => {
   const menuItems: MenuItemsList<LANGUAGE> = [
@@ -14,6 +15,7 @@ export const ToggleLanguage = () => {
     const currentLanguage = getLanguage()
 
     if (currentLanguage !== key) {
+      localStorageInstanse.setLanguage(key)
       changeLanguage(key)
     }
   }

@@ -1,6 +1,6 @@
 import { SYMBOL } from 'enums'
-import { urlInstance } from 'helpers'
 import { t } from 'i18n'
+import { urlInstance } from 'instances'
 import { routerPathes } from 'router/routerPathes'
 
 export const getDocumentIdParam = () => {
