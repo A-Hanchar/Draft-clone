@@ -1,6 +1,6 @@
 {
   "homePage": {
-    "title": "Пишите лучше с помощью программы drafter",
+    "title": "Пишите Лучше С Drafter",
     "subTitle": "Простой инструмент писателя",
     "quote": "\"Когда я не пишу на бумаге, я пишу с помощью черновика.\""
   },
@@ -18,17 +18,15 @@
     "title": "Зарегистрироваться в drafter"
   },
   "button": {
-    "login": "Войти",
     "goHome": "Домой",
     "newDocument": "Новый Документ",
     "help": "Помощь",
-    "logOut": "Выйти",
     "setting": "Настройки",
     "delete": "Удалить",
     "open": "Открыть",
-    "signIn": "Войти",
-    "signUp": "Регистрация",
-    "export": "Экспорт"
+    "export": "Экспорт",
+    "logOut": "Выйти",
+    "login": "Войти"
   },
   "error": {
     "undefinedError": "Неизвестная ошибка",
@@ -71,6 +69,14 @@
       "password": {
         "minLength": "Пароль неверный"
       }
+    },
+    "signIn": {
+      "signInButton": "Войти",
+      "signUpButton": "Регистрация"
+    },
+    "signUp": {
+      "signInButton": "Вход",
+      "signUpButton": "Регистрация"
     }
   },
   "modal": {
@@ -79,8 +85,7 @@
       "content": "Пожалуйста, оставляйте любые вопросы и предложения во вкладке \"Вопросы\" на сайте "
     },
     "settings": {
-      "title": "Настройки",
-      "content": "Опции"
+      "title": "Настройки"
     }
   },
   "authorizationMethod": {

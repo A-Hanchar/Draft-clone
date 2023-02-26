@@ -4,7 +4,7 @@ type ContentComponent = () => Node | Promise<Node>
 
 type RouteWithAuthorizationLayout = {
   layoutType: Extract<LayoutTypeKeys, 'Authorization'>
-  pageTitle: string
+  titleTranslateKey: string
   form: () => HTMLFormElement
   extendedLayoutProps?: ExtendedLayoutProps
 }

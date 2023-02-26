@@ -30,10 +30,10 @@ export const renderComponent = () => {
     const { layoutType } = route
 
     if (layoutType === 'Authorization') {
-      const { pageTitle, form, extendedLayoutProps } = route
+      const { titleTranslateKey, form, extendedLayoutProps } = route
 
       fullContent = Layout.Authorization({
-        titleText: pageTitle,
+        titleTranslateKey,
         form: form(),
         withHeader: extendedLayoutProps?.withHeader,
         withFooter: extendedLayoutProps?.withFooter,

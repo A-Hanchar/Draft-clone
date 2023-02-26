@@ -1,6 +1,5 @@
 import { SignIn } from 'forms/SignIn'
 import { SignUp } from 'forms/SignUp'
-import { t } from 'i18n'
 import { Document, Documents, Home, NotFound } from 'pages'
 
 import { routerPathes } from './routerPathes'
@@ -24,13 +23,13 @@ export const router: RouterOwnObject[] = [
     path: routerPathes.signIn,
     form: SignIn,
     layoutType: 'Authorization',
-    pageTitle: t('signInPage.title'),
+    titleTranslateKey: 'signInPage.title',
   },
   {
     path: routerPathes.signUp,
     form: SignUp,
     layoutType: 'Authorization',
-    pageTitle: t('signUpPage.title'),
+    titleTranslateKey: 'signUpPage.title',
   },
   {
     path: routerPathes.documents,

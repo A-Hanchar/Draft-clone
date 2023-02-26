@@ -18,17 +18,15 @@
     "title": "Sign Up to drafter"
   },
   "button": {
-    "login": "Login",
     "goHome": "Go Home",
     "newDocument": "New Document",
     "help": "Help",
-    "logOut": "Log Out",
     "setting": "Settings",
     "delete": "Delete",
     "open": "Open",
-    "signIn": "Sign In",
-    "signUp": "Sign Up",
-    "export": "Export"
+    "export": "Export",
+    "logOut": "Log Out",
+    "login": "Login"
   },
   "error": {
     "undefinedError": "undefined error",
@@ -71,6 +69,14 @@
       "password": {
         "minLength": "Password is incorrect"
       }
+    },
+    "signIn": {
+      "signInButton": "Sign In",
+      "signUpButton": "Sign Up"
+    },
+    "signUp": {
+      "signInButton": "Sign In",
+      "signUpButton": "Sign Up"
     }
   },
   "modal": {
@@ -79,8 +85,7 @@
       "content": "Please leave any enquiries or suggestions in the issues tab on "
     },
     "settings": {
-      "title": "Settings",
-      "content": "Options"
+      "title": "Settings"
     }
   },
   "authorizationMethod": {

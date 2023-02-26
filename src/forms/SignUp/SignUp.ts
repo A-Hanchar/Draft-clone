@@ -54,7 +54,7 @@ export const SignUp = () => {
 
   const signUpButton = Button({
     textTransform: 'uppercase',
-    children: t('button.signUp'),
+    children: t('form.signUp.signUpButton'),
     appearanceType: 'primary',
     weight: 700,
     type: 'submit',
@@ -62,7 +62,7 @@ export const SignUp = () => {
 
   const signInButton = Link({
     href: routerPathes.signIn,
-    children: t('button.signIn'),
+    children: t('form.signIn.signInButton'),
     textTransform: 'uppercase',
     weight: 700,
     color: 'blue',
