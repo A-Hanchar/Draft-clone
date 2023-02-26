@@ -1,13 +1,14 @@
 import i18next from 'i18next'
+import { localStorageInstanse } from 'instances'
 import { renderComponent } from 'router'
 
-import { LANGUAGE } from './LANGUAGE'
+import { type LANGUAGE } from './LANGUAGE'
 import { resources } from './resources'
 
 const i18n = i18next
 
 i18n.init({
-  lng: LANGUAGE.EN,
+  lng: localStorageInstanse.getLanguage(),
   resources,
 })
 
