@@ -9,7 +9,8 @@
     "notFound": "Page Not Found"
   },
   "documentPage": {
-    "pathnameError": "pathname must begin with \"documents\""
+    "pathnameError": "pathname must begin with \"documents\"",
+    "documentPlaceholder": "start typing..."
   },
   "signInPage": {
     "title": "Login to drafter"
@@ -26,7 +27,8 @@
     "open": "Open",
     "export": "Export",
     "logOut": "Log Out",
-    "login": "Login"
+    "login": "Login",
+    "toDocuments": "To Documents"
   },
   "error": {
     "undefinedError": "undefined error",
@@ -96,6 +98,6 @@
   "copyright": "© 2023",
   "gitHub": "GitHub",
   "rsSchool": "RSS",
-  "draft": "Draft",
+  "drafter": "Drafter",
   "draftIcon": "Draft Icon"
 }

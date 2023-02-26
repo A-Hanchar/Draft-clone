@@ -9,7 +9,8 @@
     "notFound": "Page non trouvée"
   },
   "documentPage": {
-    "pathnameError": "Le nom du chemin doit commencer par \"documents\""
+    "pathnameError": "Le nom du chemin doit commencer par \"documents\"",
+    "documentPlaceholder": "commencer à taper..."
   },
   "signInPage": {
     "title": "Se connecter à drafter"
@@ -26,7 +27,8 @@
     "open": "Ouvrir",
     "export": "Exportation",
     "logOut": "Déconnexion",
-    "login": "Connexion"
+    "login": "Connexion",
+    "toDocuments": "Aux documents"
   },
   "error": {
     "undefinedError": "erreur indéfinie",
@@ -96,6 +98,6 @@
   "copyright": "© 2023",
   "gitHub": "GitHub",
   "rsSchool": "RSS",
-  "draft": "Draft",
+  "drafter": "Drafter",
   "draftIcon": "Draft Icône"
 }
