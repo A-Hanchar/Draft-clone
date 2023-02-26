@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
-import { setButtonDisable, setButtonLoading } from './helpers'
+import { setButtonContent, setButtonDisable, setButtonLoading } from './helpers'
 
 import { type ButtonComponent, type ButtonProps } from './types'
 import { useGetButtonClasses } from './useGetButtonClasses'
@@ -19,8 +18,7 @@ export const Button = ({
   ...restProps
 }: ButtonProps): ButtonComponent => {
   const buttonClasses = useGetButtonClasses({ classname, rounded, textTransform, weight, ...restProps })
-
-  const buttonContent = createElementWithClassNameAndAppendNode({ tagName: 'div', children })
+  const buttonContent = setButtonContent({ initialContent: children })
 
   const button = createElementWithClassNameAndAppendNode({
     tagName: 'button',
@@ -45,5 +43,6 @@ export const Button = ({
   return Object.assign(button, {
     setLoading,
     setDisable,
+    setContent: buttonContent.setContent,
   })
 }

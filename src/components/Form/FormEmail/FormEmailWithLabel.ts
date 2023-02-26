@@ -1,11 +1,11 @@
-import { en } from 'langs'
+import { t } from 'i18n'
 
 import { FormEmail } from './FormEmail'
 import { type FormEmailWithLabelProps } from './types'
 import { FormLabelWrapper } from '../FormLabelWrapper'
 
 export const FormEmailWithLabel = ({
-  labelText = en.form.label.email,
+  labelText = t('form.label.email'),
   inputProps,
   ...restLabelProps
 }: FormEmailWithLabelProps) => {

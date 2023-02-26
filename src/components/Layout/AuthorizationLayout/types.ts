@@ -1,6 +1,8 @@
 import { type ExtendedLayoutProps } from '../ExtendedLayout'
 
-export type AuthorizationLayoutProps = ExtendedLayoutProps & {
-  titleText: string
+export type AuthorizationLayoutProps = {
+  titleTranslateKey: string
   form: HTMLFormElement
 }
+
+export type AuthorizationLayoutOwnProps = ExtendedLayoutProps & AuthorizationLayoutProps

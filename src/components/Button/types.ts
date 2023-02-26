@@ -1,4 +1,4 @@
-import { type PropsWithChildren } from 'types'
+import { type ChildrenNode, type PropsWithChildren } from 'types'
 import {
   type TextTransform,
   type ButtonTypeClose,
@@ -42,4 +42,5 @@ export type ButtonLoadingProps = {
 export type ButtonComponent = HTMLButtonElement & {
   setLoading: (isLoading: boolean) => void
   setDisable: (isDisable: boolean) => void
+  setContent: (content: ChildrenNode) => void
 }

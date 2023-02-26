@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 import { type WithSidebarLayoutProps } from './types'
 import { ExtendedLayout } from '../ExtendedLayout'
 
-export const WithSidebarLayout = ({ children, withFooter, withHeader }: WithSidebarLayoutProps) => {
+export const WithSidebarLayout = ({ children, withFooter, withHeader = true }: WithSidebarLayoutProps) => {
   const layout = ExtendedLayout({
     children,
     withFooter,

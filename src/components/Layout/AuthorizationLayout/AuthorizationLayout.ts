@@ -1,17 +1,24 @@
 import { LoginMethods } from 'components/LoginMethods'
 import { Text } from 'components/Text'
 
-import { type AuthorizationLayoutProps } from './types'
+import { t } from 'i18n'
+
+import { type AuthorizationLayoutOwnProps } from './types'
 import { ExtendedLayout } from '../ExtendedLayout'
 
-export const AuthorizationLayout = ({ titleText, form, withHeader, withFooter }: AuthorizationLayoutProps) => {
+export const AuthorizationLayout = ({
+  titleTranslateKey,
+  form,
+  withHeader,
+  withFooter,
+}: AuthorizationLayoutOwnProps) => {
   const fragment = document.createDocumentFragment()
 
   fragment.append(
     Text({
       tagName: 'h1',
       classname: 'text-center text-4xl md:text-3xl',
-      children: titleText,
+      children: t(titleTranslateKey),
       textTransform: 'uppercase',
       weight: 900,
     }),
