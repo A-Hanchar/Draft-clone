@@ -11,7 +11,11 @@ export const ToggleLanguage = () => {
   const activeItemIndex = menuItems.findIndex(({ key }) => key === getLanguage())
 
   const toggleLanguage = ({ key }: MenuItem<LANGUAGE>) => {
-    changeLanguage(key)
+    const currentLanguage = getLanguage()
+
+    if (currentLanguage !== key) {
+      changeLanguage(key)
+    }
   }
 
   const menu = Menu({
