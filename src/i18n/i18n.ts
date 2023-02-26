@@ -4,10 +4,10 @@ import { renderComponent } from 'router'
 import { LANGUAGE } from './LANGUAGE'
 import { resources } from './resources'
 
-export const i18n = i18next
+const i18n = i18next
 
 i18n.init({
-  lng: LANGUAGE.RU,
+  lng: LANGUAGE.EN,
   resources,
 })
 
@@ -20,3 +20,6 @@ export const t = (key: string) => {
 
   return translatedtext
 }
+
+export const changeLanguage = (lng: LANGUAGE) => i18n.changeLanguage(lng)
+export const getLanguage = () => i18n.language as LANGUAGE

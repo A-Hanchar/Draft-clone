@@ -1,5 +1,5 @@
 import { Text } from 'components/Text'
-import { i18n } from 'i18n'
+import { getLanguage } from 'i18n'
 
 import { type DocumentDateProps } from './types'
 
@@ -7,7 +7,7 @@ export const DocumentDate = ({ date }: DocumentDateProps) =>
   Text({
     textTransform: 'uppercase',
     tagName: 'p',
-    children: date.toLocaleDateString(i18n.language, {
+    children: date.toLocaleDateString(getLanguage(), {
       month: 'short',
       day: 'numeric',
     }),

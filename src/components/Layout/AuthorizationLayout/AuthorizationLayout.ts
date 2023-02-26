@@ -4,7 +4,7 @@ import { Text } from 'components/Text'
 import { type AuthorizationLayoutProps } from './types'
 import { ExtendedLayout } from '../ExtendedLayout'
 
-export const AuthorizationLayout = ({ titleText, form, withHeader = true, withFooter }: AuthorizationLayoutProps) => {
+export const AuthorizationLayout = ({ titleText, form, withHeader, withFooter }: AuthorizationLayoutProps) => {
   const fragment = document.createDocumentFragment()
 
   fragment.append(

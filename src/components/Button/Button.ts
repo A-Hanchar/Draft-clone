@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
 import { setButtonContent, setButtonDisable, setButtonLoading } from './helpers'
