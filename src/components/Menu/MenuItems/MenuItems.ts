@@ -1,5 +1,7 @@
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 
+import { colorsConfig } from 'variables/css'
+
 import { type MenuItemsProps } from './types'
 import { MenuItemComponent, type MenuItem } from '../MenuItem'
 
@@ -28,7 +30,7 @@ export const MenuItems = <T>({ elements, onChange, openSide = 'left' }: MenuItem
 
   const wrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `absolute top-full ${openSideClass} flex flex-col gap-2 items-start p-3 z-10 w-max shadow-xl`,
+    classname: `absolute top-full ${openSideClass} ${colorsConfig.text.darkGray} flex flex-col gap-2 items-start p-3 z-10 w-max shadow-xl`,
     children: menuItems,
   })
 

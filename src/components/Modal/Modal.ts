@@ -23,7 +23,7 @@ export const Modal = ({ children, title, onCancel }: ModalProps) => {
 
   const contentWrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    classname: `relative p-9 ${colorsConfig.bg.white} ${colorsConfig.bg.darkSlate} rounded md:p-6`,
+    classname: `relative p-9 ${colorsConfig.bg.white} rounded md:p-6`,
     children: [CloseButton({ onclick: handleClose }), Title({ title }), children],
   })
 

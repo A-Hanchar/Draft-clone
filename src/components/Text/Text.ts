@@ -18,7 +18,6 @@ export const Text = <K extends 'h1' | 'h2' | 'h3' | 'p' | 'span'>({
       textTransformConfig[textTransform],
       fontWeights[weight],
       colorsConfig.text[color],
-      colorsConfig.text.darkWhite,
       classname,
     ]),
   })

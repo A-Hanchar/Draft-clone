@@ -11,7 +11,7 @@ export const RootLayout = ({ children }: PropsWithChildren) => {
 
   replaceAllClassnameToElement({
     element: Body,
-    classname: `${colorsConfig.bg.lightGray} ${colorsConfig.bg.darkSlate}`,
+    classname: colorsConfig.bg.lightGray,
   })
 
   return main

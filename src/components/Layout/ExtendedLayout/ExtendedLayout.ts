@@ -28,7 +28,6 @@ export const ExtendedLayout = ({
     classname: getTruthyClasses([
       bodyNodeProps?.classname ?? getBodyClasses({ withFooter, withHeader }),
       colorsConfig.bg.lightGray,
-      colorsConfig.bg.darkSlate,
     ]),
   })
 
