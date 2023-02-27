@@ -6,6 +6,7 @@ import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 
 import { t } from 'i18n'
 import { keyboardShortcutsInstance } from 'instances'
 import { getDocumentIdParam, routerPathes } from 'router'
+import { colorsConfig } from 'variables/css'
 
 export const Document = async () => {
   const { documentId = '' } = getDocumentIdParam()
@@ -27,7 +28,7 @@ export const Document = async () => {
     const content = await getDocumentContentById(documentId)
 
     const textArea = Form.Textarea({
-      classname: 'w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none bg-gray-100 overflow: visible scrollbar-hide mx-auto',
+      classname: `w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none overflow: visible scrollbar-hide mx-auto ${colorsConfig.bg.lightGray}`,
       defaultValue: content,
       placeholder: t('documentPage.documentPlaceholder'),
     })

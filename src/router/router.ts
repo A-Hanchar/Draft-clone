@@ -9,6 +9,9 @@ export const rootRoute: RouterOwnObject = {
   path: routerPathes.home,
   content: Home,
   layoutType: 'Extended',
+  extendedLayoutProps: {
+    withFooter: true,
+  },
 }
 
 export const notFoundRoute: RouterOwnObject = {
