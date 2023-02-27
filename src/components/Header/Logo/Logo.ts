@@ -1,4 +1,4 @@
-import { Home } from 'components/Icons/Home'
+import { IconHome } from 'components/Icons'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { t } from 'i18n'
@@ -6,7 +6,7 @@ import { routerPathes } from 'router'
 
 export const Logo = () => {
   const title = Text({ tagName: 'h2', children: t('drafter'), weight: 700 })
-  const iconHome = Home({})
+  const iconHome = IconHome({})
 
   const fragment = document.createDocumentFragment()
   fragment.append(iconHome, title)

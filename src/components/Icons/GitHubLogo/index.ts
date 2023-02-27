@@ -1,0 +1,1 @@
+export { GitHubLogo } from './GitHubLogo'

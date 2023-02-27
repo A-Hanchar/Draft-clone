@@ -1,7 +1,5 @@
-import gitHubLogo from 'assets/icons/png/github-logo.png'
-import RSSvg from 'assets/icons/svg/rs_school_js.svg'
 import { GitHubLink } from 'components/GitHubLink'
-import { Image } from 'components/Image/Image'
+import { IconGitHub, IconRSSchool } from 'components/Icons'
 import { Link } from 'components/Link'
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode, getTruthyClasses } from 'helpers'
@@ -33,7 +31,7 @@ export const Footer = ({ classname }: PropsWithClassname) => {
     children: [links, copyright],
   })
 
-  const gitLogo = Image({ url: gitHubLogo, alt: t('gitHub'), classname: 'w-14' })
+  const gitLogo = IconGitHub({ width: 56 })
 
   const linksWrap = createElementWithClassNameAndAppendNode({
     tagName: 'div',
@@ -44,7 +42,7 @@ export const Footer = ({ classname }: PropsWithClassname) => {
   const RSLink = Link({
     href: 'https://rs.school/js/',
     target: '_blank',
-    children: Image({ url: RSSvg, alt: t('rsSchool'), classname: 'w-16' }),
+    children: IconRSSchool({ width: 64 }), // Image({ url: RSSvg, alt: t('rsSchool'), classname: 'w-16' }),
   })
 
   const footerWrapper = createElementWithClassNameAndAppendNode({
