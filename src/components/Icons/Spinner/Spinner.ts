@@ -4,7 +4,7 @@ import { colorsConfig } from 'variables/css'
 import styles from './styles.module.css'
 import { type SpinnerProps } from './types'
 import { SVGElement } from '../SVGContainer'
-import { linkW3OrgSVG } from '../SVGContainer/constants'
+import { linkW3OrgSVG } from '../constants'
 
 export const Spinner = ({ classname, color = 'green' }: SpinnerProps) => {
   const svg = SVGElement({

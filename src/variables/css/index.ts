@@ -4,3 +4,4 @@ export { colorsConfig, type ColorTextKeys, type ColorBackgroundKeys } from './co
 export * from './buttonConfig'
 export * from './resize'
 export { THEME_COLOR_MODE } from './THEME_COLOR_MODE'
+export * from './SVG'

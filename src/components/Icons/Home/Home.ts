@@ -1,25 +1,26 @@
-import { FillConfig } from 'variables/css/SVG/fillSVG'
-
 import { SVGElement } from '../SVGContainer'
-import { PathElement } from '../SVGContainer/component'
-import { linkW3OrgSVG } from '../SVGContainer/constants'
-import { type SVGProps } from '../type'
+import { SVGPath } from '../SVGPath'
+import { linkW3OrgSVG } from '../constants'
+import { type SVGProps } from '../types'
 
-export const Home = ({ width, height, classname = '' }: SVGProps) => {
+export const Home = ({
+  fill = 'black',
+  stroke = 'none',
+  viewBox = '0 0 1280.000000 1206.000000',
+  ...restHomeSvgProps
+}: SVGProps) => {
   const svg = SVGElement({
-    fill: FillConfig.light.black,
-    width,
-    height,
-    stroke: 'stroke-none',
-    viewBox: '0 0 1280.000000 1206.000000',
-    classname: `${FillConfig.dark.white} ${classname}`,
+    fill,
+    stroke,
+    viewBox,
+    ...restHomeSvgProps,
   })
 
-  const SvgG = document.createElementNS(linkW3OrgSVG, 'g')
-  SvgG.setAttribute('transform', 'translate(0.000000,1206.000000) scale(0.100000,-0.100000)')
-  svg.append(SvgG)
+  const svgG = document.createElementNS(linkW3OrgSVG, 'g')
 
-  const path1 = PathElement({
+  svgG.setAttribute('transform', 'translate(0.000000,1206.000000) scale(0.100000,-0.100000)')
+
+  const path1 = SVGPath({
     d: `M5828 11600 c-282 -250 -1418 -1256 -2523 -2235 -1106 -978 -2165
   -1917 -2355 -2085 -190 -168 -460 -407 -600 -530 -140 -124 -276 -245 -302
   -270 l-48 -45 330 -370 c181 -203 336 -369 343 -369 8 1 603 521 1323 1156
@@ -30,7 +31,7 @@ export const Home = ({ width, height, classname = '' }: SVGProps) => {
   -455z`,
   })
 
-  const path2 = PathElement({
+  const path2 = SVGPath({
     d: `M5707 9301 c-364 -322 -1370 -1213 -2235 -1979 l-1572 -1393 2 -2872
     3 -2872 22 -41 c12 -23 41 -58 64 -77 83 -72 -24 -67 1561 -67 l1428 0 2 1273
     c3 1266 3 1272 24 1317 26 58 76 108 134 134 45 21 52 21 1224 24 1304 3 1248
@@ -38,9 +39,9 @@ export const Home = ({ width, height, classname = '' }: SVGProps) => {
     1485 3 30 29 c17 16 45 63 63 105 l33 76 2 2860 2 2860 -2240 1975 c-1270
     1120 -2249 1976 -2260 1976 -13 1 -247 -200 -682 -585z`,
   })
-  SvgG.append(path1, path2)
 
-  svg.append(SvgG)
+  svgG.append(path1, path2)
+  svg.append(svgG)
 
   return svg
 }

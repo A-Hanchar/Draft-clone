@@ -1,1 +1,0 @@
-export { PathElement } from './PathElement'

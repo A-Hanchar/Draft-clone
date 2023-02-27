@@ -1,10 +1,10 @@
-import { type IPath } from './type'
+import { type SVGPathProps } from './types'
 import { linkW3OrgSVG } from '../constants'
 
-export const PathElement = ({ d, fillPath = '' }: IPath) => {
+export const SVGPath = ({ d }: SVGPathProps) => {
   const iconPath = document.createElementNS(linkW3OrgSVG, 'path')
+
   iconPath.setAttribute('d', d)
-  iconPath.setAttribute('fill', fillPath)
 
   return iconPath
 }

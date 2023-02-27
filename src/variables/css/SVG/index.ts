@@ -1,2 +1,2 @@
-export { type ColorsConfig, FillConfig } from './fillSVG'
-export { type StrokeKeys } from './strokeSVG'
+export { fillConfig, type FillColor } from './fillSVG'
+export { type StrokeType, strokeConfig } from './strokeSVG'
