@@ -1,6 +1,6 @@
 import { addClassnameToElement, getTruthyClasses } from 'helpers'
 
-import { converterPxToRem } from 'utils/converterPxToRem'
+import { converterPxToRem } from 'utils'
 import { strokeConfig, fillConfig } from 'variables/css'
 
 import { initialHeight, initialViewBox, initialWidth, linkW3OrgSVG } from '../constants'
