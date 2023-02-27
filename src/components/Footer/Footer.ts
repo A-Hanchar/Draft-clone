@@ -42,7 +42,7 @@ export const Footer = ({ classname }: PropsWithClassname) => {
   const RSLink = Link({
     href: 'https://rs.school/js/',
     target: '_blank',
-    children: IconRSSchool({ width: 64 }), // Image({ url: RSSvg, alt: t('rsSchool'), classname: 'w-16' }),
+    children: IconRSSchool({ width: 64 }),
   })
 
   const footerWrapper = createElementWithClassNameAndAppendNode({
