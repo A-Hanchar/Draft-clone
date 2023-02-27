@@ -4,6 +4,7 @@ import { Modal } from 'components/Modal'
 import { Text } from 'components/Text'
 import { getTruthyClasses } from 'helpers'
 import { t } from 'i18n'
+import { keyboardShortcutsInstance } from 'instances'
 import { type PropsWithClassname } from 'types'
 
 export const HelpButton = ({ classname }: PropsWithClassname) => {
@@ -23,6 +24,13 @@ export const HelpButton = ({ classname }: PropsWithClassname) => {
   const modal = Modal({
     children: helpText,
     title: t('modal.help.title'),
+  })
+
+  document.addEventListener('keydown', (event) => {
+    keyboardShortcutsInstance.ctrl_alt_f1({
+      event,
+      callback: modal.handleOpen,
+    })
   })
 
   return Button({

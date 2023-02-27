@@ -22,6 +22,7 @@ export const DeleteButton = ({ documentId, onClick }: DeleteButtonProps) => {
 
   const button = Button({
     appearanceType: 'alert',
+    classname: 'sm: max-w-[8rem] sm:text-xs',
     children: t('button.delete'),
     textTransform: 'uppercase',
     weight: 700,

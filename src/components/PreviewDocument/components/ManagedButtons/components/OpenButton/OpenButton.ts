@@ -12,6 +12,7 @@ export const OpenButton = ({ documentId }: OpenButtonProps) => {
 
   return Button({
     appearanceType: 'success',
+    classname: 'sm: max-w-[8rem] sm:text-xs',
     children: t('button.open'),
     textTransform: 'uppercase',
     weight: 700,

@@ -99,5 +99,28 @@
   "gitHub": "GitHub",
   "rsSchool": "RSS",
   "drafter": "Drafter",
-  "draftIcon": "Draft Иконка"
+  "draftIcon": "Draft Иконка",
+  "shortcutsTitle": "Горячие Клавиши",
+  "shortcuts": {
+    "ctrl_alt_f1": {
+      "value": "ctrl+alt+f1: ",
+      "description": "Открыть справочную информацию"
+    },
+    "ctrl_alt_s": {
+      "value": "ctrl+alt+s: ",
+      "description": "Сохранить Документ"
+    },
+    "ctrl_alt_o": {
+      "value": "ctrl+alt+o: ",
+      "description": "Открыть Новый Документ"
+    },
+    "ctrl_alt_b": {
+      "value": "ctrl+alt+b: ",
+      "description": "Посмотреть Горячие Клавиши"
+    },
+    "ctrl_alt_q": {
+      "value": "ctrl+alt+q: ",
+      "description": "Выйти"
+    }
+  }
 }
