@@ -10,7 +10,8 @@
   },
   "documentPage": {
     "pathnameError": "Le nom du chemin doit commencer par \"documents\"",
-    "documentPlaceholder": "commencer à taper..."
+    "documentPlaceholder": "commencer à taper...",
+    "saveMessage": "Document Conservé"
   },
   "signInPage": {
     "title": "Se connecter à drafter"

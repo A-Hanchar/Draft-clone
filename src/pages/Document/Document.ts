@@ -7,6 +7,8 @@ import { t } from 'i18n'
 import { keyboardShortcutsInstance } from 'instances'
 import { getDocumentIdParam, routerPathes } from 'router'
 
+import { Snackbar } from './components/Snackbar'
+
 export const Document = async () => {
   const { documentId = '' } = getDocumentIdParam()
 
@@ -23,11 +25,18 @@ export const Document = async () => {
     onclick: toDocuments,
   })
 
+  const snackbar = Snackbar({
+    classname: 'absolute bottom-[5%] left-[5%] p-6 bg-white dark:bg-slate-800 rounded',
+    color: 'darkGray',
+    weight: 700,
+  })
+
   try {
     const content = await getDocumentContentById(documentId)
 
     const textArea = Form.Textarea({
-      classname: 'w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none bg-gray-100 overflow: visible scrollbar-hide mx-auto',
+      classname:
+        'relative w-3/4 max-w-xl p-2 h-[90vh] focus:outline-none bg-gray-100 overflow: visible scrollbar-hide mx-auto',
       defaultValue: content,
       placeholder: t('documentPage.documentPlaceholder'),
     })
@@ -35,15 +44,25 @@ export const Document = async () => {
     textArea.addEventListener('keydown', (event) => {
       keyboardShortcutsInstance.ctrl_alt_s({
         event,
-        callback: () => updateDocument({ documentId, content: textArea.value }),
+        callback: () => {
+          updateDocument({ documentId, content: textArea.value })
+
+          documentWrapper.append(snackbar)
+
+          setTimeout(() => {
+            snackbar.remove()
+          }, 3000)
+        },
       })
     })
 
-    return createElementWithClassNameAndAppendNode({
+    const documentWrapper = createElementWithClassNameAndAppendNode({
       tagName: 'div',
       classname: 'flex justify-center gap-4 p-10 md:flex-col md:items-center',
       children: [toDocumentsButton, textArea],
     })
+
+    return documentWrapper
   } catch (error) {
     return Error({ error, classname: 'flex justify-start p-10' })
   }

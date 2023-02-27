@@ -10,7 +10,8 @@
   },
   "documentPage": {
     "pathnameError": "pathname должен начинаться с \"documents\"",
-    "documentPlaceholder": "начать печатать..."
+    "documentPlaceholder": "начать печатать...",
+    "saveMessage": "Документ Сохранен"
   },
   "signInPage": {
     "title": "Войти в drafter"
