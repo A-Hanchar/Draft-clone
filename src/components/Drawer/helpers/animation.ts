@@ -1,7 +1,7 @@
 import { Body } from 'components/Body'
 
 export const startAnimationDrawer = (element: HTMLDivElement, direction: 'left' | 'right') => {
-  const duration = 800
+  const duration = 400
   let startAnimation: number | null = null
 
   requestAnimationFrame(function measure(time) {

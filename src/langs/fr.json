@@ -99,5 +99,28 @@
   "gitHub": "GitHub",
   "rsSchool": "RSS",
   "drafter": "Drafter",
-  "draftIcon": "Draft Icône"
+  "draftIcon": "Draft Icône",
+  "shortcutsTitle": "Raccourcis",
+  "shortcuts": {
+    "ctrl_alt_f1": {
+      "value": "ctrl+alt+f1: ",
+      "description": "Ouvrir les informations d'aide"
+    },
+    "ctrl_alt_s": {
+      "value": "ctrl+alt+s: ",
+      "description": "Enregistrer le document"
+    },
+    "ctrl_alt_o": {
+      "value": "ctrl+alt+o: ",
+      "description": "Ouvrir un nouveau document"
+    },
+    "ctrl_alt_b": {
+      "value": "ctrl+alt+b: ",
+      "description": "Afficher les raccourcis clavier"
+    },
+    "ctrl_alt_q": {
+      "value": "ctrl+alt+q: ",
+      "description": "Déconnexion"
+    }
+  }
 }

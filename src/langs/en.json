@@ -99,5 +99,28 @@
   "gitHub": "GitHub",
   "rsSchool": "RSS",
   "drafter": "Drafter",
-  "draftIcon": "Draft Icon"
+  "draftIcon": "Draft Icon",
+  "shortcutsTitle": "Shortcuts",
+  "shortcuts": {
+    "ctrl_alt_f1": {
+      "value": "ctrl+alt+f1: ",
+      "description": "Open Help Information"
+    },
+    "ctrl_alt_s": {
+      "value": "ctrl+alt+s: ",
+      "description": "Save Document"
+    },
+    "ctrl_alt_o": {
+      "value": "ctrl+alt+o: ",
+      "description": "Open New Document"
+    },
+    "ctrl_alt_b": {
+      "value": "ctrl+alt+b: ",
+      "description": "View Hotkeys"
+    },
+    "ctrl_alt_q": {
+      "value": "ctrl+alt+q: ",
+      "description": "Log Out"
+    }
+  }
 }
