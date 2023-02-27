@@ -1,2 +1,2 @@
 export { Document } from './Document'
-export { Snackbar } from './components/Snackbar'
+export { Snackbar } from '../../components/Snackbar'

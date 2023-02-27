@@ -2,13 +2,12 @@ import { getDocumentContentById, updateDocument } from 'api'
 import { Button } from 'components/Button'
 import { Error } from 'components/Error'
 import { Form } from 'components/Form'
+import { Snackbar } from 'components/Snackbar'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
 import { t } from 'i18n'
 import { keyboardShortcutsInstance } from 'instances'
 import { getDocumentIdParam, routerPathes } from 'router'
 import { colorsConfig } from 'variables/css'
-
-import { Snackbar } from './components/Snackbar'
 
 export const Document = async () => {
   const { documentId = '' } = getDocumentIdParam()
@@ -27,7 +26,7 @@ export const Document = async () => {
   })
 
   const snackbar = Snackbar({
-    classname: 'absolute bottom-[5%] left-[5%] p-6 bg-white dark:bg-slate-800 rounded',
+    classname: 'absolute bottom-[5%] left-[5%] dark:bg-slate-800 rounded opacity-50',
     color: 'darkGray',
     weight: 700,
   })
@@ -47,11 +46,7 @@ export const Document = async () => {
         callback: () => {
           updateDocument({ documentId, content: textArea.value })
 
-          documentWrapper.append(snackbar)
-
-          setTimeout(() => {
-            snackbar.remove()
-          }, 3000)
+          documentWrapper.append(snackbar.getSnackbar())
         },
       })
     })
