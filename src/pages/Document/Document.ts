@@ -4,6 +4,7 @@ import { Error } from 'components/Error'
 import { Form } from 'components/Form'
 import { createElementWithClassNameAndAppendNode, goToPageAndRenderRoute } from 'helpers'
 import { t } from 'i18n'
+import { keyboardShortcutsInstance } from 'instances'
 import { getDocumentIdParam, routerPathes } from 'router'
 
 export const Document = async () => {
@@ -31,11 +32,11 @@ export const Document = async () => {
       placeholder: t('documentPage.documentPlaceholder'),
     })
 
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.key === 'q') {
-        e.preventDefault()
-        updateDocument({ documentId, content: textArea.value })
-      }
+    textArea.addEventListener('keydown', (event) => {
+      keyboardShortcutsInstance.ctrl_alt_s({
+        event,
+        callback: () => updateDocument({ documentId, content: textArea.value }),
+      })
     })
 
     return createElementWithClassNameAndAppendNode({

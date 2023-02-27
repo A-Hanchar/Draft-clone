@@ -2,6 +2,7 @@ import { createDocument } from 'api'
 import { Button } from 'components/Button'
 import { goToPageAndRenderRoute } from 'helpers'
 import { t } from 'i18n'
+import { keyboardShortcutsInstance } from 'instances'
 import { routerPathes } from 'router'
 
 export const CreateDocumentButton = () => {
@@ -30,6 +31,13 @@ export const CreateDocumentButton = () => {
     rounded: false,
     weight: 700,
     onclick: handleClick,
+  })
+
+  document.addEventListener('keydown', (event) => {
+    keyboardShortcutsInstance.ctrl_alt_o({
+      event,
+      callback: handleClick,
+    })
   })
 
   return button
