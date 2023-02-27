@@ -23,6 +23,7 @@ export const ExportButton = ({ documentId }: ExportButtonProps) => {
 
   const button = Button({
     appearanceType: 'primary',
+    classname: 'sm: max-w-[8rem] sm:text-xs',
     children: t('button.export'),
     textTransform: 'uppercase',
     weight: 700,
