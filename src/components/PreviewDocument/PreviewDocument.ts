@@ -13,20 +13,13 @@ export const PreviewDocument = ({ id, documentContent, date }: PreviewDocumentPr
   const previewText = Text({
     tagName: 'p',
     children: documentContent,
-    classname: 'max-w-[24rem] md:max-w-[18rem] sm:max-w-[12rem]',
+    classname: 'max-w-[24rem] md:max-w-[18rem] sm:max-w-[12rem] line-clamp-1',
   })
 
   const previewDocument = createElementWithClassNameAndAppendNode({
     tagName: 'div',
     classname: 'flex flex-col gap-4',
-    children: [
-      createElementWithClassNameAndAppendNode({
-        tagName: 'div',
-        classname: 'line-clamp-1',
-        children: [ManagedButtons({ documentId: id, handleDocumentDelete }), previewText],
-      }),
-      DocumentDate({ date }),
-    ],
+    children: [ManagedButtons({ documentId: id, handleDocumentDelete }), previewText, DocumentDate({ date })],
   })
 
   return previewDocument
