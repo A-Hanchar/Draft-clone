@@ -10,7 +10,8 @@
   },
   "documentPage": {
     "pathnameError": "pathname must begin with \"documents\"",
-    "documentPlaceholder": "start typing..."
+    "documentPlaceholder": "start typing...",
+    "saveMessage": "Document Saved"
   },
   "signInPage": {
     "title": "Login to drafter"
