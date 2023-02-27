@@ -14,7 +14,7 @@ export const Footer = ({ classname }: PropsWithClassname) => {
     tagName: 'div',
     classname: 'flex gap-4 md:text-xs',
     children: [
-      GitHubLink({ username: t('gitHubUser["A-Hanchar"].username'), name: t('gitHubUser["A-Hanchar"].name') }),
+      GitHubLink({ username: t('gitHubUser.A-Hanchar.username'), name: t('gitHubUser.A-Hanchar.name') }),
       GitHubLink({ username: t('gitHubUser.yauheniZabotsin.username'), name: t('gitHubUser.yauheniZabotsin.name') }),
       GitHubLink({ username: t('gitHubUser.sohodoll.username'), name: t('gitHubUser.sohodoll.name') }),
     ],

@@ -39,7 +39,7 @@ export const buttonConfig: ButtonConfigType = {
     green: 'text-green-500',
     blue: 'text-blue-500',
     lightGray: 'text-gray-100',
-    darkGray: 'text-gray-800 dark:text-white',
+    darkGray: 'text-gray-800 dark:text-gray-100',
   },
   getClassByColorType({ colorType }) {
     const { bgColor, color, outline, hover } = this.buttonType[colorType]

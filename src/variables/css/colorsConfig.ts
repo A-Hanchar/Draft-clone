@@ -14,10 +14,10 @@ export const colorsConfig: ColorsConfig = {
     lightGray: 'bg-gray-100 dark:bg-slate-800',
   },
   text: {
-    darkGray: 'text-gray-800 dark:text-white',
+    darkGray: 'text-gray-800 dark:text-gray-100',
     blue: 'text-blue-500',
     red: 'text-red-500',
     green: 'text-green-500',
-    neutral: 'text-neutral-400',
+    neutral: 'text-neutral-400 dark:text-gray-100',
   },
 }

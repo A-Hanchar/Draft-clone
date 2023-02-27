@@ -1,6 +1,7 @@
 import { Text } from 'components/Text'
 import { createElementWithClassNameAndAppendNode } from 'helpers'
 import { t } from 'i18n'
+import { colorsConfig } from 'variables/css'
 
 import { getShortcutsItems } from './getShortcutsItems'
 
@@ -23,6 +24,7 @@ export const HotKeysInfo = () => {
       const li = createElementWithClassNameAndAppendNode({
         tagName: 'li',
         children: [valueText, description],
+        classname: colorsConfig.text.darkGray,
       })
 
       return li
