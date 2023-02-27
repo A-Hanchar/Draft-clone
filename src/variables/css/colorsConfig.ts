@@ -8,16 +8,16 @@ type ColorsConfig = {
 
 export const colorsConfig: ColorsConfig = {
   bg: {
-    white: 'bg-white',
+    white: 'bg-white dark:bg-slate-700',
     'neutral/75': 'bg-neutral-900/75',
     transparent: 'bg-transparent',
-    lightGray: 'bg-gray-100',
+    lightGray: 'bg-gray-100 dark:bg-slate-800',
   },
   text: {
-    darkGray: 'text-gray-800',
+    darkGray: 'text-gray-800 dark:text-gray-100',
     blue: 'text-blue-500',
     red: 'text-red-500',
     green: 'text-green-500',
-    neutral: 'text-neutral-400',
+    neutral: 'text-neutral-400 dark:text-gray-100',
   },
 }

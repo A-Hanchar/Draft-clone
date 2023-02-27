@@ -2,3 +2,12 @@ export enum LOCAL_STORAGE_KEY {
   LANGUAGE = 'LANGUAGE',
   THEME_COLOR_MODE = 'THEME_COLOR_MODE',
 }
+
+export enum THEME_COLOR_MODE_ATTRIBUTE {
+  DATA_THEME_MODE = 'DATA_THEME_MODE',
+}
+
+export enum THEME_COLOR_MODE {
+  LIGHT = 'light',
+  DARK = 'dark',
+}

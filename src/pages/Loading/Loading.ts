@@ -1,12 +1,12 @@
 import { Body } from 'components/Body'
-import { Spinner } from 'components/Spinner'
+import { IconSpinner } from 'components/Icons'
 import { createElementWithClassNameAndAppendNode, replaceAllClassnameToElement } from 'helpers'
 import { colorsConfig } from 'variables/css'
 
 export const Loading = () => {
   const wrapper = createElementWithClassNameAndAppendNode({
     tagName: 'div',
-    children: Spinner({}),
+    children: IconSpinner({}),
     classname: 'w-screen h-screen flex items-center justify-center',
   })
 

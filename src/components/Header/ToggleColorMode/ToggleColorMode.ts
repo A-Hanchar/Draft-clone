@@ -1,6 +1,6 @@
 import { Menu, type MenuItem, type MenuItemsList } from 'components/Menu'
-import { localStorageInstanse } from 'instances'
-import { THEME_COLOR_MODE } from 'variables/css'
+import { toggleThemeColorMode as changeThemeColorMode } from 'helpers'
+import { localStorageInstanse, THEME_COLOR_MODE } from 'instances'
 
 export const ToggleColorMode = () => {
   const menuColorItems: MenuItemsList<THEME_COLOR_MODE> = [
@@ -15,6 +15,7 @@ export const ToggleColorMode = () => {
 
     if (currentColorTheme !== key) {
       localStorageInstanse.setThemeColorMode(key)
+      changeThemeColorMode()
     }
   }
 

@@ -1,8 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import { LANGUAGE } from 'i18n'
-import { THEME_COLOR_MODE } from 'variables/css'
 
-import { LOCAL_STORAGE_KEY } from './types'
+import { LOCAL_STORAGE_KEY, THEME_COLOR_MODE } from './types'
 
 class LocaltorageInstanse {
   getValue<T = string>(key: LOCAL_STORAGE_KEY): T | null {

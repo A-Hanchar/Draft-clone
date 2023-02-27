@@ -1,0 +1,1 @@
+export { borderColorConfig } from './borderColorConfig'

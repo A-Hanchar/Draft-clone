@@ -9,7 +9,6 @@ import { type MenuProps } from './types'
 
 export const Menu = <T>({ elements, activeItemIndex, onChange, openSide }: MenuProps<T>) => {
   const activeMenuItem = getActiveMenuItem<T>({ elements, activeItemIndex })
-  let isMenuItemsOpen = false
 
   const updateMenuButtonTitle = ({ title, key }: MenuItem<T>) => {
     menuButton.setContent(title)
@@ -18,15 +17,9 @@ export const Menu = <T>({ elements, activeItemIndex, onChange, openSide }: MenuP
   }
 
   const toggleMenuItems = () => {
-    if (!isMenuItemsOpen) {
-      isMenuItemsOpen = true
-      wrapper.append(menuItems)
+    const isMenuItemsOpen = wrapper.contains(menuItems)
 
-      return
-    }
-
-    isMenuItemsOpen = false
-    menuItems.remove()
+    isMenuItemsOpen ? wrapper.removeChild(menuItems) : wrapper.append(menuItems)
   }
 
   const menuItems = MenuItems({ elements, onChange: updateMenuButtonTitle, openSide })

@@ -10,7 +10,7 @@ export const AuthorizationLayout = ({
   titleTranslateKey,
   form,
   withHeader,
-  withFooter,
+  withFooter = true,
 }: AuthorizationLayoutOwnProps) => {
   const fragment = document.createDocumentFragment()
 

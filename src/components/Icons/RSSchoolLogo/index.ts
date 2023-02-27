@@ -1,0 +1,1 @@
+export { RSSchoolLogo } from './RSSchoolLogo'
