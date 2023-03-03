@@ -25,6 +25,7 @@ export const FormInput = ({
       'leading-tight',
       fontWeights[weight],
       colorsConfig.text[color],
+      colorsConfig.bg.white,
       classname,
     ]),
   })
